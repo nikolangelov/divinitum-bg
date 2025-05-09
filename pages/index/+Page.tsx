@@ -174,7 +174,7 @@ export default function Page() {
 						<H2WithImage class="c-paper" title="Стилът на The Barber Shop" />
 					</AnimatedComponent>
 					<AnimatedComponent>
-						<VideoPlayer src='https://cherrycarpetcleaning.co.uk/wp-content/uploads/2025/04/Barbershop-video-home.mp4' />
+						<VideoPlayer src='/assets/Barbershop-video-home.mp4' />
 					</AnimatedComponent>
 				</div>
 			</div>

@@ -206,7 +206,7 @@ export default function Page() {
 					<H2WithImage class="max-w-750px mx-auto" title="Професионално оформяне на брада: От идеята до завършения вид" />
 				</AnimatedComponent>
 				<AnimatedComponent>
-					<VideoPlayer src='https://cherrycarpetcleaning.co.uk/wp-content/uploads/2025/04/barbershop-oformiane-na-brada.mp4' />
+					<VideoPlayer src='/assets/barbershop-oformiane-na-brada.mp4' />
 				</AnimatedComponent>
 			</section>
 

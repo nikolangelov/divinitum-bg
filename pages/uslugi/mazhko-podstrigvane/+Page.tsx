@@ -179,7 +179,7 @@ export default function Page() {
 					<H2WithImage class="max-w-750px mx-auto" title="Професионално мъжко подстригване: От идеята до завършения вид" />
 				</AnimatedComponent>
 				<AnimatedComponent>
-					<VideoPlayer src='https://cherrycarpetcleaning.co.uk/wp-content/uploads/2025/04/barbershop-mazhko-podstrigvane.mp4' />
+					<VideoPlayer src='/assets/barbershop-mazhko-podstrigvane.mp4' />
 				</AnimatedComponent>
 			</section>
 

@@ -3,7 +3,7 @@
   "scripts": {
     "start": "ts-node index.ts",
     "dev": "vite dev",
-    "copyfiles": "copyfiles -u 1 \"assets/**/*.{html,css,scss,ttf,woff,woff2,webp,eot,svg,jpg,png,js}\" dist/client/assets",
+    "copyfiles": "copyfiles -u 1 \"assets/**/*.{html,css,scss,ttf,woff,woff2,webp,eot,svg,jpg,png,js,mp4}\" dist/client/assets",
     "build": "vite build && npm run copyfiles",
     "deploy": "cp -r -v ./dist/client/* /home/thebarbershop/htdocs/thebarbershop.bg",
     "preview": "vite preview",
