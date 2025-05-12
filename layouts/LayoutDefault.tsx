@@ -728,7 +728,7 @@ function HamburgerMenu() {
     <div class="lg-hidden flex flex-content-center flex-items-center flex-justify-between w-full">
       <div class="flex flex-items-center flex-justify-center lg-pl-4 pl-0">
         <a href="/" onClick={closeMenu}>
-          <img src="/assets/logo-mobile.png" class="w-13 mr--3 mt-4" alt="fine-carpet-cleaning-logo" />
+          <img src="/assets/logo-mobile.png" class="w-13 mr--3 mt-4" alt="thebarbershop-logo" />
         </a>
       </div>
       <a href="https://book.thebarbershop.bg/reservations/start?site=1" target="_blank" rel="noopener noreferrer">
