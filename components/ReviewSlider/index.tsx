@@ -91,7 +91,7 @@ export function StarReview(props: { src: string; stars: number; hrefGoogleReview
             <div class="flex flex-justify-center flex-items-center">
                 <div class="flex flex-col flex-justify-center flex-items-center">
                     <div class="flex flex-justify-center flex-items-center">
-                        <img class="w-12 h-12 mx-auto" style="filter: saturate(130%);" src={props.src} alt="profile" />
+                        <img class="w-10 h-10 mx-auto" style="filter: saturate(130%);" src={props.src} alt="profile" />
                     </div>
                     <div class="important-text-center py-7 lg-px-0 px-3 font-300 font-size-4.3 md-font-size-4.5 line-height-7 lg-line-height-8" style="font-family:'Roboto', sans-serif; text-align: left;">{props.reviewText}</div>
                     <div class="">
