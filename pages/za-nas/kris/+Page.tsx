@@ -32,7 +32,7 @@ export default function Page() {
 				</div>
 			</div>
 
-			{/* <section class="pb-20 bg-#f2e0c2" style="background-color: #222222; background-image: url(/assets/bg-2.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+			{/* <section class="pb-20 bg-#f2e0c2" style="background-color: #222222; background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center center; background-repeat: no-repeat; background-size: cover;">
 				<AnimatedComponent>
 					<H2WithImage class="c-paper" title="Видео" />
 				</AnimatedComponent>
@@ -72,7 +72,7 @@ export default function Page() {
 				</div>
 			</section>
 
-			<div class="lg-px-30 pb-20 w-full flex flex-col flex-justify-center bg-#f2e0c2" style="background-color: #222222; background-image: url(/assets/bg-2.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+			<div class="lg-px-30 pb-20 w-full flex flex-col flex-justify-center bg-#f2e0c2" style="background-color: #222222; background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center center; background-repeat: no-repeat; background-size: cover;">
 				<AnimatedComponentSlide>
 					<div class="px-4">
 						<H2WithImage class="c-paper" title="Какво казват другите за Кристиан?" />

@@ -131,7 +131,7 @@ export default function Page() {
 				</div>
 			</div>
 
-			<div class="pb-10" style="background-image: url(/assets/bg-2.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+			<div class="pb-10" style="background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
 				<AnimatedComponentSlide>
 					<H2WithImage class="c-paper" title="Какво Ви очаква по време на семейно подстригване за баща и син" />
 				</AnimatedComponentSlide>
@@ -235,7 +235,7 @@ export default function Page() {
 					/>
 				</div>
 
-				<section style="background-color: #222222; background-image: url(/assets/bg-2.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+				<section style="background-color: #222222; background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center center; background-repeat: no-repeat; background-size: cover;">
 					<div class="flex flex-col pb-20">
 						<div class="flex flex-col flex-items-center">
 							<AnimatedComponent>
@@ -357,7 +357,7 @@ export default function Page() {
 				</div> */}
 			</section>
 
-			<section style="background-color: #222222; background-image: url(/assets/bg-2.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+			<section style="background-color: #222222; background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center center; background-repeat: no-repeat; background-size: cover;">
 				<div class="lg-mx-30 mx-auto">
 					<div class="flex md-flex flex-col lg-gap-5 flex-justify-center max-w-1440px lg-px-0 mx-auto pb-10">
 						<AnimatedComponent>

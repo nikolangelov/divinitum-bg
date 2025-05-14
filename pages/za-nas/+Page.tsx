@@ -90,7 +90,7 @@ export default function Page() {
 								<img class="pb-2 mx-auto md:mx-0 pt-80px md:pt-0 flex flex-justify-center" src="/assets/heading-ic.png" />
 								<h2 class="md:text-left mb-7 pl-0 important-mt-0">Нашата история</h2>
 								<div class="w-full relative block md:hidden pb-4">
-									<img src="/assets/za-nas/the-barber-shop-sofia-team-3.jpg" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
+									<img src="/assets/za-nas/the-barber-shop-sofia-team-3.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
 								</div>
 								<p class="important-delay-500 sm-line-height-7 line-height-6.5">Всичко започва през 2014 г., когато все още няма бръснарници в София. В този момент нашата история започва да се пише чрез създаването на БРЪСНАРНИЦАТА. След известно време се превърнахме в предпочитано специализирано място за мъжка грижа и стил.</p>
 								<p class="important-delay-700 sm-line-height-7 line-height-6.5 mb-0">Мисията ни и до ден днешен е да създадем място и атмосфера, където мъжете получават качествено обслужване, и се чувстват като част от общност, която цени добрия вкус и безупречния външен вид.</p>
@@ -99,7 +99,7 @@ export default function Page() {
 
 						<AnimatedComponent class="w-full md:w-1/2 hidden md:block">
 							<div class="relative">
-								<img src="/assets/za-nas/the-barber-shop-sofia-team-3.jpg" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
+								<img src="/assets/za-nas/the-barber-shop-sofia-team-3.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
 								<p class="important-my-0">Екипът на The Barber Shop</p>
 							</div>
 						</AnimatedComponent>
@@ -107,7 +107,7 @@ export default function Page() {
 				</section>
 			</section>
 
-			<section style="background-color: #222222; background-image: url(/assets/bg-2.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+			<section style="background-color: #222222; background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center center; background-repeat: no-repeat; background-size: cover;">
 				<div class="xl-mx-30 lg-mx-15 mx-auto">
 					<div class="flex md-flex flex-col lg-gap-5 flex-justify-center max-w-1440px lg-px-0 mx-auto md:pb-10">
 						<AnimatedComponent>
@@ -182,7 +182,7 @@ export default function Page() {
 						</AnimatedComponentSlide>
 						<AnimatedComponentSlide>
 							<BarberContainer
-								img="/assets/denis/барбър-денис-индивидуална-мобилно.webp"
+								img="/assets/za-nas/барбър-денис-индивидуална-мобилно.webp"
 								alt="барбър Денис"
 								href="/za-nas/denis/"
 								title="Денис"
@@ -261,7 +261,7 @@ export default function Page() {
 			</section> */}
 
 			<section
-			// style="background-color: #222222; background-image: url(/assets/bg-2.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover;"
+			// style="background-color: #222222; background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center center; background-repeat: no-repeat; background-size: cover;"
 			>
 				<div class="flex flex-col pb-20">
 					<div class="flex flex-col flex-items-center">

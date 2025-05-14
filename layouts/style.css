@@ -20,7 +20,7 @@ body {
   margin: 0 auto;
   padding: 0px !important;
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(122, 50, 8, 0.2), rgba(126, 78, 51, 0.1)), url(/assets/designbg.png);
+  background-image: linear-gradient(rgba(122, 50, 8, 0.2), rgba(126, 78, 51, 0.1)), url(/assets/thebarbershop-light-bg.webp);
   background-position: center;
   background-repeat: repeat;
   background-size: cover;

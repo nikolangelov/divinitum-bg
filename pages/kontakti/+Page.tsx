@@ -333,7 +333,7 @@ export default function Page() {
 				</div>
 			)}
 
-			<div class="pt-20 md:pt-30 pb-20" style="background-image: url(/assets/bg-2.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+			<div class="pt-20 md:pt-30 pb-20" style="background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
 				<div class="flex lg:flex-row flex-col gap-15 lg:gap-0">
 					<div class="lg:w-1/2 px-5 lg:px-0 md:mx-20 lg:mx-0">
 						<WorkingHoursTable />

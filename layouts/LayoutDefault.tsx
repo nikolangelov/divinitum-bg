@@ -439,7 +439,7 @@ export default function LayoutDefault(props: { children?: JSX.Element }) {
         <HamburgerMenu />
       </Topbar>
       <Content>{childrenMemo()}</Content>
-      {/* <CookieConsent /> */}
+      <CookieConsent />
       <BackToTopArrow></BackToTopArrow>
       <TopFooter />
       <MainFooter>
@@ -539,7 +539,7 @@ function TopFooter() {
 
   return (
     <>
-      <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(/assets/20.jpg); background-position: 50% 50% ; background-repeat: no-repeat; background-size: cover;" role="img" aria-label="">
+      <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(/assets/thebarbershop-footer-bg.webp); background-position: 50% 50% ; background-repeat: no-repeat; background-size: cover;" role="img" aria-label="">
         <div class="px-2 gap-15 h-100% lg-py-0 pb-12 flex flex-col flex-justify-center flex-items-center">
           <AnimatedComponent class="flex flex-col flex-justify-center">
             <H2WithImage class="c-paper important-mb-0" title="Свържете се с нас" />

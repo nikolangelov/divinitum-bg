@@ -121,7 +121,7 @@ export default function Page() {
 				</AnimatedComponent>
 			</section>
 
-			<section class="pb-20 px-4 w-full" style="background-image: url(/assets/bg-2.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+			<section class="pb-20 px-4 w-full" style="background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
 				<section class="max-w-7xl mx-auto px-4">
 					<div class="flex flex-col md:flex-row items-start md:gap-20">
 						<div class="w-full space-y-6">
@@ -155,7 +155,7 @@ export default function Page() {
 					<div class="flex flex-col md:flex-row items-center gap-10 md:gap-20 md:pt-120px">
 						<AnimatedComponentSlide class="hidden md-block w-full md:w-1/2">
 							<div>
-								<img src="/assets/karieri/the-barber-shop-sofia-team.jpg" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
+								<img src="/assets/karieri/the-barber-shop-sofia-team.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
 							</div>
 						</AnimatedComponentSlide>
 
@@ -219,14 +219,14 @@ export default function Page() {
 						</div>
 						<AnimatedComponentSlide class="md-hidden block w-full md:w-1/2">
 							<div class="relative">
-								<img src="/assets/za-nas/the-barber-shop-sofia-team-3.jpg" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
+								<img src="/assets/za-nas/the-barber-shop-sofia-team-3.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
 							</div>
 						</AnimatedComponentSlide>
 					</div>
 				</section>
 			</section>
 
-			<section class="pb-20 px-4 w-full" style="background-image: url(/assets/bg-2.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+			<section class="pb-20 px-4 w-full" style="background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
 				<section class="max-w-7xl mx-auto px-4">
 					<div class="flex flex-col md:flex-row items-center gap-10 md:gap-20 md:pt-120px">
 						<div class="w-full md:w-1/2 space-y-6">
@@ -286,7 +286,7 @@ export default function Page() {
 
 						<AnimatedComponentSlide class="w-full md:w-1/2">
 							<div class="relative">
-								<img src="/assets/karieri/бръснар-софия.jpg" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
+								<img src="/assets/karieri/бръснар-софия.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
 							</div>
 						</AnimatedComponentSlide>
 					</div>

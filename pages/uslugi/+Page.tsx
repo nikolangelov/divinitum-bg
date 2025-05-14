@@ -161,8 +161,6 @@ export default function Page() {
 						href="/uslugi/mazhko-podstrigvane"
 						title="Мъжко подстригване"
 						desc="Подстригването на The Barber Shop е комбинация от различни бръснарски и фризьорски техники на подстригване и е в съответствие с международните тенденции в бръснарството, модата и мъжкия стил."
-						price="50"
-						time="1 ч."
 					/>
 					<ServiceContainer
 						img="/assets/uslugi/оформяне-на-брада-1-mobile.webp"
@@ -170,8 +168,6 @@ export default function Page() {
 						href="/uslugi/oformiane-na-brada"
 						title="Оформяне на брада"
 						desc="Оформянето на брадата е специфична процедура, която изисква сериозни познания, бръснарска компетенция и известна доза талант."
-						price="50"
-						time="1 ч."
 					/>
 					<ServiceContainer
 						img="/assets/uslugi/подстригване-и-оформяне-на-брада-mobile.webp"
@@ -179,8 +175,6 @@ export default function Page() {
 						href="/uslugi/mazhko-podstrigvane-i-oformiane-na-brada"
 						title="Подстригване и оформяне на брада"
 						desc=""
-						price="50"
-						time="1 ч."
 					/>
 					<ServiceContainer
 						img="/assets/uslugi/класическо-мокро-бръснене-mobile.webp"
@@ -188,17 +182,13 @@ export default function Page() {
 						href="/uslugi/klasichesko-mokro-brasnene"
 						title="Класическо мокро бръснене"
 						desc="Класическо мокро бръснене е ритуал в The Barber Shop Sofia, който е много повече от грижа – той е чиста проба удоволствие за един мъж."
-						price="50"
-						time="1 ч."
 					/>
 					<ServiceContainer
-						img="/assets/tonirane-na-kosa/барбър-шоп-тониране-на-сиви-коси.webp"
+						img="/assets/uslugi/барбър-шоп-тониране-на-сиви-коси.webp"
 						alt="тониране на мъжка коса"
 						href="/uslugi/profesionalno-tonirane-na-mazhka-kosa"
 						title="Тониране на мъжка коса"
 						desc=""
-						price="50"
-						time="1 ч."
 					/>
 					<ServiceContainer
 						img="/assets/uslugi/бръснене-на-глава-с-бръснач-2-mobile.webp"
@@ -206,8 +196,6 @@ export default function Page() {
 						href="/uslugi/brasnene-na-glava-s-brasnach"
 						title="Бръснене на глава с бръснач"
 						desc=""
-						price="50"
-						time="1 ч."
 					/>
 					<ServiceContainer
 						img="/assets/uslugi/бръснене-на-глава-с-бръснач-1-mobile.webp"
@@ -215,17 +203,13 @@ export default function Page() {
 						href="/uslugi/detsko-podstrigvane-momche"
 						title="Детско подстригване"
 						desc="Подстригване на деца и младежи до 10 г."
-						price="50"
-						time="1 ч."
 					/>
 					<ServiceContainer
-						img="/assets/bashta-i-sin/подстригване-на-баща-и-син.webp"
+						img="/assets/uslugi/подстригване-на-баща-и-син.webp"
 						alt="подстригване на баща и син"
 						href="/uslugi/podstrigvane-na-bashta-i-sin"
 						title="Подстригване на баща и син"
 						desc="Вярваме, че посещението на бръснарницата създава не само добри навици, но и прекрасни спомени."
-						price="50"
-						time="1 ч."
 					/>
 				</div>
 			</section>

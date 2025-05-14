@@ -304,7 +304,7 @@ export default function Page() {
 				</AnimatedComponent>
 			</section>
 
-			<section class="pb-20" style="background-color: #222222; background-image: url(/assets/bg-2.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+			<section class="pb-20" style="background-color: #222222; background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center center; background-repeat: no-repeat; background-size: cover;">
 				<AnimatedComponent>
 					<H2WithImage class="c-paper" title="Над 25 000 мъже ни се довериха" />
 					<ImageWithFrameReviewSlider
@@ -453,7 +453,7 @@ export default function Page() {
 				</AnimatedComponent>
 			</section>
 
-			<section class="pb-20" style="background-color: #222222; background-image: url(/assets/bg-2.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+			<section class="pb-20" style="background-color: #222222; background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center center; background-repeat: no-repeat; background-size: cover;">
 				<AnimatedComponent>
 					<H2WithImage class="c-paper" title="Най-добрите знаят къде да отидат" />
 					<div class="flex flex-col justify-center items-center gap-15 px-4 md:px-6">
@@ -534,7 +534,7 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section class="pb-14 md:pb-18" style="background-color: #222222; background-image: url(/assets/bg-2.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+			<section class="pb-14 md:pb-18" style="background-color: #222222; background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center center; background-repeat: no-repeat; background-size: cover;">
 				<AnimatedComponent>
 					<H2WithImage class="c-paper" title="Виж защо 600+ мъже ни оценяват с 5 звезди" />
 					<div class="max-w-900px m-auto px-5">
@@ -565,32 +565,7 @@ export default function Page() {
 						]} />
 					</div>
 				</AnimatedComponent>
-			</section >
-
-			{/* <section class="pb-20">
-				<H2WithImage title="Какво казват клиентите за нас" />
-				<div class="bg-paper w-63 m-auto p-2">
-					<div class="b-solid b-4 b-brand">
-						<p class="text-center font-700 font-size-14 mt-8 mb-6.5"
-							style="font-family:'Oswald', sans-serif !important;">
-							4,8
-						</p>
-						<div class="flex justify-center items-center gap-1 mx-2 mb-6.5">
-							<img class="w-8 h-8" src="/assets/output-onlinepngtools.png" />
-							<img class="w-8 h-8" src="/assets/output-onlinepngtools.png" />
-							<img class="w-8 h-8" src="/assets/output-onlinepngtools.png" />
-							<img class="w-8 h-8" src="/assets/output-onlinepngtools.png" />
-							<img class="w-8 h-8" src="/assets/output-onlinepngtools.png" />
-						</div>
-					</div>
-				</div>
-				<div>
-					<p class="text-center font-700 font-size-8 mt-4"
-						style="font-family:'Oswald', sans-serif !important;">
-						607 отзива
-					</p>
-				</div>
-			</section> */}
+			</section>
 		</>
 	);
 }

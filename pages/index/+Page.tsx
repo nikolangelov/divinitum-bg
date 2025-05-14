@@ -76,7 +76,7 @@ export default function Page() {
 				</div>
 			</div>
 
-			<div class="pb-10 lg--mt-30 -mt-80" style="background-image: url(/assets/bg-2.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+			<div class="pb-10 lg--mt-30 -mt-80" style="background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
 
 				<div class="lg-mt-0 lg-px-30 pb-10 max-w-1600px mx-auto flex lg-flex-row flex-col lg-gap-20">
 					<div class="lg-w-50% px-5">
@@ -145,13 +145,13 @@ export default function Page() {
 						href="/uslugi/klasichesko-mokro-brasnene"
 					/>
 					<ServiceContaner
-						img="/assets/tonirane-na-kosa/барбър-шоп-тониране-на-сиви-коси.webp"
+						img="/assets/home/барбър-шоп-тониране-на-сиви-коси.webp"
 						alt="тониране на сиви коси"
 						title="Тониране на сиви коси"
 						href="/uslugi/klasichesko-mokro-brasnene"
 					/>
 					<ServiceContaner
-						img="/assets/brasnene-na-glava-s-brasnach/бръснене-на-глава-с-бръснач-в-бръснарница.webp"
+						img="/assets/home/бръснене-на-глава-с-бръснач-в-бръснарница.webp"
 						alt="бръснене на глава с бръснач"
 						title="Бръснене на глава с бръснач"
 						href="/uslugi/brasnene-na-glava-s-brasnach"
@@ -163,7 +163,7 @@ export default function Page() {
 						href="/uslugi/detsko-podstrigvane-momche"
 					/>
 					<ServiceContaner
-						img="/assets/bashta-i-sin/подстригване-на-баща-и-син.webp"
+						img="/assets/home/подстригване-на-баща-и-син.webp"
 						alt="подстригване на баща и син"
 						title="Подстригване на баща и син"
 						href="/uslugi/podstrigvane-na-bashta-i-sin"
@@ -171,7 +171,7 @@ export default function Page() {
 				</div>
 			</div>
 
-			<div style="background-image: url(/assets/bg-2.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+			<div style="background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
 				<div class="pb-20">
 					<AnimatedComponent>
 						<H2WithImage class="c-paper" title="Стилът на The Barber Shop" />
