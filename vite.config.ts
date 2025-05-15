@@ -1,8 +1,8 @@
-import {defineConfig} from "vite"
+import { defineConfig } from "vite"
 import vike from "vike/plugin";
 import vikeSolid from "vike-solid/vite";
 
-import {fileURLToPath, URL} from "node:url"
+import { fileURLToPath, URL } from "node:url"
 import Icons from "unplugin-icons/vite"
 import UnoCSS from 'unocss/vite'
 
@@ -12,12 +12,18 @@ export default defineConfig({
 	server: {
 		host: true,
 		port: 4002,
+		proxy: {
+			'/api': {
+				target: 'http://localhost:3046', // Your Express server
+				changeOrigin: true,
+			},
+		},
 	},
 	envPrefix: "PUBLIC_",
 	plugins: [
 		UnoCSS({
 			theme:
-			 {
+			{
 				colors: {
 					brand: "#eba65b",
 					"brand-dark": "#bf7e36",
@@ -41,7 +47,7 @@ export default defineConfig({
 				}
 			}
 		}),
-		vike({prerender: true}),
+		vike({ prerender: true }),
 		vikeSolid(),
 		// @ts-ignore
 		// only https://icon-sets.iconify.design/material-symbols/
@@ -51,7 +57,7 @@ export default defineConfig({
 		Icons({ compiler: "solid" }),
 		// markdownHotModuleReload(),
 	],
-	
+
 	resolve: {
 		alias: {
 			// must also be defined in tsconfig!

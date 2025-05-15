@@ -20,7 +20,7 @@ export default function Page() {
 			<div class="w-full bg-#212528">
 				<div class="max-w-1240px mx-auto">
 					<div class="flex flex-justify-center">
-						<div class="left-0 right-0 px-3 my-0 mx-auto absolute top-65% lg-top-68% text-center w-full max-w-900px" style="-webkit-transform: translateY(-50%);">
+						<div class="left-0 right-0 px-3 my-0 mx-auto absolute top-65% lg-top-74% text-center w-full max-w-900px" style="-webkit-transform: translateY(-50%);">
 							<AnimatedComponent>
 								<h1 class="uppercase c-paper mb-6 text-center">Благовест</h1>
 							</AnimatedComponent>

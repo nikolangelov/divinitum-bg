@@ -401,27 +401,8 @@ export default function LayoutDefault(props: { children?: JSX.Element }) {
           </div>
 
           <MenuItem href="/otzivi">Отзиви</MenuItem>
-
-          <div
-            class="relative"
-            onMouseEnter={() => setAboutMenuOpen(true)}
-            onMouseLeave={() => setAboutMenuOpen(false)}
-          >
-            <ServiceMenuItem href="/za-nas">За нас</ServiceMenuItem>
-            <DropDownMenuDesktop
-              isVisible={aboutMenuOpen()}
-              items={[
-                { href: "/za-nas/kris", title: "Кристиан" },
-                { href: "/za-nas/mario", title: "МАРИО" },
-                { href: "/za-nas/blago", title: "Благовест" },
-                { href: "/za-nas/denis", title: "ДЕНИС" },
-              ]}
-            />
-          </div>
+          <MenuItem href="/za-nas">За нас</MenuItem>
           <MenuItem href="/karieri">Кариери</MenuItem>
-          <div class="hidden">
-            <MenuItem href="/">Магазин</MenuItem>
-          </div>
           <MenuItem href="/kontakti">Контакти</MenuItem>
 
           {/* <MenuItem href="/shop">Shop</MenuItem>

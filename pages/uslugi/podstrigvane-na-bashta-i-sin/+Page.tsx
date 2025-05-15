@@ -187,7 +187,7 @@ export default function Page() {
 			</section> */}
 
 			<div class="pb-20" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8) ), url(/assets/brown-background-image.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
-				<H2WithImage class="c-paper" title="Цена на подстригване на баща и син" />
+				<H2WithImage class="c-paper" title="Цена за подстригване на баща и син" />
 				<AnimatedComponentSlide>
 					<div class="mt-15 md-mt-20 px-20px sm-px-50px md-pb-10 pb-5 max-w-1400px mx-auto">
 						<div>

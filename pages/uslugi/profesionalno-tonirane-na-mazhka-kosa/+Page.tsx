@@ -351,10 +351,17 @@ export default function Page() {
 					<AnimatedComponent>
 						<OftenOT
 							services={[
+								{ title: "Мъжко подстригване" },
 								{ title: "Подстригване и оформяне на брада" },
 								{ title: "Оформяне на брада" },
 								{ title: "Подстригване на баща и син" },
 							]}>
+							<ElementInOftenOT
+								img="/assets/uslugi/мъжко-подстригване-1-mobile.webp"
+								alt="Мъжко подстригване"
+								href="/uslugi/mazhko-podstrigvane"
+								title="Мъжко подстригване"
+							/>
 							<ElementInOftenOT
 								img="/assets/uslugi/подстригване-и-оформяне-на-брада-mobile.webp"
 								alt="Подстригване и оформяне на брада"
@@ -372,12 +379,6 @@ export default function Page() {
 								alt="Подстригване на баща и син"
 								href="/uslugi/podstrigvane-na-bashta-i-sin"
 								title="Подстригване на баща и син"
-							/>
-							<ElementInOftenOT
-								img="/assets/uslugi/мъжко-подстригване-1-mobile.webp"
-								alt="Мъжко подстригване"
-								href="/uslugi/mazhko-podstrigvane"
-								title="Мъжко подстригване"
 							/>
 						</OftenOT>
 					</AnimatedComponent>

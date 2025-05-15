@@ -100,7 +100,6 @@ export default function Page() {
 						<AnimatedComponent class="w-full md:w-1/2 hidden md:block">
 							<div class="relative">
 								<img src="/assets/za-nas/the-barber-shop-sofia-team-3.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
-								<p class="important-my-0">Екипът на The Barber Shop</p>
 							</div>
 						</AnimatedComponent>
 					</div>
