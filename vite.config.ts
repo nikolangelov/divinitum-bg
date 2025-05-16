@@ -12,12 +12,6 @@ export default defineConfig({
 	server: {
 		host: true,
 		port: 4002,
-		proxy: {
-			'/api': {
-				target: 'http://localhost:3046', // Your Express server
-				changeOrigin: true,
-			},
-		},
 	},
 	envPrefix: "PUBLIC_",
 	plugins: [
@@ -65,6 +59,9 @@ export default defineConfig({
 		},
 	},
 	build: {
+		rollupOptions: {
+			external: ['@emailjs/browser'],
+		},
 		// target is es2022 to support top level await
 		// https://caniuse.com/?search=top%20level%20await
 		target: "es6",
