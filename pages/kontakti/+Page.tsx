@@ -7,6 +7,7 @@ import MdiPhoneClassic from "~icons/mdi/phone-classic";
 import RiTimerLine from '~icons/ri/timer-line';
 import RiMailOpenFill from '~icons/ri/mail-open-fill';
 import RiWhatsappFill from '~icons/ri/whatsapp-fill';
+import emailjs from '@emailjs/browser';
 
 function svgIconViber() {
 	return (
@@ -107,77 +108,118 @@ function GoogleMapIframe() {
 	);
 }
 
-export default function Page() {
-	const [email, setEmail] = createSignal('');
-	const [name, setName] = createSignal('');
-	const [surname, setSurname] = createSignal('');
-	const [phone, setPhone] = createSignal('');
-	const [text, setText] = createSignal('');
-	const [isSubmitted, setIsSubmitted] = createSignal(false);
-	const [isModalOpen, setIsModalOpen] = createSignal(false);
-	const [isUploading, setIsUploading] = createSignal(false);
-	const [progress, setProgress] = createSignal(0);
-	const [errorMessage, setErrorMessage] = createSignal('');
+interface ContactUsProps {
+	onSuccess: () => void;
+	onError: () => void;
+	setUploading: (v: boolean) => void;
+}
 
-	const resetForm = () => {
-		setEmail('');
-		setName('');
-		setSurname('');
-		setPhone('');
-		setText('');
+const ContactUs = ({ onSuccess, onError, setUploading }: ContactUsProps) => {
+	let form: HTMLFormElement | undefined;
+
+	const sendEmail = (e: Event) => {
+		e.preventDefault();
+
+		if (!form) return;
+		setUploading(true);
+
+		emailjs
+			.sendForm('service_h8j0yvt', 'template_sfx2ge6', form, {
+				publicKey: 'THs2MxEeIfIAlmqdZ',
+			})
+			.then(
+				() => {
+					console.log('SUCCESS!');
+					setUploading(false);
+					onSuccess();
+				},
+				(error) => {
+					console.log('FAILED...', error.text);
+					setUploading(false);
+					onError();
+				}
+			);
 	};
 
-	async function sendEmail(e: Event) {
-		e.preventDefault();
-		setIsUploading(true);
-		setProgress(0);
+	return (
+		<form class="space-y-6" ref={(el) => (form = el)} onSubmit={sendEmail}>
+			<div class="space-y-4">
+				<div class="input-highlight relative overflow-hidden">
+					<input
+						name="name"
+						type="text"
+						placeholder="Име"
+						class="w-full px-4 py-3 bg-transparent border-0 border-b border-paper focus:outline-none focus:ring-0 text-paper"
+						required
+					/>
+				</div>
+				<div class="input-highlight relative overflow-hidden">
+					<input
+						name="surname"
+						type="text"
+						placeholder="Фамилия"
+						class="w-full px-4 py-3 bg-transparent border-0 border-b border-paper focus:outline-none focus:ring-0 text-paper"
+						required
+					/>
+				</div>
+				<div class="input-highlight relative overflow-hidden">
+					<input
+						name="phone"
+						type="tel"
+						pattern="^\+?[0-9\s\-]{7,15}$"
+						placeholder="Phone"
+						class="w-full px-4 py-3 bg-transparent border-0 border-b border-paper focus:outline-none focus:ring-0 text-paper"
+						required
+					/>
+				</div>
+				<div class="input-highlight relative overflow-hidden">
+					<input
+						name="email_id"
+						type="email"
+						placeholder="Email"
+						class="w-full px-4 py-3 bg-transparent border-0 border-b border-paper focus:outline-none focus:ring-0 text-paper"
+						required
+					/>
+				</div>
+				<div class="pt-2">
+					<textarea
+						name="message"
+						placeholder="Разкажи повече за себе си и бръснарството..."
+						class="rounded-0 w-full px-4 py-3 bg-white border-paper focus:border-brand focus:ring-2 focus:ring-brand focus:ring-opacity-50 outline-none transition-all duration-200 h-32 resize-none"
+					></textarea>
+				</div>
+			</div>
+			<button
+				type="submit"
+				value="Send"
+				class="cursor-pointer font-700 border-none hover:shadow-xl hover:translate-y-[-2px] translate-y-[0px] bg-gradient-to-br from-[#c29059] to-[#c27832] duration-200 ease-in-out shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),_0_4px_6px_-2px_rgba(252,252,252,0.05)] w-full text-white py-4 font-medium transition-all uppercase tracking-1.5px text-sm focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-opacity-50 rounded-0">
+				Кандидатствай
+			</button>
+			<div class="text-center text-xs text-paper mt-4">
+				Ще обработим вашето запитване с внимание. Очаквайте нашия отговор скоро!
+			</div>
+		</form>
+	);
+};
 
-		// const formData = new FormData();
-		// formData.append('senderEmail', email());
-		// formData.append('name', name());
-		// formData.append('surname', surname());
-		// formData.append('phone', phone());
-		// formData.append('text', text());
+export default function Page() {
+	const [isModalOpen, setIsModalOpen] = createSignal(false);
+	const [isUploading, setIsUploading] = createSignal(false);
+	const [errorMessage, setErrorMessage] = createSignal(false);
 
-		const payload = {
-			senderEmail: email(),
-			name: name(),
-			surname: surname(),
-			phone: phone(),
-			text: text(),
-		};
+	const handleSuccess = () => {
+		setIsModalOpen(true);
+		setErrorMessage(false);
+	};
 
-		try {
-			const response = await fetch('/api/send-email', {
-				method: 'POST',
-				// body: formData,
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(payload),
-			});
-
-			if (response.ok) {
-				setIsSubmitted(true);
-				setIsModalOpen(true);
-				resetForm();
-			} else {
-				const errorText = await response.text();
-				setErrorMessage(`Failed to send the email. Please try again later. Error details: ${errorText}`);
-			}
-		} catch (error) {
-			console.error('Error:', error);
-			alert('An error occurred while sending the email.');
-		} finally {
-			setIsUploading(false);
-		}
-	}
+	const handleError = () => {
+		setErrorMessage(true);
+		setIsModalOpen(false);
+	};
 
 	const closeModal = () => {
 		setIsModalOpen(false);
-		setIsSubmitted(false);
-		setErrorMessage('');
-		resetForm();
+		setErrorMessage(false);
 	};
 
 	createEffect(() => {
@@ -224,70 +266,12 @@ export default function Page() {
 
 							<div class="md:px-12 md:pt-10 py-5 px-3">
 								<h2 class="important-mt-0 md:mt-5 mb-10 c-paper">Изпрати запитване</h2>
-								{!isSubmitted() && !isModalOpen() && (
-									<form class="space-y-6" onSubmit={sendEmail} method="post" enctype="multipart/form-data">
-										<div class="space-y-4">
-
-											<div class="input-highlight relative overflow-hidden">
-												<input
-													type="text"
-													value={name()}
-													onChange={(e) => setName(e.target.value)}
-													placeholder="Име"
-													class="w-full px-4 py-3 bg-transparent border-0 border-b border-paper focus:outline-none focus:ring-0 text-paper"
-													required
-												/>
-											</div>
-											<div class="input-highlight relative overflow-hidden">
-												<input
-													type="text"
-													value={surname()}
-													onChange={(e) => setSurname(e.target.value)}
-													placeholder="Фамилия"
-													class="w-full px-4 py-3 bg-transparent border-0 border-b border-paper focus:outline-none focus:ring-0 text-paper"
-													required
-												/>
-											</div>
-											<div class="input-highlight relative overflow-hidden">
-												<input
-													type="tel"
-													pattern="^\+?[0-9\s\-]{7,15}$"
-													value={phone()}
-													onChange={(e) => setPhone(e.target.value)}
-													placeholder="Phone"
-													class="w-full px-4 py-3 bg-transparent border-0 border-b border-paper focus:outline-none focus:ring-0 text-paper"
-													required
-												/>
-											</div>
-											<div class="input-highlight relative overflow-hidden">
-												<input
-													type="email"
-													value={email()}
-													onChange={(e) => setEmail(e.target.value)}
-													placeholder="Email"
-													class="w-full px-4 py-3 bg-transparent border-0 border-b border-paper focus:outline-none focus:ring-0 text-paper"
-													required
-												/>
-											</div>
-											<div class="pt-2">
-												<textarea
-													value={text()}
-													onChange={(e) => setText(e.target.value)}
-													placeholder="Разкажи повече за себе си и бръснарството..."
-													class="rounded-0 w-full px-4 py-3 bg-white border-paper focus:border-brand focus:ring-2 focus:ring-brand focus:ring-opacity-50 outline-none transition-all duration-200 h-32 resize-none"
-												></textarea>
-											</div>
-										</div>
-										<button
-											type="submit"
-											class="cursor-pointer font-700 border-none hover:shadow-xl hover:translate-y-[-2px] translate-y-[0px] bg-gradient-to-br from-[#c29059] to-[#c27832] duration-200 ease-in-out shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),_0_4px_6px_-2px_rgba(252,252,252,0.05)] w-full text-white py-4 font-medium transition-all uppercase tracking-1.5px text-sm focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-opacity-50 rounded-0">
-											Кандидатствай
-										</button>
-
-										<div class="text-center text-xs text-paper mt-4">
-											Ще обработим вашето запитване с внимание. Очаквайте нашия отговор скоро!
-										</div>
-									</form>
+								{!isModalOpen() && !errorMessage() && (
+									<ContactUs
+										onSuccess={handleSuccess}
+										onError={handleError}
+										setUploading={setIsUploading}
+									/>
 								)}
 							</div>
 						</div>

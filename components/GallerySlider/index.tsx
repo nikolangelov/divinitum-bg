@@ -3,7 +3,6 @@ import { createSignal, onCleanup, onMount, Show, createEffect, useContext } from
 import RiPlayMiniLine from '~icons/ri/play-mini-line';
 import RiPlayReverseMiniLine from '~icons/ri/play-reverse-mini-line';
 import RiCloseFill from '~icons/ri/close-fill';
-import { cn } from "../../utils/cn";
 
 export const GallerySlider = (props: { buttonClass?: string; imgs: { src: string, alt: string }[] }) => {
   const [isDesktop, setIsDesktop] = createSignal(false);
@@ -107,11 +106,11 @@ const GallerySliderDesktop = (props: { buttonClass?: string; imgs: { src: string
           </Slider>
 
           <SliderButton class="bg-transparent b-none cursor-pointer position-absolute top-45% right-0 lg-right--15 bg-transparent b-none" next>
-            <RiPlayMiniLine class={cn(`lg:ml-15 xl:-ml-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment`, props.buttonClass)} />
+            <RiPlayMiniLine class="lg:ml-15 xl:-ml-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment" />
           </SliderButton>
 
           <SliderButton class="bg-transparent b-none cursor-pointer position-absolute top-45% left-0 lg-left--15 bg-transparent b-none" prev>
-            <RiPlayReverseMiniLine class={cn(`lg:mr-15 xl:-mr-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment`, props.buttonClass)} />
+            <RiPlayReverseMiniLine class="lg:mr-15 xl:-mr-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment" />
           </SliderButton>
         </div>
         <DotsUnderSlider imgs={props.imgs} />
@@ -166,10 +165,10 @@ const GallerySliderMobile = (props: { buttonClass?: string; imgs: { src: string,
           </Slider>
 
           <SliderButton next class="hidden bg-transparent b-none cursor-pointer position-absolute top-47% right-0 bg-transparent b-none">
-            <RiPlayMiniLine class={cn(`-ml-1 font-size-7 b-solid b-2px p-1 c-brand-compliment b-brand-compliment important-hover-c-paper hover-bg-brand-compliment hover-b-brand-compliment transition-colors`, props.buttonClass)} />
+            <RiPlayMiniLine class="-ml-1 font-size-7 b-solid b-2px p-1 c-brand-compliment b-brand-compliment important-hover-c-paper hover-bg-brand-compliment hover-b-brand-compliment transition-colors" />
           </SliderButton>
           <SliderButton prev class="hidden bg-transparent b-none cursor-pointer position-absolute top-47% left-0 bg-transparent b-none">
-            <RiPlayReverseMiniLine class={cn(`-mr-1 font-size-7 b-solid b-2px p-1 c-brand-compliment b-brand-compliment important-hover-c-paper hover-bg-brand-compliment hover-b-brand-compliment transition-colors`, props.buttonClass)} />
+            <RiPlayReverseMiniLine class="-mr-1 font-size-7 b-solid b-2px p-1 c-brand-compliment b-brand-compliment important-hover-c-paper hover-bg-brand-compliment hover-b-brand-compliment transition-colors" />
           </SliderButton>
         </div>
         <DotsUnderSlider imgs={props.imgs} />

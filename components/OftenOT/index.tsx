@@ -3,7 +3,6 @@ import { Slider, SliderButton, SliderContext, SliderProvider } from "solid-slide
 import RiPlayMiniLine from '~icons/ri/play-mini-line';
 import RiPlayReverseMiniLine from '~icons/ri/play-reverse-mini-line';
 import MdiScissors from '~icons/mdi/scissors';
-import { cn } from "../../utils/cn";
 
 export function DotsUnderSlider(props: { services: { title: string }[] }) {
     const [context] = useContext(SliderContext);
@@ -62,10 +61,10 @@ export const OftenOT = ({ children, buttonClass, ...props }: { children: JSX.Ele
                         {children}
                     </Slider>
                     <SliderButton class="cursor-pointer position-absolute top-45% left--15 bg-transparent b-none" prev>
-                        <RiPlayReverseMiniLine class={cn(`lg:mr-15 xl:-mr-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment`, buttonClass)} />
+                        <RiPlayReverseMiniLine class="lg:mr-15 xl:-mr-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment" />
                     </SliderButton>
                     <SliderButton class="cursor-pointer position-absolute top-45% right--15 bg-transparent b-none" next>
-                        <RiPlayMiniLine class={cn(`lg:ml-15 xl:-ml-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment`, buttonClass)} />
+                        <RiPlayMiniLine class="lg:ml-15 xl:-ml-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment" />
                     </SliderButton>
                 </div>
             ) : (
@@ -74,10 +73,10 @@ export const OftenOT = ({ children, buttonClass, ...props }: { children: JSX.Ele
                         {children}
                     </Slider>
                     <SliderButton class="hidden cursor-pointer position-absolute top-47% left-0 bg-transparent b-none" prev>
-                        <RiPlayReverseMiniLine class={cn(`-ml-1 font-size-7 b-solid b-2px p-1 c-paper b-brand-compliment hover-c-brand-compliment bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors`, buttonClass)} />
+                        <RiPlayReverseMiniLine class="-ml-1 font-size-7 b-solid b-2px p-1 c-paper b-brand-compliment hover-c-brand-compliment bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors" />
                     </SliderButton>
                     <SliderButton class="hidden cursor-pointer position-absolute top-47% right-0 bg-transparent b-none" next>
-                        <RiPlayMiniLine class={cn(`-mr-1 font-size-7 b-solid b-2px p-1 c-paper b-brand-compliment hover-c-brand-compliment bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors`, buttonClass)} />
+                        <RiPlayMiniLine class="-mr-1 font-size-7 b-solid b-2px p-1 c-paper b-brand-compliment hover-c-brand-compliment bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors" />
                     </SliderButton>
                 </div>
             )}

@@ -7,7 +7,6 @@ import { H2WithImage } from "../../components/H2WithImage";
 import { Slider, SliderButton, SliderProvider } from "solid-slider";
 import RiPlayMiniLine from '~icons/ri/play-mini-line';
 import RiPlayReverseMiniLine from '~icons/ri/play-reverse-mini-line';
-import { cn } from "../../utils/cn";
 import RiDoubleQuotesL from '~icons/ri/double-quotes-l';
 import RiDoubleQuotesR from '~icons/ri/double-quotes-r';
 import { ServiceContaner } from '../../components/ServiceContainer';
@@ -25,10 +24,10 @@ export const ImageWithFrameReviewSlider = ({ children, buttonClass, ...props }: 
 						{children}
 					</Slider>
 					<SliderButton class="cursor-pointer position-absolute top-45% left--15 bg-transparent b-none" prev>
-						<RiPlayReverseMiniLine class={cn(`lg:mr-15 xl:-mr-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment`, buttonClass)} />
+						<RiPlayReverseMiniLine class="lg:mr-15 xl:-mr-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment" />
 					</SliderButton>
 					<SliderButton class="cursor-pointer position-absolute top-45% right--15 bg-transparent b-none" next>
-						<RiPlayMiniLine class={cn(`lg:ml-15 xl:-ml-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment`, buttonClass)} />
+						<RiPlayMiniLine class="lg:ml-15 xl:-ml-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment" />
 					</SliderButton>
 				</div>
 			) : (
@@ -118,10 +117,10 @@ export const QuotationReviewsSlider = ({ children, buttonClass, ...props }: { ch
 						{children}
 					</Slider>
 					<SliderButton class="cursor-pointer position-absolute top-45% left--15 bg-transparent b-none" prev>
-						<RiPlayReverseMiniLine class={cn(`lg:mr-15 xl:-mr-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment`, buttonClass)} />
+						<RiPlayReverseMiniLine class="lg:mr-15 xl:-mr-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment" />
 					</SliderButton>
 					<SliderButton class="cursor-pointer position-absolute top-45% right--15 bg-transparent b-none" next>
-						<RiPlayMiniLine class={cn(`lg:ml-15 xl:-ml-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment`, buttonClass)} />
+						<RiPlayMiniLine class="lg:ml-15 xl:-ml-2 font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment" />
 					</SliderButton>
 				</div>
 			) : (
