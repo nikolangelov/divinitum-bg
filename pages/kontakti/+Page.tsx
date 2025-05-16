@@ -117,6 +117,30 @@ interface ContactUsProps {
 const ContactUs = ({ onSuccess, onError, setUploading }: ContactUsProps) => {
 	let form: HTMLFormElement | undefined;
 
+
+	createEffect(() => {
+		if (typeof window !== 'undefined') {
+			import('@emailjs/browser').then((emailjs) => {
+				emailjs.init('THs2MxEeIfIAlmqdZ') // only if needed
+
+				emailjs.send(
+					'service_h8j0yvt', // required
+					'template_sfx2ge6', // required
+					{
+						publicKey: 'THs2MxEeIfIAlmqdZ' // optional options object
+					}
+				).then(
+					(result) => {
+						console.log('Email sent:', result.text)
+					},
+					(error) => {
+						console.error('Email error:', error)
+					}
+				)
+			})
+		}
+	})
+
 	const sendEmail = (e: Event) => {
 		e.preventDefault();
 
