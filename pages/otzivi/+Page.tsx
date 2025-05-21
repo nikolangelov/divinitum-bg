@@ -70,7 +70,7 @@ function ImageWithFrameReview(props: { text: string | JSX.Element; src: string; 
 			<div class="max-w-600px sm:max-w-900px mx-auto flex flex-col lg:flex-row justify-center items-center relative gap-2 sm:gap-6 md:gap-10 overflow-hidden">
 				<div class="relative w-auto">
 					<div class="w-auto h-auto sm:max-h-400px">
-						<img class="w-auto h-auto max-h-400px sm:max-h-400px" style={props.style} src={props.src} alt="profile" />
+						<img loading="lazy" class="w-auto h-auto max-h-400px sm:max-h-400px" style={props.style} src={props.src} alt="profile" />
 						<div class="absolute inset-0 pointer-events-none">
 							<span class={`before:absolute before:content-empty before:bg-[#f2f2f2] before:z-[1] before:w-[2px] before:h-[80%] before:top-[1rem]  before:left-[1rem] 
 								after:absolute after:content-empty after:bg-[#f2f2f2] after:z-[1] after:h-[2px] after:w-[72%] after:top-[1rem] after:left-[1rem]
@@ -89,11 +89,11 @@ function ImageWithFrameReview(props: { text: string | JSX.Element; src: string; 
 					<div>
 						<h3 class="c-paper text-center sm:text-left important-mb-3 important-sm:font-size-24px important-font-size-20px important-line-height-normal">{props.service}</h3>
 						<div class="flex justify-center sm:justify-start items-center gap-1">
-							<img class="w-4 h-4" src="/assets/output-onlinepngtools.png" />
-							<img class="w-4 h-4" src="/assets/output-onlinepngtools.png" />
-							<img class="w-4 h-4" src="/assets/output-onlinepngtools.png" />
-							<img class="w-4 h-4" src="/assets/output-onlinepngtools.png" />
-							<img class="w-4 h-4" src="/assets/output-onlinepngtools.png" />
+							<img loading="lazy" class="w-4 h-4" src="/assets/output-onlinepngtools.png" />
+							<img loading="lazy" class="w-4 h-4" src="/assets/output-onlinepngtools.png" />
+							<img loading="lazy" class="w-4 h-4" src="/assets/output-onlinepngtools.png" />
+							<img loading="lazy" class="w-4 h-4" src="/assets/output-onlinepngtools.png" />
+							<img loading="lazy" class="w-4 h-4" src="/assets/output-onlinepngtools.png" />
 						</div>
 					</div>
 					<div>
@@ -147,7 +147,7 @@ function QuotationReview(props: { text: string | JSX.Element; name: string; prof
 							<RiDoubleQuotesR class="font-size-10 md:font-size-20 c-brand-compliment" />
 						</div>
 						<div class="flex justify-start items-center gap-3 ml-4 mb-6 md:ml-6">
-							<img class="w-11 h-11 md:w-13 md:h-13" src={props.profile} />
+							<img loading="lazy" class="w-11 h-11 md:w-13 md:h-13" src={props.profile} />
 							<p class="mt-0 mb-0 font-100 font-size-4 md:font-size-5">{props.name}</p>
 						</div>
 					</div>
@@ -179,7 +179,7 @@ function SquareImageReview(props: { text: string | JSXElement; src: string; date
 			<div class="max-w-1300px flex flex-col sm:flex-row items-center justify-center relative gap-4 md:gap-5 md:pl-5 md:pr-10">
 				<div class="relative w-auto">
 					<div class="w-auto h-auto">
-						<img class="w-auto h-auto max-h-300px md:max-h-200px" src={props.src} alt="profile" />
+						<img loading="lazy" class="w-auto h-auto max-h-300px md:max-h-200px" src={props.src} alt="profile" />
 					</div>
 				</div>
 				<div class="md:w-1/2 md:px-0 px-6 md:pl-4 md:pr-0 flex flex-col justify-center items-center">

@@ -6,7 +6,7 @@ export function ServiceContaner(props: { title: string, href: string, img: strin
 	return (
 		<AnimatedComponentSlide class="flex sm-w-65% md-w-50% lg-w-35% xl-w-23% max-w-full relative overflow-hidden " style="flex: 0 0 auto;">
 			<a class="group" href={props.href}>
-				<img class="w-full h-auto" src={props.img} alt={props.alt} />
+				<img loading="lazy" class="w-full h-auto" src={props.img} alt={props.alt} />
 				<div class="w-full p-20px absolute bottom-0px text-center" style="background: -webkit-linear-gradient(top, transparent 0, rgba(0, 0, 0, .01) 1%, rgba(0, 0, 0, .95) 80%);">
 					<div class="flex flex-col gap-1">
 						<MdiScissors class="c-paper mx-auto rotate-[270deg] w-8" />

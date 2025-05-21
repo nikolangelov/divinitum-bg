@@ -179,7 +179,7 @@ export default function Page() {
 					<div class="flex flex-col md:flex-row items-start md:gap-20">
 						<div class="w-full space-y-6">
 							<AnimatedComponent>
-								<img class="pb-2 pt-80px md:pt-120px flex flex-justify-center" src="/assets/heading-ic.png" />
+								<img loading="lazy" class="pb-2 pt-80px md:pt-120px flex flex-justify-center" src="/assets/heading-ic.png" />
 								<h3 class="c-paper text-left mb-7 pl-0 important-mt-0">За начинаещ барбър</h3>
 							</AnimatedComponent>
 							<AnimatedComponent>
@@ -191,7 +191,7 @@ export default function Page() {
 
 						<div class="w-full space-y-6">
 							<AnimatedComponent>
-								<img class="pb-2 pt-80px md:pt-120px flex flex-justify-center" src="/assets/heading-ic.png" />
+								<img loading="lazy" class="pb-2 pt-80px md:pt-120px flex flex-justify-center" src="/assets/heading-ic.png" />
 								<h3 class="c-paper text-left mb-7 pl-0 important-mt-0">За опитен барбър</h3>
 							</AnimatedComponent>
 							<AnimatedComponent>
@@ -208,13 +208,13 @@ export default function Page() {
 					<div class="flex flex-col md:flex-row items-center gap-10 md:gap-20 md:pt-120px">
 						<AnimatedComponentSlide class="hidden md-block w-full md:w-1/2">
 							<div>
-								<img src="/assets/karieri/the-barber-shop-sofia-team.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
+								<img loading="lazy" src="/assets/karieri/the-barber-shop-sofia-team.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
 							</div>
 						</AnimatedComponentSlide>
 
 						<div class="w-full md:w-1/2 space-y-6">
 							<AnimatedComponentSlide>
-								<img class="pb-2 mx-auto md:mx-0 pt-80px md:pt-0 flex flex-justify-center" src="/assets/heading-ic.png" />
+								<img loading="lazy" class="pb-2 mx-auto md:mx-0 pt-80px md:pt-0 flex flex-justify-center" src="/assets/heading-ic.png" />
 								<h2 class="md:text-left mb-7 pl-0 important-mt-0">Какво предлагаме</h2>
 
 							</AnimatedComponentSlide>
@@ -272,7 +272,7 @@ export default function Page() {
 						</div>
 						<AnimatedComponentSlide class="md-hidden block w-full md:w-1/2">
 							<div class="relative">
-								<img src="/assets/za-nas/the-barber-shop-sofia-team-3.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
+								<img loading="lazy" src="/assets/za-nas/the-barber-shop-sofia-team-3.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
 							</div>
 						</AnimatedComponentSlide>
 					</div>
@@ -284,7 +284,7 @@ export default function Page() {
 					<div class="flex flex-col md:flex-row items-center gap-10 md:gap-20 md:pt-120px">
 						<div class="w-full md:w-1/2 space-y-6">
 							<AnimatedComponentSlide>
-								<img class="pb-2 mx-auto md:mx-0 pt-80px md:pt-0 flex flex-justify-center" src="/assets/heading-ic.png" />
+								<img loading="lazy" class="pb-2 mx-auto md:mx-0 pt-80px md:pt-0 flex flex-justify-center" src="/assets/heading-ic.png" />
 								<h2 class="md:text-left mb-7 pl-0 important-mt-0 c-paper">Какво изискваме</h2>
 							</AnimatedComponentSlide>
 							<AnimatedComponentSlide>
@@ -339,7 +339,7 @@ export default function Page() {
 
 						<AnimatedComponentSlide class="w-full md:w-1/2">
 							<div class="relative">
-								<img src="/assets/karieri/бръснар-софия.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
+								<img loading="lazy" src="/assets/karieri/бръснар-софия.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
 							</div>
 						</AnimatedComponentSlide>
 					</div>

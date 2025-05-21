@@ -97,6 +97,7 @@ const GallerySliderDesktop = (props: { buttonClass?: string; imgs: { src: string
           >
             {props.imgs.map((e, index) => (
               <img
+                loading="lazy"
                 src={e.src}
                 alt={e.alt}
                 class="object-contain w-full h-full"
@@ -122,7 +123,7 @@ const GallerySliderDesktop = (props: { buttonClass?: string; imgs: { src: string
             <div class="fixed top-0 left-0 w-full h-full m-auto bg-paper-inv px-10 flex flex-justify-center">
               <Slider options={{ loop: true, initial: currentIndex() }}>
                 {props.imgs.map((e) => (
-                  <img src={e.src} alt={e.alt} class="object-contain w-full h-full" />
+                  <img loading="lazy" src={e.src} alt={e.alt} class="object-contain w-full h-full" />
                 ))}
               </Slider>
               <RiCloseFill onClick={() => setOpen(false)} class="hover:rotate-90 transition-all z-2 w-16 h-16 absolute top-0 right-0 mr-8 mt-8 p-2 bg-transparent c-brand-compliment cursor-pointer hover-color-paper:hover" />
@@ -156,6 +157,7 @@ const GallerySliderMobile = (props: { buttonClass?: string; imgs: { src: string,
           <Slider options={{ loop: true, initial: currentIndex(), slides: { perView: 1.3, spacing: 20 } }}>
             {props.imgs.map((e, index) => (
               <img
+                loading="lazy"
                 src={e.src}
                 alt={e.alt}
                 class="object-contain w-full h-full"
@@ -180,7 +182,7 @@ const GallerySliderMobile = (props: { buttonClass?: string; imgs: { src: string,
             <div class="fixed top-0 left-0 w-full h-full m-auto bg-paper-inv px-5 flex flex-items-center flex-justify-center">
               <Slider options={{ loop: true, initial: currentIndex() }}>
                 {props.imgs.map((e) => (
-                  <img src={e.src} alt={e.alt} class="object-contain w-full h-full" />
+                  <img loading="lazy" src={e.src} alt={e.alt} class="object-contain w-full h-full" />
                 ))}
               </Slider>
 

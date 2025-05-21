@@ -171,8 +171,8 @@ export function BeforeAfterSliderContainer(props: BeforeAfterSliderProps) {
         "touch-action": "none",
       }}
     >
-      <img src={props.after} alt={props.altAfter || "After"} class="absolute inset-0 w-full h-full object-cover" />
-      <img src={props.before} alt={props.altBefore || "Before"} class="absolute inset-0 w-full h-full object-cover"
+      <img loading="lazy" src={props.after} alt={props.altAfter || "After"} class="absolute inset-0 w-full h-full object-cover" />
+      <img loading="lazy" src={props.before} alt={props.altBefore || "Before"} class="absolute inset-0 w-full h-full object-cover"
         style={{
           "clip-path": `inset(0 ${100 - sliderPos()}% 0 0)`
         }}

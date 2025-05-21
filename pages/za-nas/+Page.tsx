@@ -87,10 +87,10 @@ export default function Page() {
 					<div class="md:pt-120px flex flex-col md:flex-row items-center gap-8 md:gap-20">
 						<div class="w-full md:w-1/2 space-y-4">
 							<AnimatedComponent>
-								<img class="pb-2 mx-auto md:mx-0 pt-80px md:pt-0 flex flex-justify-center" src="/assets/heading-ic.png" />
+								<img loading="lazy" class="pb-2 mx-auto md:mx-0 pt-80px md:pt-0 flex flex-justify-center" src="/assets/heading-ic.png" />
 								<h2 class="md:text-left mb-7 pl-0 important-mt-0">Нашата история</h2>
 								<div class="w-full relative block md:hidden pb-4">
-									<img src="/assets/za-nas/the-barber-shop-sofia-team-3.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
+									<img loading="lazy" src="/assets/za-nas/the-barber-shop-sofia-team-3.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
 								</div>
 								<p class="important-delay-500 sm-line-height-7 line-height-6.5">Всичко започва през 2014 г., когато все още няма бръснарници в София. В този момент нашата история започва да се пише чрез създаването на БРЪСНАРНИЦАТА. След известно време се превърнахме в предпочитано специализирано място за мъжка грижа и стил.</p>
 								<p class="important-delay-700 sm-line-height-7 line-height-6.5 mb-0">Мисията ни и до ден днешен е да създадем място и атмосфера, където мъжете получават качествено обслужване, и се чувстват като част от общност, която цени добрия вкус и безупречния външен вид.</p>
@@ -99,7 +99,7 @@ export default function Page() {
 
 						<AnimatedComponent class="w-full md:w-1/2 hidden md:block">
 							<div class="relative">
-								<img src="/assets/za-nas/the-barber-shop-sofia-team-3.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
+								<img loading="lazy" src="/assets/za-nas/the-barber-shop-sofia-team-3.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
 							</div>
 						</AnimatedComponent>
 					</div>
