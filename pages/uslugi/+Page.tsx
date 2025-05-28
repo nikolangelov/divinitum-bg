@@ -84,9 +84,9 @@ function ServiceContainer(props: { href: string, title: string, desc: string, pr
 									</div>
 									<div class="h-[1px] w-[100px] group-hover:w-[300px] transition-all duration-900 ease-in-out bg-brand mb-6"></div>
 								</div>
-								{/* <div class="c-paper text-left mb-5 pr-4 pl-10 text-lg leading-7 mt-auto">
+								<div class="c-paper text-left mb-5 pr-2 pl-5 text-lg leading-6.3 mt-auto font-size-16px">
 									{props.desc}
-								</div> */}
+								</div>
 								<div class="flex flex-col flex-items-center pb-2">
 									<div class="bg-none c-paper b-solid b-1px b-paper hover-b-brand hover-bg-brand transition-colors mx-auto uppercase font-size-4 font-500 px-7 py-2" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Вижте повече</div>
 								</div>
@@ -124,9 +124,9 @@ function ServiceContainer(props: { href: string, title: string, desc: string, pr
 									<div class="h-[1px] transition-all duration-900 ease-in-out bg-brand"
 										style={{ width: `${arrowWidth()}px` }}>
 									</div>
-									{/* <div class="c-paper text-left pt-4 pr-6 pl-10 text-lg leading-7 mt-auto">
+									<div class="c-paper text-left pt-4 pr-2 pl-5 text-lg leading-6.2 mt-auto font-size-15px">
 										{props.desc}
-									</div> */}
+									</div>
 									<div class="flex flex-col flex-items-center pt-6">
 										<div class="bg-none c-paper b-solid b-1px b-paper hover-b-brand hover-bg-brand transition-colors mx-auto uppercase font-size-4 font-500 px-7 py-2" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Вижте повече</div>
 									</div>
@@ -160,56 +160,56 @@ export default function Page() {
 						alt="мъжко подстригване"
 						href="/uslugi/mazhko-podstrigvane"
 						title="Мъжко подстригване"
-						desc="Подстригването на The Barber Shop е комбинация от различни бръснарски и фризьорски техники на подстригване и е в съответствие с международните тенденции в бръснарството, модата и мъжкия стил."
+						desc="Подстригване, съобразено с Вашата индивидуалност. Гаранция за стилна прическа, която изглежда добре дори когато нямате време да я стилизирате."
 					/>
 					<ServiceContainer
 						img="/assets/uslugi/оформяне-на-брада-1-mobile.webp"
 						alt="оформяне на брада"
 						href="/uslugi/oformiane-na-brada"
 						title="Оформяне на брада"
-						desc="Оформянето на брадата е специфична процедура, която изисква сериозни познания, бръснарска компетенция и известна доза талант."
+						desc="Детайлното оформяне на брада променя цялостната визия. Придаваме форма и характер с помощта на перфектни контури, които подчертават най-добрите черти на лицето Ви."
 					/>
 					<ServiceContainer
 						img="/assets/uslugi/подстригване-и-оформяне-на-брада-mobile.webp"
 						alt="подстригване и оформяне на брада"
 						href="/uslugi/mazhko-podstrigvane-i-oformiane-na-brada"
 						title="Подстригване и оформяне на брада"
-						desc=""
+						desc="Комбинирана услуга, която спестява време и средства. Осигурява безупречна визия чрез пълно обновяване на прическата и брадата за по-свеж и уверен външен вид."
 					/>
 					<ServiceContainer
 						img="/assets/uslugi/класическо-мокро-бръснене-mobile.webp"
 						alt="класическо мокро бръснене"
 						href="/uslugi/klasichesko-mokro-brasnene"
 						title="Класическо мокро бръснене"
-						desc="Класическо мокро бръснене е ритуал в The Barber Shop Sofia, който е много повече от грижа – той е чиста проба удоволствие за един мъж."
+						desc="Класика от старата школа – топла кърпа, богата ароматна пяна и прецизно движение на бръснача. Автентичен мъжки ритуал, който завършва с перфектно гладка кожа."
 					/>
 					<ServiceContainer
 						img="/assets/uslugi/барбър-шоп-тониране-на-сиви-коси.webp"
 						alt="тониране на мъжка коса"
 						href="/uslugi/profesionalno-tonirane-na-mazhka-kosa"
 						title="Тониране на мъжка коса"
-						desc=""
+						desc="Фино тониране, което дискретно прикрива сивите коси, без драстични промени. Възстановява цвета и връща естествения младежки вид на косата Ви."
 					/>
 					<ServiceContainer
 						img="/assets/uslugi/бръснене-на-глава-с-бръснач-2-mobile.webp"
 						alt="бръснене на глава с бръснач"
 						href="/uslugi/brasnene-na-glava-s-brasnach"
 						title="Бръснене на глава с бръснач"
-						desc=""
+						desc="Гладкото бръснене подчертава мъжествеността и чертите на лицето, като освежава излъчването и придава усещане за по-стилен и поддържан външен вид."
 					/>
 					<ServiceContainer
 						img="/assets/uslugi/бръснене-на-глава-с-бръснач-1-mobile.webp"
 						alt="детско подстригване"
 						href="/uslugi/detsko-podstrigvane-momche"
 						title="Детско подстригване"
-						desc="Подстригване на деца и младежи до 10 г."
+						desc="Детското подстригване в The Barber Shop e весело и приятно преживяване. Грижим се за малките джентълмени, чрез супер прически, които издържат на игри и приключения."
 					/>
 					<ServiceContainer
 						img="/assets/uslugi/подстригване-на-баща-и-син.webp"
 						alt="подстригване на баща и син"
 						href="/uslugi/podstrigvane-na-bashta-i-sin"
 						title="Подстригване на баща и син"
-						desc="Вярваме, че посещението на бръснарницата създава не само добри навици, но и прекрасни спомени."
+						desc="Създайте си мъжка традиция и прекрасни спомени като превърнете обикновеното подстригване в специален и споделен момент между баща и син."
 					/>
 				</div>
 			</section>

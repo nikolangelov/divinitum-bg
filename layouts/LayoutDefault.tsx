@@ -399,15 +399,10 @@ export default function LayoutDefault(props: { children?: JSX.Element }) {
               ]}
             />
           </div>
-
           <MenuItem href="/otzivi">Отзиви</MenuItem>
           <MenuItem href="/za-nas">За нас</MenuItem>
           <MenuItem href="/karieri">Кариери</MenuItem>
           <MenuItem href="/kontakti">Контакти</MenuItem>
-
-          {/* <MenuItem href="/shop">Shop</MenuItem>
-          <MenuItem href="/cart">Cart</MenuItem>
-          <MenuItem href="/product">Product</MenuItem> */}
         </div>
 
         <a href="https://book.thebarbershop.bg/reservations/start?site=1" target="_blank" rel="noopener noreferrer" class="hidden lg-block mr-10">
@@ -419,7 +414,7 @@ export default function LayoutDefault(props: { children?: JSX.Element }) {
         </a>
         <HamburgerMenu />
       </Topbar>
-      <Content>{childrenMemo()}</Content>
+        <Content>{childrenMemo()}</Content>
       <CookieConsent />
       <BackToTopArrow></BackToTopArrow>
       <TopFooter />
