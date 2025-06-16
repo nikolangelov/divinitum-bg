@@ -350,24 +350,25 @@ export default function Page() {
 				<div class="flex flex-col lg:flex-row items-center justify-center gap-12 md:gap-20 mx-2 md:mx-15 xl:mx-45">
 					<div class="lg:w-1/2 flex flex-col justify-center sm:justify-start items-center lg:items-start">
 						<AnimatedComponent>
-							<h2 class="uppercase important-mb-0 pt-0 mt-0 lg:text-left">Кандидатствай сега</h2>
+							<h2 class="uppercase important-mb-0 pt-0 mt-0 lg:text-left">Кандидатствайте сега</h2>
 							<p class="c-brand-compliment text-center lg:text-left mb-6 font-500 important-mt-1">/ Присъедини се към нашия екип /</p>
 							<p class="text-center lg:text-left">
 								Ако обичате занаята и искате да работите в модерна бръснарница, ние имаме място за Вас! Станете част от нашия екип и развийте уменията си при нас.
 							</p>
 						</AnimatedComponent>
-						{/* <AnimatedComponent>
-							<button
+						<AnimatedComponent>
+							<a
+								href="/kurs-za-brasnar"
 								class="md:block hidden mt-3 cursor-pointer text-center w-50 lg-w-55 bg-brand-compliment hover:c-paper-inv b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-4.5 font-500 py-3 c-paper transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">
 								Курс за бръснар
-							</button>
-						</AnimatedComponent> */}
+							</a>
+						</AnimatedComponent>
 					</div>
 
 					<AnimatedComponent class="lg:w-1/2s">
 						<div class="px-20px py-25px md:px-30px md:py-40px rounded-0 w-full max-w-150 overflow-hidden relative bg-#14100c" style="background-image: url(/assets/wood-bg-2.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
 							<div class="md:px-12 md:pt-10 py-5 px-3">
-								<h2 class="important-mt-0 md:mt-5 mb-10 c-paper">Изпрати запитване</h2>
+								<h2 class="important-mt-0 md:mt-5 mb-10 c-paper">Изпратете запитване</h2>
 								{!isModalOpen() && !errorMessage() && (
 									<ContactUs
 										onSuccess={handleSuccess}

@@ -255,7 +255,7 @@ export default function Page() {
 							<a href="https://book.thebarbershop.bg/reservations/start?site=1" target="_blank" rel="noopener noreferrer">
 								<button
 									class="cursor-pointer text-center w-45 lg-w-55 bg-brand-compliment hover:c-paper-inv b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-4.5 font-500 py-3 c-paper transition-colors rounded-0" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">
-									Запази час
+									Запазете час
 								</button>
 							</a>
 						</AnimatedComponent>

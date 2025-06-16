@@ -403,7 +403,7 @@ export default function LayoutDefault(props: { children?: JSX.Element }) {
           <MenuItem href="/otzivi">Отзиви</MenuItem>
           <MenuItem href="/za-nas">За нас</MenuItem>
           <MenuItem href="/karieri">Кариери</MenuItem>
-          {/* <MenuItem href="/kurs-za-brasnar">Академия</MenuItem> */}
+          <MenuItem href="/kurs-za-brasnar">Академия</MenuItem>
           <MenuItem href="/kontakti">Контакти</MenuItem>
         </div>
 
@@ -451,10 +451,10 @@ export default function LayoutDefault(props: { children?: JSX.Element }) {
 
             <div class="hidden md-flex flex-col flex-justify-start flex-items-center py-2 md-gap-0 gap-1" style="border-right-color: rgba(255, 255, 255, 0.12); border-left-color: rgba(255, 255, 255, 0.2);">
               <h3 class="c-brand font-600 mt-0 uppercase">Полезни връзки</h3>
-              {/* <MainFooterMenuItem href="/kurs-za-brasnar">Академия</MainFooterMenuItem>
+              <MainFooterMenuItem href="/kurs-za-brasnar">Академия</MainFooterMenuItem>
               <div>
                 <MdiDot class="w-4 c-paper pt-2px mx-5 block" />
-              </div> */}
+              </div>
               <MainFooterMenuItem href="/kontakti">Контакти</MainFooterMenuItem>
               <div>
                 <MdiDot class="w-4 c-paper pt-2px mx-5 block" />
@@ -845,12 +845,12 @@ const MyDropdown = (props: { closeMenu: () => void; }) => {
               href="/"
             />
           </div>
-          {/* <MobileDropdownMenuItem
+          <MobileDropdownMenuItem
             closeMenu={props.closeMenu}
             text="Академия"
             icon={<MdiFileCertificateOutline />}
             href="/kurs-za-brasnar"
-          /> */}
+          />
           <MobileDropdownMenuItem
             closeMenu={props.closeMenu}
             text="Контакти"
