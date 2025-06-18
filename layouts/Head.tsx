@@ -1,5 +1,5 @@
 // Default <head> (can be overridden by pages)
-import logoUrl from "../assets/Thebarbershop-favicon-16x16.png";
+import logoUrl from "../assets/TBS_logo_GA.jpeg";
 
 export default function Head() {
   return (
