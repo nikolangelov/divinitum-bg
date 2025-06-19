@@ -542,6 +542,83 @@ export function Countdown() {
 }
 
 
+
+export function TestimonialSlide({ img }: { img: { src: string; alt: string; name: string; reviewtext: string | JSX.Element } }) {
+	return (
+		<div class="flex flex-col items-center text-center">
+			<img
+				loading="lazy"
+				src={img.src}
+				alt={img.alt}
+				class="max-w-full max-h-[550px] border-2 border-white shadow-md mb-4"
+			/>
+			<p class="c-paper text-center mt-2 mb-1">{img.name}</p>
+			<div class="flex justify-center items-center gap-1.5 pb-1">
+				{Array(5).fill(0).map(() => (
+					<img loading="lazy" class="w-5 h-5" src="/assets/output-onlinepngtools.png" />
+				))}
+			</div>
+			<p class="max-w-550px h-auto c-paper flex justify-center md:font-size-3.8 font-size-3.4 md:leading-6.3 leading-5.8 ml-2 md:ml-0">{img.reviewtext}</p>
+		</div>
+	);
+}
+
+export function ThumbnailDots(props: { imgs: { src: string; alt: string }[] }) {
+	const [context] = useContext(SliderContext);
+
+	return (
+		<div class="flex gap-5 md:gap-6 mt-4 items-center justify-center">
+			{props.imgs.map((img, index) => (
+				<img
+					loading="lazy"
+					src={img.src}
+					alt={img.alt}
+					class={`object-cover cursor-pointer transition-all ${context()?.current() === index
+						? 'w-20 h-20 md:w-30 md:h-30 outline-solid outline-4 md:outline-8 outline-paper'
+						: 'w-18 h-18 md:w-26 md:h-26 filter-brightness-50'
+						}`}
+					onClick={() => context()?.moveTo(index)}
+				/>
+			))}
+		</div>
+	);
+}
+
+export const TestSlider = ({
+	imgs,
+}: {
+	imgs: { src: string; alt: string; name: string; reviewtext: string | JSX.Element }[];
+}) => {
+	const isDesktop = useMediaQuery("(min-width: 768px)");
+
+	return (
+		<SliderProvider>
+			<div class="max-w-900px mx-auto pt-5 position-relative">
+				<Slider options={{ loop: true, slides: { perView: 1, spacing: 15 } }}>
+					{imgs.map(img => (
+						<div>
+							<TestimonialSlide img={img} />
+						</div>
+					))}
+				</Slider>
+
+				{isDesktop() && (
+					<>
+						<SliderButton class="cursor-pointer position-absolute top-50% left-0 bg-transparent b-none" prev>
+							<RiPlayReverseMiniLine class="font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment" />
+						</SliderButton>
+						<SliderButton class="cursor-pointer position-absolute top-50% right-0 bg-transparent b-none" next>
+							<RiPlayMiniLine class="font-size-10 b-solid b-3px p-1 c-paper bg-brand-compliment hover-bg-transparent hover-b-brand-compliment transition-colors b-brand-compliment hover-c-brand-compliment" />
+						</SliderButton>
+					</>
+				)}
+
+				<ThumbnailDots imgs={imgs} />
+			</div>
+		</SliderProvider>
+	);
+};
+
 export default function Page() {
 	const [isModalOpen, setIsModalOpen] = createSignal(false);
 	const [isUploading, setIsUploading] = createSignal(false);
@@ -684,7 +761,7 @@ export default function Page() {
 								От курса за бръснар в бръснарницата
 							</AnimatedComponent>
 							<div class="flex flex-justify-center w-full gap-5 lg-gap-15 py-8">
-								<button onClick={openModal} class="cursor-pointer text-center w-32 lg-w-42 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">запишете се</button>
+								<button onClick={openModal} class="cursor-pointer text-center w-42 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
 							</div>
 						</div>
 					</div>
@@ -698,6 +775,10 @@ export default function Page() {
 					</AnimatedComponent>
 					<AnimatedComponent>
 						<VideoPlayer src='/assets/Barber-Shop-Academy-Subtitled-Video Website.mp4' />
+					</AnimatedComponent>
+
+					<AnimatedComponent class="flex flex-justify-center w-full gap-5 lg-gap-15 mt-15">
+						<button onClick={openModal} class="cursor-pointer text-center w-42 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
 					</AnimatedComponent>
 				</div>
 				<div class="pt-30 flex md-flex flex-col flex-justify-center max-w-1440px lg-px-0 mx-auto lg:pb-10">
@@ -784,7 +865,7 @@ export default function Page() {
 				</AnimatedComponent>
 
 				<AnimatedComponent class="flex flex-justify-center w-full gap-5 lg-gap-15 mt-12 md:mt-15 ">
-					<button onClick={openModal} class="cursor-pointer text-center w-32 lg-w-42 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">запишете се</button>
+					<button onClick={openModal} class="cursor-pointer text-center w-42 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
 				</AnimatedComponent>
 			</section>
 
@@ -801,7 +882,7 @@ export default function Page() {
 								<p class="important-delay-500 sm-line-height-7 line-height-6.5">Кристиан Митов, или просто Крис, както го знаят всички, е човек, който наистина обича това, което прави. Има над 8 години опит в бранша, където е изградил репутация като професионалист в бръснарството и клиентското обслужване. Започнал е като всички останали – с голямо желание и почти никакъв опит. Черпил е вдъхновение от най-известните бръснари в България и Европа – а днес самия той е сред водещите бръснари.</p>
 								<p class="important-delay-700 sm-line-height-7 line-height-6.5 mb-0">Вярва, че в този занаят никога не спираш да учиш. Ето защо непрекъснато се развива и продължава да участва в разнообразни обучения на American Crew, Depot, както и редица тематични семинари и курсове за бръснари. Натрупаните знания и опит се превръщат в полезни професионални умения. Негова сила в бръснарството са Fade техниките, умелата работа с ножици, оформянето на брада и изграждането на цялостно клиентско изживяване, което кара хората да се връщат.</p>
 								<p class="important-delay-500 sm-line-height-7 line-height-6.5">През годините Кристиан е обучил и въвел в занаята десетки начинаещи, някои от които вече успешно развиват собствена практика. Обучава лично, с фокус и специално внимание върху всеки курсист. Във всеки курс обръща внимание и на не толкова техническите фактори за успех като дисциплината, уважението към занаята и отношението към клиента.</p>
-								<p class="important-delay-700 sm-line-height-7 line-height-6.5 mb-0">Към днешна дата Крис е официален амбасадор на <a href="https://www.depotmaletools.com/en/"  target="_blank" rel="noopener noreferrer" class="c-brand-compliment hover:c-brand-dark font-600 transition-all">DEPOT</a>, което означава, че представлява италианския бранд в България, работи с техните продукти, провежда съвместни обучения с тях и е избран от самата марка като лице, което въплъщава нейния стил и стандарт. Обменя опит с представители на марката от различни държави и посещава събитията на бранда.</p>
+								<p class="important-delay-700 sm-line-height-7 line-height-6.5 mb-0">Към днешна дата Крис е официален амбасадор на <a href="https://www.depotmaletools.com/en/" target="_blank" rel="noopener noreferrer" class="c-brand-compliment hover:c-brand-dark font-600 transition-all">DEPOT</a>, което означава, че представлява италианския бранд в България, работи с техните продукти, провежда съвместни обучения с тях и е избран от самата марка като лице, което въплъщава нейния стил и стандарт. Обменя опит с представители на марката от различни държави и посещава събитията на бранда.</p>
 							</AnimatedComponent>
 						</div>
 
@@ -927,7 +1008,7 @@ export default function Page() {
 					</div>
 
 					<AnimatedComponent class="flex flex-justify-center w-full gap-5 lg-gap-15 mt-5">
-						<button onClick={openModal} class="cursor-pointer text-center w-32 lg-w-42 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">запишете се</button>
+						<button onClick={openModal} class="cursor-pointer text-center w-42 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
 					</AnimatedComponent>
 				</section>
 			</section>
@@ -1056,26 +1137,28 @@ export default function Page() {
 				<AnimatedComponent>
 					<H2WithImage class="c-paper" title="Вдъхновение от хора като теб" />
 					<div class="max-w-900px m-auto px-5">
-						<FacebookLikeGallery imgs={[
-							{
-								src: "/assets/akademia/след-академия-за-бръснари-1.webp",
-								alt: "the-barber-shop-detsko-podstrigvane",
-								name: "Марио",
-								reviewtext: "Преминах курса по бръснарство с огромно удоволствие и съм изключително доволен от обучението! Преподавателите бяха професионалисти с богат опит, които обясняваха ясно и търпеливо. Практическата част беше отлично организирана – имах възможност да работя с реални клиенти, което ми даде увереност и усет към занаята. Атмосферата беше приятелска и мотивираща, а групата – сплотена."
-							},
-							{
-								src: "/assets/akademia/след-бръснарски-курсове-1.webp",
-								alt: "barbershop-mazhko-podstrigvane-otzivi",
-								name: "Благо",
-								reviewtext: "Изключително доволен съм от обучението – практиката беше ключова за мен! Хареса ми подходът на екипа и атмосферата в академията. Научих всичко необходимо, за да стартирам веднага след курса. Препоръчвам с две ръце!"
-							},
-							{
-								src: "/assets/akademia/след-бръснарска-академия.webp",
-								alt: "barber-shop-otzivi-usluga-podstrigvane",
-								name: "Емо",
-								reviewtext: "Завърших курса преди няколко месеца и още от първата седмица започнах да практикувам. Обучението беше интензивно, но много добре структурирано. Преподавателите са търпеливи и наистина влагат сърце в това, което правят. Благодаря за увереността, която ми дадохте!"
-							},
-						]} />
+						<TestSlider
+							imgs={[
+								{
+									src: "/assets/akademia/след-академия-за-бръснари-1.webp",
+									alt: "the-barber-shop-detsko-podstrigvane",
+									name: "Марио",
+									reviewtext: "Преминах курса по бръснарство с огромно удоволствие и съм изключително доволен от обучението! Преподавателите бяха професионалисти с богат опит, които обясняваха ясно и търпеливо. Практическата част беше отлично организирана – имах възможност да работя с реални клиенти, което ми даде увереност и усет към занаята. Атмосферата беше приятелска и мотивираща, а групата – сплотена."
+								},
+								{
+									src: "/assets/akademia/след-бръснарски-курсове-1.webp",
+									alt: "barbershop-mazhko-podstrigvane-otzivi",
+									name: "Благо",
+									reviewtext: "Изключително доволен съм от обучението – практиката беше ключова за мен! Хареса ми подходът на екипа и атмосферата в академията. Научих всичко необходимо, за да стартирам веднага след курса. Препоръчвам с две ръце!"
+								},
+								{
+									src: "/assets/akademia/след-бръснарска-академия.webp",
+									alt: "barber-shop-otzivi-usluga-podstrigvane",
+									name: "Емо",
+									reviewtext: "Завърших курса преди няколко месеца и още от първата седмица започнах да практикувам. Обучението беше интензивно, но много добре структурирано. Преподавателите са търпеливи и наистина влагат сърце в това, което правят. Благодаря за увереността, която ми дадохте!"
+								},
+							]}
+						/>
 					</div>
 				</AnimatedComponent>
 			</section>
@@ -1180,7 +1263,7 @@ export default function Page() {
 							</h3>
 						</div>
 						<div class="flex flex-col flex-items-center flex-self-center">
-							<button onClick={openModal} class="mr-2 cursor-pointer text-center w-32 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Запазете място</button>
+							<button onClick={openModal} class="mr-2 cursor-pointer text-center w-32 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
 						</div>
 					</div>
 				</AnimatedComponent>
@@ -1199,7 +1282,7 @@ export default function Page() {
 							</h3>
 						</div>
 						<div class="flex flex-col flex-items-center flex-self-center">
-							<button onClick={openModal} class="mr-2 cursor-pointer text-center w-32 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Запазете място</button>
+							<button onClick={openModal} class="mr-2 cursor-pointer text-center w-32 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
 						</div>
 					</div>
 				</AnimatedComponent>
@@ -1232,7 +1315,7 @@ export default function Page() {
 				</div>
 				<p class="c-paper text-center font-500 important-font-size-25px uppercase mt-15" style="font-family: 'Oswald', sans-serif !important;">всичко това за 2500 лв.</p>
 				<div class="flex flex-col flex-items-center flex-self-center mt-6">
-					<button onClick={openModal} class="mr-2 cursor-pointer text-center w-38 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
+					<button onClick={openModal} class="mr-2 cursor-pointer text-center w-42 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
 				</div>
 				<p class="md:font-size-20px font-size-18px c-paper font-500 uppercase mt-6 md:mt-6 text-center line-height-8 md:line-height-10" style="font-family: 'Oswald', sans-serif !important;">*до 22 юни можете да го получите с 300 лв. отстъпка за 2200 лв.</p>
 			</section>
@@ -1295,3 +1378,5 @@ export default function Page() {
 		</>
 	);
 }
+
+

@@ -500,7 +500,7 @@ function LayoutDefault(props: { children?: JSX.Element }) {
         <Topbar>
           <div class="flex items-center justify-center lg-pl-4 pl-0 z-99">
             <a href="/" class="hidden lg-block" onClick={closeMenu}>
-              <img loading="lazy" src="/assets/the-barber-shop-logo1000-x-400-px.webp" class="lg-w-30 w-20 lg-ml-10 lg-mt-4" alt="the-barber-shop-logo" />
+              <img loading="lazy" src="/assets/akademia/barbershop-academy-logo-desktop.webp" class="lg-w-38 w-30 lg-ml-10 lg-mt-4" alt="the-barber-shop-academy-desktop-logo" />
             </a>
           </div>
 
@@ -1072,7 +1072,7 @@ function HamburgerMenu() {
       <div class="z-99 lg-hidden flex flex-content-center flex-items-center flex-justify-between w-full">
         <div class="flex flex-items-center flex-justify-center lg-pl-4 pl-0">
           <a href="/" onClick={closeMenu}>
-            <img width="52" height="52" loading="lazy" src="/assets/logo-mobile.png" class="w-13 mr--3 mt-4" alt="thebarbershop-logo" />
+            <img width="110" loading="lazy" src="/assets/akademia/barbershop-academy-logo-desktop.webp" class="mr--10 ml--4 mt-4" alt="thebarbershop-academy-logo-mobile" />
           </a>
         </div>
         <div class="flex flex-items-center flex-justify-center">
