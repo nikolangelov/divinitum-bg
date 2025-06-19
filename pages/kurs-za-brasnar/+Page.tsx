@@ -406,6 +406,12 @@ interface ContactUsProps {
 export const ContactUs = ({ onSuccess, onError, setUploading }: ContactUsProps) => {
 	let form: HTMLFormElement | undefined;
 
+	const [currentUrl, setCurrentUrl] = createSignal("");
+
+	onMount(() => {
+		setCurrentUrl(window.location.href);
+	});
+
 	const sendEmail = (e: Event) => {
 		e.preventDefault();
 
@@ -477,11 +483,7 @@ export const ContactUs = ({ onSuccess, onError, setUploading }: ContactUsProps) 
 						class="rounded-0 w-full px-4 py-3 bg-white border-paper focus:border-brand focus:ring-2 focus:ring-brand focus:ring-opacity-50 outline-none transition-all duration-200 h-22 md:h-32 resize-none"
 					></textarea>
 				</div>
-				<input
-					type="hidden"
-					name="submitted_from_url"
-					value={window.location.href}
-				/>
+				<input type="hidden" name="submitted_from_url" value={currentUrl()} />
 			</div>
 			<button
 				type="submit"
