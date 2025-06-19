@@ -681,7 +681,7 @@ export default function Page() {
 								<h1 class="uppercase c-paper mb-2 important-font-size-43px important-sm:font-size-65px important-md:font-size-80px important-lg:font-size-100px important-xl:font-size-115px important-line-height-62px important-sm:line-height-85px important-md:line-height-100px important-lg:line-height-120px important-xl:line-height-136px">Стани бръснар за 4 седмици</h1>
 							</AnimatedComponent>
 							<AnimatedComponent class="important-delay-300 c-paper text-center mb-0 font-size-4.3 lg-font-size-5 sm-px-0 px-5 leading-6">
-								От курса за бръснарство в бръснарницата
+								От курса за бръснар в бръснарницата
 							</AnimatedComponent>
 							<div class="flex flex-justify-center w-full gap-5 lg-gap-15 py-8">
 								<button onClick={openModal} class="cursor-pointer text-center w-32 lg-w-42 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">запишете се</button>
