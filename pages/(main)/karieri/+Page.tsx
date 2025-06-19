@@ -3,7 +3,7 @@ import { AnimatedComponent } from '../../../components/AnimateOnView';
 import { AnimatedComponentSlide } from '../../../components/AnimateOnViewSlide';
 import { H2WithImage } from '../../../components/H2WithImage';
 import MdiCircleSmall from '~icons/mdi/circle-small';
-import { createEffect, createSignal } from 'solid-js';
+import { createEffect, createSignal, onMount } from 'solid-js';
 import MdiCloseThick from '~icons/mdi/close-thick';
 import confetti from "canvas-confetti";
 import emailjs from '@emailjs/browser';
@@ -16,6 +16,11 @@ interface ContactUsProps {
 
 const ContactUs = ({ onSuccess, onError, setUploading }: ContactUsProps) => {
 	let form: HTMLFormElement | undefined;
+	const [currentUrl, setCurrentUrl] = createSignal("");
+
+	onMount(() => {
+		setCurrentUrl(window.location.href);
+	});
 
 	const sendEmail = (e: Event) => {
 		e.preventDefault();
@@ -88,11 +93,7 @@ const ContactUs = ({ onSuccess, onError, setUploading }: ContactUsProps) => {
 						class="rounded-0 w-full px-4 py-3 bg-white border-paper focus:border-brand focus:ring-2 focus:ring-brand focus:ring-opacity-50 outline-none transition-all duration-200 h-32 resize-none"
 					></textarea>
 				</div>
-				<input
-					type="hidden"
-					name="submitted_from_url"
-					value={window.location.href}
-				/>
+				<input type="hidden" name="submitted_from_url" value={currentUrl()} />
 			</div>
 			<button
 				type="submit"
