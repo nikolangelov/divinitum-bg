@@ -1,5 +1,5 @@
 import "solid-slider/slider.css";
-import { createSignal, JSXElement } from 'solid-js';
+import { createEffect, createSignal, JSXElement } from 'solid-js';
 import { ReviewSlider, StarReview } from '../../../../components/ReviewSlider';
 import { VideoPlayer } from '../../../../components/VideoPlayer';
 import { GallerySlider } from '../../../../components/GallerySlider';
@@ -20,6 +20,116 @@ import MdiRomanNumeral8 from '~icons/mdi/roman-numeral-8';
 import MdiRomanNumeral9 from '~icons/mdi/roman-numeral-9';
 import MdiRomanNumeral10 from '~icons/mdi/roman-numeral-10';
 import { H2WithImage } from "../../../../components/H2WithImage";
+
+
+const JSONLDScript = () => {
+	createEffect(() => {
+		const localBusinessScript = document.createElement("script");
+		localBusinessScript.type = "application/ld+json";
+		localBusinessScript.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "The Barber Shop Sofia",
+			"@id": "https://thebarbershop.bg#localBusiness",
+			"image": "https://thebarbershop.bg/assets/logo.png",
+			"telephone": "+359882820331",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "ж.к. Изток, ул. Николай Хайтов 2",
+				"addressLocality": "София",
+				"postalCode": "1113",
+				"addressCountry": "BG"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": 4.8,
+				"reviewCount": 610,
+				"bestRating": 5,
+				"worstRating": 1
+			},
+			"review": [
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Boyan Kushev"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 5,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "Excellent service, very nice and clean place! Definitely recommended 🤟🤟🤟 Services Beard trim, Razor cut, Groom packages, Custom cut, Beard maintenance, Shave, Hot towel shave"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Vladimir Valchev"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 5,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "Excellent service and truly professional barbers."
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Stanislav Radnev"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 4,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "I have been going there for the last 7 years and the service is impeccable. Would recommend to everyone."
+				}
+			],
+			"inLanguage": "bg"
+		});
+		document.head.appendChild(localBusinessScript);
+
+		const serviceScript = document.createElement("script");
+		serviceScript.type = "application/ld+json";
+		serviceScript.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"name": "Бръснене на Глава с Бръснач",
+			"description": "Бръснене на глава с бръснач. [1 час.]",
+			"image": "https://thebarbershop.bg/assets/brasnene-na-glava-s-brasnach/бръснене-на-глава-с-бръснач-в-бръснарница.webp",
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "https://thebarbershop.bg/uslugi/brasnene-na-glava-s-brasnach"
+			},
+			"provider": {
+				"@type": "LocalBusiness",
+				"name": "The Barber Shop Sofia",
+				"@id": "https://thebarbershop.bg#localBusiness"
+			},
+			"areaServed": {
+				"@type": "Place",
+				"name": "София"
+			},
+			"offers": {
+				"@type": "Offer",
+				"priceCurrency": "BGN",
+				"price": "45",
+				"availability": "https://schema.org/InStock",
+				"url": "https://thebarbershop.bg/uslugi/brasnene-na-glava-s-brasnach"
+			},
+			"inLanguage": "bg"
+		});
+		document.head.appendChild(serviceScript);
+	});
+
+	return null;
+};
 
 function Collapse(props: { title: string; desc: string; children?: JSXElement }) {
 	const [isExpanded, setIsExpanded] = createSignal(false);
@@ -119,6 +229,8 @@ export default function Page() {
 					height="0" width="0" style="display:none;visibility:hidden">
 				</iframe>
 			</noscript>
+
+			<JSONLDScript />
 
 			<div style="background-position: center top; background-repeat: no-repeat; background-size: cover; height: auto;"><div style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/brasnene-na-glava-s-brasnach/бръснене-на-глава-с-бръснач-в-бръснарница.webp); background-position: left 100% top 100%; background-repeat: no-repeat; background-size: cover;" class="h-97vh md:h-100vh brasnene-na-glava-img" role="img" aria-label="бръснене на глава с бръснач в barber shop sofia"></div></div>
 

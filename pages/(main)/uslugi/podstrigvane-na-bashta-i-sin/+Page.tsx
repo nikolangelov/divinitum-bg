@@ -1,5 +1,5 @@
 import "solid-slider/slider.css";
-import { createSignal, JSXElement } from 'solid-js';
+import { createEffect, createSignal, JSXElement } from 'solid-js';
 import { ReviewSlider, StarReview } from '../../../../components/ReviewSlider';
 import { VideoPlayer } from '../../../../components/VideoPlayer';
 import { GallerySlider } from '../../../../components/GallerySlider';
@@ -19,6 +19,115 @@ import MdiRomanNumeral7 from '~icons/mdi/roman-numeral-7';
 import MdiRomanNumeral8 from '~icons/mdi/roman-numeral-8';
 import MdiRomanNumeral9 from '~icons/mdi/roman-numeral-9';
 import { H2WithImage } from "../../../../components/H2WithImage";
+
+const JSONLDScript = () => {
+	createEffect(() => {
+		const localBusinessScript = document.createElement("script");
+		localBusinessScript.type = "application/ld+json";
+		localBusinessScript.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "The Barber Shop Sofia",
+			"@id": "https://thebarbershop.bg#localBusiness",
+			"image": "https://thebarbershop.bg/assets/logo.png",
+			"telephone": "+359882820331",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "ж.к. Изток, ул. Николай Хайтов 2",
+				"addressLocality": "София",
+				"postalCode": "1113",
+				"addressCountry": "BG"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": 4.8,
+				"reviewCount": 610,
+				"bestRating": 5,
+				"worstRating": 1
+			},
+			"review": [
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Galina Koleva"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 5,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "Very cool place for big and small boys"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Asen Markov"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 5,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "The perfect place for a man's retreat. I was greeted with polite service and a friendly atmosphere. Their work is at a very high level with attention to detail. I highly recommend it!"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Dimitar Stoyanov"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 4,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "Чудесна обстановка. Млади момчета със завидни умения. Горещо препоръчвам !"
+				}
+			],
+			"inLanguage": "bg"
+		});
+		document.head.appendChild(localBusinessScript);
+
+		const serviceScript = document.createElement("script");
+		serviceScript.type = "application/ld+json";
+		serviceScript.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"name": "Подстригване на Баща и Син",
+			"description": "Семейните посещения винаги носят огромна радост. Винаги се радваме изключително много, когато на бръснарските столове седнат баща и син. Вярваме, че посещението на бръснарницата създава не само добри навици, но и прекрасни спомени. Ако все още не сте довели малчугана си при нашите момчета, то тази седмица имате повод да го направите. [1 ч. 30мин.]",
+			"image": "https://thebarbershop.bg/assets/bashta-i-sin/подстригване-на-баща-и-син.webp",
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "https://thebarbershop.bg/uslugi/podstrigvane-na-bashta-i-sin"
+			},
+			"provider": {
+				"@type": "LocalBusiness",
+				"name": "The Barber Shop Sofia",
+				"@id": "https://thebarbershop.bg#localBusiness"
+			},
+			"areaServed": {
+				"@type": "Place",
+				"name": "София"
+			},
+			"offers": {
+				"@type": "Offer",
+				"priceCurrency": "BGN",
+				"price": "75",
+				"availability": "https://schema.org/InStock",
+				"url": "https://thebarbershop.bg/uslugi/podstrigvane-na-bashta-i-sin"
+			},
+			"inLanguage": "bg"
+		});
+		document.head.appendChild(serviceScript);
+	});
+
+	return null;
+};
 
 function Collapse(props: { title: string; desc: string; children?: JSXElement }) {
 	const [isExpanded, setIsExpanded] = createSignal(false);
@@ -112,6 +221,8 @@ export default function Page() {
 					height="0" width="0" style="display:none;visibility:hidden">
 				</iframe>
 			</noscript>
+
+			<JSONLDScript />
 
 			<div style="background-position: center top; background-repeat: no-repeat; background-size: cover; height: auto;"><div style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8) ), url(/assets/bashta-i-sin/подстригване-на-баща-и-син.webp); background-position: center top; background-repeat: no-repeat; background-size: cover;" class="h-95vh md:h-100vh bashta-i-sin-img" role="img" aria-label="подстригване на баща и син the barbershop"></div></div>
 

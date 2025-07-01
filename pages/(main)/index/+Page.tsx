@@ -11,11 +11,130 @@ import MdiPhoneClassic from '~icons/mdi/phone-classic';
 import RiTimerFill from '~icons/ri/timer-fill';
 import { ServiceContaner } from '../../../components/ServiceContainer';
 import { Head } from 'vike-solid/Head';
+import { createEffect } from "solid-js";
+
+const JSONLDScript = () => {
+	createEffect(() => {
+		const script = document.createElement("script");
+		script.type = "application/ld+json";
+		script.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"@id": "https://thebarbershop.bg#localBusiness",
+			"name": "The Barber Shop Sofia",
+			"image": "https://thebarbershop.bg/assets/za-nas/the-barber-shop-sofia-2_result_result.webp",
+			"url": "https://thebarbershop.bg",
+			"telephone": "+359 88 282 0331",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "ж.к. Изток, ул. Николай Хайтов 2",
+				"addressLocality": "София",
+				"postalCode": "1113",
+				"addressCountry": "BG"
+			},
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": [
+					"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+				],
+				"opens": "10:00",
+				"closes": "20:00"
+			},
+			"sameAs": [
+				"https://www.facebook.com/TheBarberShopSofia/?locale=en_GB",
+				"https://www.youtube.com/@TheBarberShop-c7o",
+				"https://www.instagram.com/the.barber.shop.sofia/"
+			],
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.8",
+				"bestRating": "5",
+				"worstRating": "1",
+				"ratingCount": "610"
+			},
+			"priceRange": "лв.",
+			"areaServed": {
+				"@type": "Place",
+				"name": "София"
+			},
+			"description": "The Barber Shop Sofia е нещо повече от просто бръснарница. Това е Вашето спокойно място, където можете да се откъснете за малко от ежедневието. Да спрете и да си поемете въздух, докато някой се погрижи за отличния Ви външен вид.",
+			"inLanguage": "bg",
+			"review": [
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Pavel Petrov"
+					},
+					"datePublished": "2025-05-27",
+					"reviewBody": "Мноооого добро постригване и супер готин персонал!",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"inLanguage": "bg"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Teodor Stoilov"
+					},
+					"datePublished": "2025-05-27",
+					"reviewBody": "Супер отношение и майсторство от Благо. Силно препоръчвам!",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"inLanguage": "bg"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Georgi Pleshkov"
+					},
+					"datePublished": "2024-10-27",
+					"reviewBody": "За първи път посещавам The Barber Shop. Крис ме изслуша и след това подстрига с изключително внимание към детайла и моите предпочитания. Атмосферата е много приятна, а за резултатите можете да прецените сами.\n\nС ръка на сърцето мога да кажа, че това е най-добрата бръснарница в София от тези, които съм посетил.",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"inLanguage": "bg"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Atanas Todorov"
+					},
+					"datePublished": "2025-02-27",
+					"reviewBody": "Страхотен и приветлив салон.\nПълен с професионалисти!\nВинаги си тръгвам доволен и определено препоръчвам Крис!",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"inLanguage": "bg"
+				}
+			]
+		}
+		);
+		document.head.appendChild(script);
+	});
+
+	return null; // This component doesn't need to render anything visible
+};
 
 export default function Page() {
 	return (
 		<>
 			<Head><meta name="google-site-verification" content="hYXSLNVoAgD8gglbKZvTZycfmFhcTTRZ8CKPADFbRP0" /></Head>
+
+			<JSONLDScript />
 
 			<div style="background-position: center top; background-repeat: no-repeat; background-size: cover; height: auto;"><div style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.55) ), url(/assets/za-nas/the-barber-shop-sofia-2_result_result.webp); background-position: right 55% bottom 100%; background-repeat: no-repeat; background-size: cover;" class="h-105vh home-img" role="img" aria-label="бръснарски салон софия център"></div></div>
 

@@ -8,6 +8,82 @@ import MdiScissors from '~icons/mdi/scissors';
 import MdiCircleSmall from '~icons/mdi/circle-small';
 import { H2WithImage } from '../../../components/H2WithImage';
 import MdiArrowRight from '~icons/mdi/arrow-right';
+import { createEffect } from "solid-js";
+
+const JSONLDScript = () => {
+	createEffect(() => {
+		const script = document.createElement("script");
+		script.type = "application/ld+json";
+		script.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"@id": "https://thebarbershop.bg#localBusiness",
+			"name": "The Barber Shop Sofia",
+			"image": "https://thebarbershop.bg/assets/thebarbershop-footer-bg.webp",
+			"url": "https://thebarbershop.bg/za-nas",
+			"telephone": "+359 88 282 0331",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "ж.к. Изток, ул. Николай Хайтов 2",
+				"addressLocality": "София",
+				"postalCode": "1113",
+				"addressCountry": "BG"
+			},
+			"description": "The Barber Shop, намиращ се в сърцето на кв. Изток е пионер в американския стил бръснарство в България.",
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+				"opens": "10:00",
+				"closes": "20:00"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.8",
+				"bestRating": "5",
+				"worstRating": "1",
+				"ratingCount": "610"
+			},
+			"foundingDate": "2018",
+			"sameAs": [
+				"https://www.facebook.com/TheBarberShopSofia/?locale=en_GB",
+				"https://www.youtube.com/@TheBarberShop-c7o",
+				"https://www.instagram.com/the.barber.shop.sofia/"
+			],
+			"inLanguage": "bg",
+			"review": [
+				{
+					"@type": "Review",
+					"author": { "@type": "Person", "name": "Pavel Petrov" },
+					"datePublished": "2025-05-27",
+					"reviewBody": "Мноооого добро постригване и супер готин персонал!",
+					"reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+					"inLanguage": "bg"
+				},
+				{
+					"@type": "Review",
+					"author": { "@type": "Person", "name": "Teodor Stoilov" },
+					"datePublished": "2025-05-27",
+					"reviewBody": "Супер отношение и майсторство от Благо. Силно препоръчвам!",
+					"reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+					"inLanguage": "bg"
+				},
+				{
+					"@type": "Review",
+					"author": { "@type": "Person", "name": "Georgi Pleshkov" },
+					"datePublished": "2024-10-27",
+					"reviewBody": "За първи път посещавам The Barber Shop... най-добрата бръснарница в София.",
+					"reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+					"inLanguage": "bg"
+				}
+			]
+		}
+		);
+		document.head.appendChild(script);
+	});
+
+	return null; // This component doesn't need to render anything visible
+};
+
 
 function BarberContainer(props: { title: string; href: string; img: string; alt: string }) {
 
@@ -64,6 +140,8 @@ export default function Page() {
 					height="0" width="0" style="display:none;visibility:hidden">
 				</iframe>
 			</noscript>
+
+			<JSONLDScript />
 
 			<div style="background-position: center top; background-repeat: no-repeat; background-size: cover; height: auto;">
 				<div style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) ), url(/assets/za-nas/the-barber-shop-sofia-2_result_result.webp); background-position: right 55% bottom 100%; background-repeat: no-repeat; background-size: cover;" class="h-100vh za-nas-img" role="img" aria-label="the barber shop Sofia">

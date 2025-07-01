@@ -1,5 +1,5 @@
 import "solid-slider/slider.css";
-import { createSignal, JSXElement } from 'solid-js';
+import { createEffect, createSignal, JSXElement } from 'solid-js';
 import { ReviewSlider, StarReview } from '../../../../components/ReviewSlider';
 import { VideoPlayer } from '../../../../components/VideoPlayer';
 import { GallerySlider } from '../../../../components/GallerySlider';
@@ -20,6 +20,116 @@ import MdiRomanNumeral8 from '~icons/mdi/roman-numeral-8';
 import MdiRomanNumeral9 from '~icons/mdi/roman-numeral-9';
 import MdiRomanNumeral10 from '~icons/mdi/roman-numeral-10';
 import { H2WithImage } from "../../../../components/H2WithImage";
+
+
+const JSONLDScript = () => {
+	createEffect(() => {
+		const localBusinessScript = document.createElement("script");
+		localBusinessScript.type = "application/ld+json";
+		localBusinessScript.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "The Barber Shop Sofia",
+			"@id": "https://thebarbershop.bg#localBusiness",
+			"image": "https://thebarbershop.bg/assets/logo.png",
+			"telephone": "+359882820331",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "ж.к. Изток, ул. Николай Хайтов 2",
+				"addressLocality": "София",
+				"postalCode": "1113",
+				"addressCountry": "BG"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": 4.8,
+				"reviewCount": 610,
+				"bestRating": 5,
+				"worstRating": 1
+			},
+			"review": [
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Borislav Donchev"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 5,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "The Barber Shop е страхотно място! Най-обикновени неща като оформяне на брада, при тях е цяло изживяване. Кристиян Митов е ТОП бръснар! Евала момчета. Keep it going! Силно препоръчвам бръснарницата!!!"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Atanas Todorov"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 5,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "Страхотен и приветлив салон.Пълен с професионалисти! Винаги си тръгвам доволен и определено препоръчвам Крис!."
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Nikola Despotoski"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 4,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "Really detailed and organized crew. Booked appointment thru maps and they responded swiftly. Upon arrival I was offered whiskey, beer and other beverages, unfortunately I refused alcohol because I was driving. I totally recommend this barber shop."
+				}
+			],
+			"inLanguage": "bg"
+		});
+		document.head.appendChild(localBusinessScript);
+
+		const serviceScript = document.createElement("script");
+		serviceScript.type = "application/ld+json";
+		serviceScript.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"name": "Класическо Мокро Бръснене",
+			"description": "Класическо мокро бръснене е ритуал в The Barber Shop Sofia, който е много повече от грижа – той е чиста проба удоволствие за един мъж. Гладкото бръснене не е просто премахване на окосмяването по лицето - то е комбинация от продукти, горещи кърпи, плавни движения на бръснача и масажни техники на бръснаря. Услугата включва: гладко бръснене с бръснач, нанасяне на продукти за преди, по време и след бръснене без опасност от раздразнение и зачервяване. [1ч.]",
+			"image": "https://thebarbershop.bg/assets/klasichesko-mokro-brasnene/мокро-бръснене-софия-1.webp",
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "https://thebarbershop.bg/uslugi/klasichesko-mokro-brasnene"
+			},
+			"provider": {
+				"@type": "LocalBusiness",
+				"name": "The Barber Shop Sofia",
+				"@id": "https://thebarbershop.bg#localBusiness"
+			},
+			"areaServed": {
+				"@type": "Place",
+				"name": "София"
+			},
+			"offers": {
+				"@type": "Offer",
+				"priceCurrency": "BGN",
+				"price": 45,
+				"availability": "https://schema.org/InStock",
+				"url": "https://thebarbershop.bg/uslugi/klasichesko-mokro-brasnene"
+			},
+			"inLanguage": "bg"
+		});
+		document.head.appendChild(serviceScript);
+	});
+
+	return null;
+};
 
 function Collapse(props: { title: string; desc: string; children?: JSXElement }) {
 	const [isExpanded, setIsExpanded] = createSignal(false);
@@ -148,6 +258,8 @@ export default function Page() {
 					height="0" width="0" style="display:none;visibility:hidden">
 				</iframe>
 			</noscript>
+
+			<JSONLDScript />
 
 			<div style="background-position: center top; background-repeat: no-repeat; background-size: cover; height: auto;"><div style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/klasichesko-mokro-brasnene/мокро-бръснене-софия-1.webp); background-position: right top; background-repeat: no-repeat; background-size: cover;" class="h-100vh brasnene-img" role="img" aria-label="мокро бръснене в София"></div></div>
 

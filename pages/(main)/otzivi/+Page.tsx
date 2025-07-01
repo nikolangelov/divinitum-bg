@@ -1,7 +1,7 @@
 import "solid-slider/slider.css";
 import range from "lodash/range";
 import { AnimatedComponent } from "../../../components/AnimateOnView";
-import { createResource, createSignal, JSX, JSXElement, onCleanup, onMount } from "solid-js";
+import { createEffect, createResource, createSignal, JSX, JSXElement, onCleanup, onMount } from "solid-js";
 import { BeforeAfterSlider, BeforeAfterSliderContainer, DotsUnderSlider } from "../../../components/BeforeAfterSlider";
 import { H2WithImage } from "../../../components/H2WithImage";
 import { Slider, SliderButton, SliderProvider } from "solid-slider";
@@ -12,6 +12,102 @@ import RiDoubleQuotesR from '~icons/ri/double-quotes-r';
 import { ServiceContaner } from '../../../components/ServiceContainer';
 import { FacebookLikeGallery } from "../../../components/FacebookLikeGallery";
 import { AnimatedComponentSlide } from "../../../components/AnimateOnViewSlide";
+
+const JSONLDScript = () => {
+	createEffect(() => {
+		const script = document.createElement("script");
+		script.type = "application/ld+json";
+		script.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"@id": "https://thebarbershop.bg#localBusiness",
+			"name": "The Barber Shop Sofia",
+			"image": "https://thebarbershop.bg/assets/thebarbershop-footer-bg.webp",
+			"url": "https://thebarbershop.bg/otzivi",
+			"telephone": "+359 88 282 0331",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "ж.к. Изток, ул. Николай Хайтов 2",
+				"addressLocality": "София",
+				"postalCode": "1113",
+				"addressCountry": "BG"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.8",
+				"bestRating": "5",
+				"worstRating": "1",
+				"ratingCount": "610"
+			},
+			"review": [
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Pavel Petrov"
+					},
+					"datePublished": "2025-05-27",
+					"reviewBody": "Мноооого добро постригване и супер готин персонал!",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"inLanguage": "bg"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Teodor Stoilov"
+					},
+					"datePublished": "2025-05-27",
+					"reviewBody": "Супер отношение и майсторство от Благо. Силно препоръчвам!",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"inLanguage": "bg"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Georgi Pleshkov"
+					},
+					"datePublished": "2024-10-27",
+					"reviewBody": "За първи път посещавам The Barber Shop. Крис ме изслуша и след това подстрига с изключително внимание към детайла и моите предпочитания. Атмосферата е много приятна, а за резултатите можете да прецените сами.\n\nС ръка на сърцето мога да кажа, че това е най-добрата бръснарница в София от тези, които съм посетил.",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"inLanguage": "bg"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Atanas Todorov"
+					},
+					"datePublished": "2025-02-27",
+					"reviewBody": "Страхотен и приветлив салон.\nПълен с професионалисти!\nВинаги си тръгвам доволен и определено препоръчвам Крис!",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"inLanguage": "bg"
+				}
+			]
+		}
+		);
+		document.head.appendChild(script);
+	});
+
+	return null; // This component doesn't need to render anything visible
+};
 
 export const ImageWithFrameReviewSlider = ({ children, buttonClass, ...props }: { children: JSX.Element | JSX.Element[], buttonClass?: string, services: { title: string }[] }) => {
 	const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -202,6 +298,8 @@ export default function Page() {
 					height="0" width="0" style="display:none;visibility:hidden">
 				</iframe>
 			</noscript>
+
+			<JSONLDScript />
 
 			<section class="lg-pt-50 pb-20 pt-30 px-2 md:px-4 w-full">
 				<AnimatedComponent>

@@ -18,6 +18,39 @@ import confetti from "canvas-confetti";
 import RiFacebookFill from '~icons/ri/facebook-fill';
 import RiInstagramLine from '~icons/ri/instagram-line';
 
+const JSONLDScript = () => {
+	createEffect(() => {
+		const script = document.createElement("script");
+		script.type = "application/ld+json";
+		script.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "The Barber Shop Sofia",
+			"description": "The Barber Shop Sofia е нещо повече от просто бръснарница. Това е Вашето спокойно място, където можете да се откъснете за малко от ежедневието. Да спрете и да си поемете въздух, докато някой се погрижи за отличния Ви външен вид.",
+			"url": "https://thebarbershop.bg/kurs-za-brasnar",
+			"logo": "https://thebarbershop.bg/assets/za-nas/the-barber-shop-sofia-2_result_result.webp",
+			"telephone": "+359 88 282 0331",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "ул. “Алдомировска” 77",
+				"addressLocality": "София",
+				"addressCountry": "BG"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.8",
+				"bestRating": "5",
+				"worstRating": "1",
+				"ratingCount": "610"
+			}
+		}
+		);
+		document.head.appendChild(script);
+	});
+
+	return null; // This component doesn't need to render anything visible
+};
+
 export const VideoPlayer = (props: { src: string }) => {
 	let videoRef: HTMLVideoElement | undefined;
 
@@ -660,6 +693,8 @@ export default function Page() {
 					height="0" width="0" style="display:none;visibility:hidden">
 				</iframe>
 			</noscript>
+
+			<JSONLDScript />
 
 			{isModalOpen() && !isSuccess() && (
 				<section class="flex items-center justify-center">

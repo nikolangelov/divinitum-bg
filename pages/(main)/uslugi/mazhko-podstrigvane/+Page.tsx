@@ -1,5 +1,5 @@
 import "solid-slider/slider.css";
-import { createSignal, JSXElement } from 'solid-js';
+import { createEffect, createSignal, JSXElement } from 'solid-js';
 import { ReviewSlider, StarReview } from '../../../../components/ReviewSlider';
 import { VideoPlayer } from '../../../../components/VideoPlayer';
 import { GallerySlider } from '../../../../components/GallerySlider';
@@ -19,6 +19,106 @@ import MdiRomanNumeral7 from '~icons/mdi/roman-numeral-7';
 import MdiRomanNumeral8 from '~icons/mdi/roman-numeral-8';
 import MdiRomanNumeral9 from '~icons/mdi/roman-numeral-9';
 import { H2WithImage } from "../../../../components/H2WithImage";
+
+const JSONLDScript = () => {
+	createEffect(() => {
+		const localBusinessScript = document.createElement("script");
+		localBusinessScript.type = "application/ld+json";
+		localBusinessScript.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "The Barber Shop Sofia",
+			"@id": "https://thebarbershop.bg#localBusiness",
+			"image": "https://thebarbershop.bg/assets/logo.png",
+			"telephone": "+359882820331",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "ж.к. Изток, ул. Николай Хайтов 2",
+				"addressLocality": "София",
+				"postalCode": "1113",
+				"addressCountry": "BG"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": 4.8,
+				"reviewCount": 610,
+				"bestRating": 5,
+				"worstRating": 1
+			},
+			"review": [
+				{
+					"@type": "Review",
+					"author": { "@type": "Person", "name": "Ivo Stoilov" },
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 5,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "Професионално изпълнена услуга без нищо излишно. Горещо препоръчвам на онези, които се колебаят."
+				},
+				{
+					"@type": "Review",
+					"author": { "@type": "Person", "name": "Georgi Pleshkov" },
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 5,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "За първи път посещавам The Barber Shop. Крис ме изслуша и след това подстрига с изключително внимание към детайла и моите предпочитания..."
+				},
+				{
+					"@type": "Review",
+					"author": { "@type": "Person", "name": "Kaloyan Iliev" },
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 4,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "Страхотна атмосфера в салона. Много приятно място..."
+				}
+			],
+			"inLanguage": "bg"
+		});
+		document.head.appendChild(localBusinessScript);
+
+		const serviceScript = document.createElement("script");
+		serviceScript.type = "application/ld+json";
+		serviceScript.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"name": "Мъжко подстригване",
+			"description": "Подстригването на The Barber Shop е комбинация от различни бръснарски и фризьорски техники...",
+			"image": "https://thebarbershop.bg/assets/mazhko-podstrigvane/мъжко-подстригване.webp",
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "https://thebarbershop.bg/uslugi/mazhko-podstrigvane"
+			},
+			"provider": {
+				"@type": "LocalBusiness",
+				"name": "The Barber Shop Sofia",
+				"@id": "https://thebarbershop.bg#localBusiness"
+			},
+			"areaServed": {
+				"@type": "Place",
+				"name": "София"
+			},
+			"offers": {
+				"@type": "Offer",
+				"priceCurrency": "BGN",
+				"price": 50,
+				"availability": "https://schema.org/InStock",
+				"url": "https://thebarbershop.bg/uslugi/mazhko-podstrigvane"
+			},
+			"inLanguage": "bg"
+		});
+		document.head.appendChild(serviceScript);
+	});
+
+	return null;
+};
 
 function Collapse(props: { title: string; desc: string; children?: JSXElement }) {
 	const [isExpanded, setIsExpanded] = createSignal(false);
@@ -110,6 +210,8 @@ export default function Page() {
 					height="0" width="0" style="display:none;visibility:hidden">
 				</iframe>
 			</noscript>
+
+			<JSONLDScript />
 
 			<div style="background-position: center top; background-repeat: no-repeat; background-size: cover; height: auto;"><div style="filter: saturate(1.1); background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/mazhko-podstrigvane/мъжко-подстригване-с-машинка-1.webp); background-position: left 30% top 100%; background-repeat: no-repeat; background-size: cover;" class="h-100vh podstrigvane-img" role="img" aria-label="мъжко подстригване с машинка"></div></div>
 

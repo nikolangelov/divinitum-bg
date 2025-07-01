@@ -1,5 +1,5 @@
 import "solid-slider/slider.css";
-import { createSignal, JSXElement } from 'solid-js';
+import { createEffect, createSignal, JSXElement } from 'solid-js';
 import { ReviewSlider, StarReview } from '../../../../components/ReviewSlider';
 import { VideoPlayer } from '../../../../components/VideoPlayer';
 import { GallerySlider } from '../../../../components/GallerySlider';
@@ -20,6 +20,118 @@ import MdiRomanNumeral8 from '~icons/mdi/roman-numeral-8';
 import MdiRomanNumeral9 from '~icons/mdi/roman-numeral-9';
 import MdiRomanNumeral10 from '~icons/mdi/roman-numeral-10';
 import { H2WithImage } from "../../../../components/H2WithImage";
+
+
+const JSONLDScript = () => {
+	createEffect(() => {
+		const localBusinessScript = document.createElement("script");
+		localBusinessScript.type = "application/ld+json";
+		localBusinessScript.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"@id": "https://thebarbershop.bg#localBusiness",
+			"name": "The Barber Shop Sofia",
+			"url": "https://thebarbershop.bg",
+			"image": "https://thebarbershop.bg/assets/logo.png",
+			"telephone": "+359882820331",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "ж.к. Изток, ул. Николай Хайтов 2",
+				"addressLocality": "София",
+				"postalCode": "1113",
+				"addressCountry": "BG"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": 4.8,
+				"reviewCount": 610,
+				"bestRating": 5,
+				"worstRating": 1
+			},
+			"review": [
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Atanas Todorov"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 5,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "Страхотен и приветлив салон. Пълен с професионалисти! Винаги си тръгвам доволен и определено препоръчвам Крис!"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Nikola Stamenov"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 5,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "Най-добрият салон, в който съм бил. Атмосферата, отношението и уменията на бръснарите са на изключително високо ниво."
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Asen Markov"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 4,
+						"bestRating": 5,
+						"worstRating": 1
+					},
+					"reviewBody": "Перфектното място за мъжки отдих. Посрещнаха ме с вежливо обслужване и приятелска атмосфера. Работата им е на много високо ниво с внимание към детайла. Препоръчвам!"
+				}
+			],
+			"inLanguage": "bg"
+		});
+		document.head.appendChild(localBusinessScript);
+
+		const serviceScript = document.createElement("script");
+		serviceScript.type = "application/ld+json";
+		serviceScript.text = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"serviceType": "barbering",
+			"name": "мъжко подстригване и Оформяне на Брада",
+			"description": "Подстригване и оформяне на брада. Услугата включва: подстригване, измиване, стилизиране с продукт, избран спрямо предпочитанията на клиента и спецификата на косата му, оформяне на дължината, очертаване на контур на брадата с тример и/или бръснач (изцяло по избор на клиента), нанасяне на продукти за грижа на брадата, съобразени с преценката на бръснаря и предпочитанията на клиента. [1ч.30мин.]",
+			"image": "https://thebarbershop.bg/assets/podstrigvane-i-oformiane-na-brada/мъжко-подстригване-и-оформяне-на-брада-1.webp",
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "https://thebarbershop.bg/uslugi/mazhko-podstrigvane-i-oformiane-na-brada"
+			},
+			"provider": {
+				"@type": "LocalBusiness",
+				"name": "The Barber Shop Sofia",
+				"@id": "https://thebarbershop.bg#localBusiness"
+			},
+			"areaServed": {
+				"@type": "Place",
+				"name": "София"
+			},
+			"offers": {
+				"@type": "Offer",
+				"priceCurrency": "BGN",
+				"price": "70",
+				"availability": "https://schema.org/InStock",
+				"url": "https://thebarbershop.bg/uslugi/podstrigvane-na-bashta-i-sin"
+			},
+			"inLanguage": "bg"
+		});
+		document.head.appendChild(serviceScript);
+	});
+
+	return null;
+};
 
 function Collapse(props: { title: string; desc: string; children?: JSXElement }) {
 	const [isExpanded, setIsExpanded] = createSignal(false);
@@ -137,6 +249,8 @@ export default function Page() {
 					height="0" width="0" style="display:none;visibility:hidden">
 				</iframe>
 			</noscript>
+
+			<JSONLDScript />
 
 			<div style="background-position: center top; background-repeat: no-repeat; background-size: cover; height: auto;"><div style="filter: saturate(1.1); background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/podstrigvane-i-oformiane-na-brada/мъжко-подстригване-и-оформяне-на-брада-1.webp); background-position: left 80% top 100%; background-repeat: no-repeat; background-size: cover;" class="h-100vh kombo-img" role="img" aria-label="подстригване и оформяне на мъжка брада"></div></div>
 
