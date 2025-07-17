@@ -547,7 +547,7 @@ export function Countdown() {
 
 	function calculateTimeLeft() {
 		const now = new Date();
-		const targetDate = new Date(now.getFullYear(), 5, 30, 23, 59, 59); // June 30, 23:59:59
+		const targetDate = new Date(now.getFullYear(), 7, 2, 23, 59, 59);
 
 		const difference = targetDate.getTime() - now.getTime();
 
@@ -709,9 +709,9 @@ export default function Page() {
 							<div class="w-full xl:w-1/2 md:w-2/5 w-full flex flex-col justify-center lg:justify-start items-center lg:items-start">
 								<AnimatedComponent>
 									<h2 class="important-pl-0 text-left important-xl:font-size-40px important-md:font-size-30px important-font-size-22px important-xl:leading-56px important-md:leading-45px important-leading-30px important-xl:mb-60px important-md:mb-30px important-mb-15px">Станете професионален бръснар за 4 седмици</h2>
-									{/* <p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запишете се две седмици преди началото, за да получите 300 лв отстъпка</p>
-									<Countdown /> */}
-									<h3 class="font-400 text-left important-xl:font-size-27px important-md:font-size-22px important-font-size-16px important-xl:mb-20px important-mb-2px">Остават 4 места.</h3>
+									<p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запишете се две седмици преди началото, за да получите 300 лв отстъпка</p>
+									<Countdown />
+									<h3 class="font-400 text-left important-xl:font-size-27px important-md:font-size-22px important-font-size-16px important-xl:mb-20px important-mb-2px">Остават 8 места.</h3>
 									<p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запазете мястото си в предстоящото издание на курса като попълните контактната форма.</p>
 								</AnimatedComponent>
 							</div>
@@ -1040,7 +1040,7 @@ export default function Page() {
 							<div class="relative">
 								<img loading="lazy" src="/assets/akademia/контакт-за-курс-за-бръснарство.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
 							</div>
-							<p class="c-paper mt-0 md:font-size-14px font-size-12px md:leading-6 leading-5">Занятията ще се провеждат The Barber Shop Academy<br />на <span class="c-brand underline">ул. “Алдомировска” 77</span> (непосредствена близост до метростанцията)</p>
+							<p class="c-paper mt-0 md:font-size-14px font-size-12px md:leading-6 leading-5">Занятията ще се провеждат The Barber Shop Academy<br />на <span class="c-brand underline">бул. Константин Величков</span> (непосредствена близост до метростанцията)</p>
 						</AnimatedComponent>
 					</div>
 
@@ -1208,12 +1208,22 @@ export default function Page() {
 							title="Обща информация"
 							secondtitle={
 								<>
-									Обучението се провежда от понеделник до петък в рамките на <span class="whitespace-nowrap sm:whitespace-normal">4 седмици</span>.
+									Гъвкаво обучение
 								</>
 							}
 							text={
 								<>
-									Всеки урок е с продължителност от <span class="whitespace-nowrap sm:whitespace-normal">4 часа</span> като включва комбинация от теория и практика.
+									Обучението се провежда в два формата:
+									<ul class="ml--7">
+										<li>Дневен курс през уикендите</li>
+										<li>Вечерен курс през делничните дни.</li>
+									</ul>
+									<div>Всеки урок е с продължителност от 4 или <span class="whitespace-nowrap sm:whitespace-normal">6 часа</span> (в зависимост от формата на обучение) като включва комбинация от теория и практика.</div>
+									<div>Общата продължителност на курса е:</div>
+									<ul class="ml--7">
+										<li>60 часа за дневната форма, през уикендите</li>
+										<li>80 часа за вечерната форма, от понеделник до петък</li>
+									</ul>
 								</>
 							}
 						/>
@@ -1289,18 +1299,31 @@ export default function Page() {
 
 			<section class="py-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8) ), url(/assets/brown-background-image.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
 				<AnimatedComponent class="mx-5 md-mx-30 flex flex-col gap-2">
-					<div class="flex w-full pr-10px xl:px-50px lg:px-30px md:py-4 py-6 lg:py-6 max-w-1320px mx-auto flex-justify-between flex-items-center b-solid b-2px hover-b-gray-500 flex my-8 b-paper bg-#14100c hover-bg-transparent transition-colors important-transition-duration-300">
-						<div class="flex flex-row flex-justify-start items-center">
-							<MdiProgressClock class="md:mt-1 flex flex-self-center mr-0 lg:mr-8 lg-w-7 w-15 c-brand font-size-6" />
-							<h3 class="md:px-0 px-0 text-left c-paper important-line-height-7 important-font-size-4 important-md:font-size-6 lg:flex hidden flex-justify-center flex-items-center uppercase important-mb-0 important-md:mb-5 important-xl:mb-6 font-500" style="font-family: 'Oswald', sans-serif !important;">
-								Първа дата: 16 август 2025 г. 09:00 - 15:00
-							</h3>
-							<h3 class="md:px-0 px-0 text-left c-paper important-line-height-6.5 important-font-size-4 important-md:font-size-5 flex lg:hidden flex-justify-center flex-items-center uppercase important-my-5 important-sm:mb-5 font-500" style="font-family: 'Oswald', sans-serif !important;">
-								Първа дата:<br />16 август 2025 г.<br />09:00 - 15:00
-							</h3>
+					<div class="flex flex-col w-full pr-10px xl:px-50px lg:px-30px md:py-4 py-6 lg:py-6 max-w-1320px mx-auto flex-justify-between flex-items-start b-solid b-2px hover-b-gray-500 flex my-8 b-paper bg-#14100c hover-bg-transparent transition-colors important-transition-duration-300">
+						<div class="flex w-full mx-auto flex-justify-between flex-items-center">
+							<div class="flex flex-row flex-justify-start items-center">
+								<div class="flex flex-col">
+									<div class="flex items-center">
+										<MdiProgressClock class="md:mt-1 flex flex-self-center mr-0 lg:mr-8 lg-w-7 w-15 c-brand font-size-6" />
+										<h3 class="md:px-0 px-0 text-left c-paper important-line-height-7 important-font-size-4 important-md:font-size-6 lg:flex hidden flex-justify-center flex-items-center uppercase important-mb-0 important-md:mb-5 important-xl:mb-6 font-500" style="font-family: 'Oswald', sans-serif !important;">
+											Уикенд курс: 16 август 2025 г. 09:00 - 15:00
+										</h3>
+										<h3 class="md:px-0 px-0 text-left c-paper important-line-height-6.5 important-font-size-4 important-md:font-size-5 flex lg:hidden flex-justify-center flex-items-center uppercase important-my-5 important-sm:mb-5 font-500" style="font-family: 'Oswald', sans-serif !important;">
+											Уикенд курс:<br />16 август 2025 г.<br />09:00 - 15:00
+										</h3>
+									</div>
+								</div>
+							</div>
+							<div class="flex flex-col flex-items-center flex-self-center">
+								<button onClick={openModal} class="mr-2 cursor-pointer text-center w-32 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
+							</div>
 						</div>
-						<div class="flex flex-col flex-items-center flex-self-center">
-							<button onClick={openModal} class="mr-2 cursor-pointer text-center w-32 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
+						<div class="flex">
+							<ul class="ml--2 lg:ml--6">
+								<li class="c-paper">Обучението се провежда в рамките на 5 уикенда</li>
+								<li class="c-paper">Всяка събота и неделя, по 6 часа на ден</li>
+								<li class="c-paper">Общата продължителност на курса е 60 часа</li>
+							</ul>
 						</div>
 					</div>
 				</AnimatedComponent>
@@ -1308,18 +1331,31 @@ export default function Page() {
 
 			<section class="py-5 my-10" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8) ), url(/assets/brown-background-image.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
 				<AnimatedComponent class="mx-5 md-mx-30 flex flex-col gap-2">
-					<div class="flex w-full pr-10px xl:px-50px lg:px-30px md:py-4 py-6 lg:py-6 max-w-1320px mx-auto flex-justify-between flex-items-center b-solid b-2px hover-b-gray-500 flex my-8 b-paper bg-#14100c hover-bg-transparent transition-colors important-transition-duration-300">
-						<div class="flex flex-row flex-justify-start items-center">
-							<MdiProgressClock class="md:mt-1 flex flex-self-center mr-0 lg:mr-8 lg-w-7 w-15 c-brand font-size-6" />
-							<h3 class="md:px-0 px-0 text-left c-paper important-line-height-7 important-font-size-4 important-md:font-size-6 lg:flex hidden flex-justify-center flex-items-center uppercase important-mb-0 important-md:mb-5 important-xl:mb-6 font-500" style="font-family: 'Oswald', sans-serif !important;">
-								Втора дата: 15 септември 2025 г. 17:30 - 21:30
-							</h3>
-							<h3 class="md:px-0 px-0 text-left c-paper important-line-height-6.5 important-font-size-4 important-md:font-size-5 flex lg:hidden flex-justify-center flex-items-center uppercase important-my-5 important-sm:mb-5 font-500" style="font-family: 'Oswald', sans-serif !important;">
-								Втора дата:<br />15 септември 2025 г.<br />17:30 - 21:30
-							</h3>
+					<div class="flex flex-col w-full pr-10px xl:px-50px lg:px-30px md:py-4 py-6 lg:py-6 max-w-1320px mx-auto flex-justify-between flex-items-start b-solid b-2px hover-b-gray-500 flex my-8 b-paper bg-#14100c hover-bg-transparent transition-colors important-transition-duration-300">
+						<div class="flex w-full mx-auto flex-justify-between flex-items-center">
+							<div class="flex flex-row flex-justify-start items-center">
+								<div class="flex flex-col">
+									<div class="flex items-center">
+										<MdiProgressClock class="md:mt-1 flex flex-self-center mr-0 lg:mr-8 lg-w-7 w-15 c-brand font-size-6" />
+										<h3 class="md:px-0 px-0 text-left c-paper important-line-height-7 important-font-size-4 important-md:font-size-6 lg:flex hidden flex-justify-center flex-items-center uppercase important-mb-0 important-md:mb-5 important-xl:mb-6 font-500" style="font-family: 'Oswald', sans-serif !important;">
+											Вечерен курс: 15 септември 2025 г. 17:30 - 21:30
+										</h3>
+										<h3 class="md:px-0 px-0 text-left c-paper important-line-height-6.5 important-font-size-4 important-md:font-size-5 flex lg:hidden flex-justify-center flex-items-center uppercase important-my-5 important-sm:mb-5 font-500" style="font-family: 'Oswald', sans-serif !important;">
+											Вечерен курс:<br />15 септември 2025 г.<br />17:30 - 21:30
+										</h3>
+									</div>
+								</div>
+							</div>
+							<div class="flex flex-col flex-items-center flex-self-center">
+								<button onClick={openModal} class="mr-2 cursor-pointer text-center w-32 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
+							</div>
 						</div>
-						<div class="flex flex-col flex-items-center flex-self-center">
-							<button onClick={openModal} class="mr-2 cursor-pointer text-center w-32 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
+						<div class="flex">
+							<ul class="ml--2 lg:ml--6">
+								<li class="c-paper">Вечерен курс през делничните дни</li>
+								<li class="c-paper">От понеделник до петък, по 4 часа на ден</li>
+								<li class="c-paper">Общата продължителност на курса е 80 часа</li>
+							</ul>
 						</div>
 					</div>
 				</AnimatedComponent>
@@ -1354,7 +1390,7 @@ export default function Page() {
 				<div class="flex flex-col flex-items-center flex-self-center mt-6">
 					<button onClick={openModal} class="mr-2 cursor-pointer text-center w-42 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
 				</div>
-				<p class="md:font-size-20px font-size-18px c-paper font-500 uppercase mt-6 md:mt-6 text-center line-height-8 md:line-height-10" style="font-family: 'Oswald', sans-serif !important;">*до 22 юни можете да го получите с 300 лв. отстъпка за 2200 лв.</p>
+				<p class="md:font-size-20px font-size-18px c-paper font-500 uppercase mt-6 md:mt-6 text-center line-height-8 md:line-height-10" style="font-family: 'Oswald', sans-serif !important;">*До 2 август можете да го получите с 300 лв. отстъпка за 2200 лв.</p>
 			</section>
 
 			<section class="pb-10">
