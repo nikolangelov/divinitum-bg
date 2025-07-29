@@ -420,7 +420,7 @@ function LayoutDefault(props: { children?: JSX.Element }) {
               <div class="w-full xl:w-1/2 md:w-2/5 w-full flex flex-col justify-center lg:justify-start items-center lg:items-start">
                 <AnimatedComponent>
                   <h2 class="important-pl-0 text-left important-xl:font-size-40px important-md:font-size-30px important-font-size-22px important-xl:leading-56px important-md:leading-45px important-leading-30px important-xl:mb-60px important-md:mb-30px important-mb-15px">Станете професионален бръснар за 4 седмици</h2>
-                  <p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запишете се две седмици преди началото, за да получите 300 лв отстъпка</p>
+                  <p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запишете се две седмици преди началото, за да получите 300 лв отстъпка.</p>
                   <Countdown />
                   <h3 class="font-400 text-left important-xl:font-size-27px important-md:font-size-22px important-font-size-16px important-xl:mb-20px important-mb-2px">Остават 8 места.</h3>
                   <p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запазете мястото си в предстоящото издание на курса като попълните контактната форма.</p>
@@ -432,7 +432,7 @@ function LayoutDefault(props: { children?: JSX.Element }) {
 
                   <div class="xl:px-10 md:pt-3">
                     <h3 class="important-mt-0 md:mt-2 mb-10 c-paper uppercase
-										important-xl:font-size-26px important-md:font-size-24px important-font-size-18px">Влезете в играта</h3>
+										important-xl:font-size-26px important-md:font-size-24px important-font-size-18px">Влезте в играта</h3>
                     <ContactUs
                       onSuccess={handleSuccess}
                       onError={handleError}
@@ -685,7 +685,7 @@ function TopFooter() {
               <div class="w-full xl:w-1/2 md:w-2/5 w-full flex flex-col justify-center lg:justify-start items-center lg:items-start">
                 <AnimatedComponent>
                   <h2 class="important-pl-0 text-left important-xl:font-size-40px important-md:font-size-30px important-font-size-22px important-xl:leading-56px important-md:leading-45px important-leading-30px important-xl:mb-60px important-md:mb-30px important-mb-15px">Станете професионален бръснар за 4 седмици</h2>
-                  <p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запишете се две седмици преди началото, за да получите 300 лв отстъпка</p>
+                  <p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запишете се две седмици преди началото, за да получите 300 лв отстъпка.</p>
                   <Countdown />
                   <h3 class="font-400 text-left important-xl:font-size-27px important-md:font-size-22px important-font-size-16px important-xl:mb-20px important-mb-2px">Остават 8 места.</h3>
                   <p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запазете мястото си в предстоящото издание на курса като попълните контактната форма.</p>
@@ -697,7 +697,7 @@ function TopFooter() {
 
                   <div class="xl:px-10 md:pt-3">
                     <h3 class="important-mt-0 md:mt-2 mb-10 c-paper uppercase
-										important-xl:font-size-26px important-md:font-size-24px important-font-size-18px">Влезете в играта</h3>
+										important-xl:font-size-26px important-md:font-size-24px important-font-size-18px">Влезте в играта</h3>
                     <ContactUs
                       onSuccess={handleSuccess}
                       onError={handleError}
@@ -993,7 +993,7 @@ function HamburgerMenu() {
               <div class="w-full xl:w-1/2 md:w-2/5 w-full flex flex-col justify-center lg:justify-start items-center lg:items-start">
                 <AnimatedComponent>
                   <h2 class="important-pl-0 text-left important-xl:font-size-40px important-md:font-size-30px important-font-size-22px important-xl:leading-56px important-md:leading-45px important-leading-30px important-xl:mb-60px important-md:mb-30px important-mb-15px">Станете професионален бръснар за 4 седмици</h2>
-                  <p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запишете се две седмици преди началото, за да получите 300 лв отстъпка</p>
+                  <p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запишете се две седмици преди началото, за да получите 300 лв отстъпка.</p>
                   <Countdown />
                   <h3 class="font-400 text-left important-xl:font-size-27px important-md:font-size-22px important-font-size-16px important-xl:mb-20px important-mb-2px">Остават 8 места.</h3>
                   <p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запазете мястото си в предстоящото издание на курса като попълните контактната форма.</p>
@@ -1005,7 +1005,7 @@ function HamburgerMenu() {
 
                   <div class="xl:px-10 md:pt-3">
                     <h3 class="important-mt-0 md:mt-2 mb-10 c-paper uppercase
-										important-xl:font-size-26px important-md:font-size-24px important-font-size-18px">Влезете в играта</h3>
+										important-xl:font-size-26px important-md:font-size-24px important-font-size-18px">Влезте в играта</h3>
                     <ContactUs
                       onSuccess={handleSuccess}
                       onError={handleError}
