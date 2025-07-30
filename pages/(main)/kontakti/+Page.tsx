@@ -252,7 +252,7 @@ const ContactUs = ({ onSuccess, onError, setUploading }: ContactUsProps) => {
 		setUploading(true);
 
 		emailjs
-			.sendForm('service_h8j0yvt', 'template_sfx2ge6', form, {
+			.sendForm('service_iec7295', 'template_qde70mq', form, {
 				publicKey: 'THs2MxEeIfIAlmqdZ',
 			})
 			.then(
