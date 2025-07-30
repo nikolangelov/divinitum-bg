@@ -47,9 +47,9 @@ app.post('/api/send-email', (req, res) => {
     console.log(emailContent)
 
     const mailOptions = {
-        from: '"The Barbershop" <info@thebarbershop.bg>',
+        from: '"The Barbershop" <officethebarbershop@gmail.com>',
         replyTo: senderEmail,
-        to: 'info@thebarbershop.bg',
+        to: 'officethebarbershop@gmail.com',
         subject: 'Ново съобщение от контактната форма на сайта',
         text: emailContent,
     };
