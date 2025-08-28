@@ -1310,7 +1310,7 @@ export default function Page() {
 								</div>
 							</div>
 							<div class="flex flex-col flex-items-center flex-self-center">
-								<button class="mr-2 cursor-default text-center w-32 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнал</button>
+								<button class="mr-2 cursor-default text-center w-32 lg-w-52 bg-#8f3541 c-paper b-solid b-2px b-#8f3541 uppercase font-size-4 lg-font-size-5 font-500 py-3 transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнал</button>
 							</div>
 						</div>
 						<div class="flex">
@@ -1365,10 +1365,10 @@ export default function Page() {
 									<div class="flex items-center">
 										<MdiProgressClock class="md:mt-1 flex flex-self-center mr-0 lg:mr-8 lg-w-7 w-15 c-brand font-size-6" />
 										<h3 class="md:px-0 px-0 text-left c-paper important-line-height-7 important-font-size-4 important-md:font-size-6 lg:flex hidden flex-justify-center flex-items-center uppercase important-mb-0 important-md:mb-5 important-xl:mb-6 font-500" style="font-family: 'Oswald', sans-serif !important;">
-											Уикенд курс: 18 август 2025 г. 09:00 - 15:00
+											Уикенд курс: 18 октомври 2025 г. 09:00 - 15:00
 										</h3>
 										<h3 class="md:px-0 px-0 text-left c-paper important-line-height-6.5 important-font-size-4 important-md:font-size-5 flex lg:hidden flex-justify-center flex-items-center uppercase important-my-5 important-sm:mb-5 font-500" style="font-family: 'Oswald', sans-serif !important;">
-											Уикенд курс:<br />18 август 2025 г.<br />09:00 - 15:00
+											Уикенд курс:<br />18 октомври 2025 г.<br />09:00 - 15:00
 										</h3>
 									</div>
 								</div>
