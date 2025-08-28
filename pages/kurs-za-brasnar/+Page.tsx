@@ -1310,7 +1310,7 @@ export default function Page() {
 								</div>
 							</div>
 							<div class="flex flex-col flex-items-center flex-self-center">
-								<button class="mr-2 cursor-default text-center w-32 lg-w-52 bg-#8f3541 c-paper b-solid b-2px b-#8f3541 uppercase font-size-4 lg-font-size-5 font-500 py-3 transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнал</button>
+								<button class="mr-2 cursor-default text-center w-32 lg-w-52 bg-#913f4a c-paper b-solid b-2px b-#913f4a uppercase font-size-4 lg-font-size-5 font-500 py-3 transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнал</button>
 							</div>
 						</div>
 						<div class="flex">
