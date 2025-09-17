@@ -710,7 +710,7 @@ export default function Page() {
 									<h2 class="important-pl-0 text-left important-xl:font-size-40px important-md:font-size-30px important-font-size-22px important-xl:leading-56px important-md:leading-45px important-leading-30px important-xl:mb-60px important-md:mb-30px important-mb-15px">Станете професионален бръснар за 4 седмици</h2>
 									{/* <p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запишете се две седмици преди началото, за да получите 300 лв отстъпка.</p>
 									<Countdown /> */}
-									<h3 class="font-400 text-left important-xl:font-size-27px important-md:font-size-22px important-font-size-16px important-xl:mb-20px important-mb-2px">Остават 4 места.</h3>
+									<h3 class="font-400 text-left important-xl:font-size-27px important-md:font-size-22px important-font-size-16px important-xl:mb-20px important-mb-2px">Остават 2 места.</h3>
 									<p class="important-xl:font-size-19px important-md:font-size-16px important-font-size-12px important-xl:leading-32px important-md:leading-27px important-leading-19px important-xl:mt-13px important-mt-4px important-mb-8px">Запазете мястото си в предстоящото издание на курса като попълните контактната форма.</p>
 								</AnimatedComponent>
 							</div>
@@ -1326,7 +1326,7 @@ export default function Page() {
 
 			<section class="py-5 my-10" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8) ), url(/assets/brown-background-image.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
 				<AnimatedComponent class="mx-5 md-mx-30 flex flex-col gap-2">
-					<div class="flex flex-col w-full pr-10px xl:px-50px lg:px-30px md:py-4 py-6 lg:py-6 max-w-1320px mx-auto flex-justify-between flex-items-start b-solid b-2px hover-b-gray-500 flex my-8 b-paper bg-#14100c hover-bg-transparent transition-colors important-transition-duration-300">
+					<div class="flex flex-col w-full pr-10px xl:px-50px lg:px-30px md:py-4 py-6 lg:py-6 max-w-1320px mx-auto flex-justify-between flex-items-start b-solid b-2px flex my-8 b-paper bg-#14100c transition-colors important-transition-duration-300">
 						<div class="flex w-full mx-auto flex-justify-between flex-items-center">
 							<div class="flex flex-row flex-justify-start items-center">
 								<div class="flex flex-col">
@@ -1342,7 +1342,7 @@ export default function Page() {
 								</div>
 							</div>
 							<div class="flex flex-col flex-items-center flex-self-center">
-								<button onClick={openModal} class="mr-2 cursor-pointer text-center w-32 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
+								<button class="mr-2 cursor-default text-center w-32 lg-w-52 bg-#913f4a c-paper b-solid b-2px b-#913f4a uppercase font-size-4 lg-font-size-5 font-500 py-3 transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнал</button>
 							</div>
 						</div>
 						<div class="flex">
