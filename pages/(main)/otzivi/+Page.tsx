@@ -138,6 +138,29 @@ export const ImageWithFrameReviewSlider = ({ children, buttonClass, ...props }: 
 	);
 };
 
+export const OneImageSlider = ({ children, buttonClass, ...props }: { children: JSX.Element | JSX.Element[], buttonClass?: string, services: { title: string }[] }) => {
+	const isDesktop = useMediaQuery("(min-width: 768px)");
+
+	return (
+		<SliderProvider>
+			{isDesktop() ? (
+				<div class="max-w-900px mx-auto position-relative hidden md:block mb-0 pt-5">
+					<Slider options={{ loop: true, slides: { perView: 1, spacing: 15 } }}>
+						{children}
+					</Slider>
+				</div>
+			) : (
+				<div class="max-w-900px m-auto position-relative md:hidden block mx-4">
+					<Slider options={{ loop: true, slides: { perView: 1, spacing: 10 } }}>
+						{children}
+					</Slider>
+				</div>
+			)}
+			<DotsUnderSlider services={props.services} />
+		</SliderProvider>
+	);
+};
+
 function useMediaQuery(query: string) {
 	const [matches, setMatches] = createSignal(false);
 

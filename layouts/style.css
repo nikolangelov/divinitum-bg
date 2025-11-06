@@ -364,16 +364,7 @@ html::-webkit-scrollbar-thumb {
 
 @media (min-width: 640px) {
   .akademiq-img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url('/assets/akademia/курс-за-бръснарство-крис.webp') !important;
-    background-position: right 50% bottom 75% !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-  }
-}
-
-@media (min-width: 640px) {
-  .akademiq-img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url('/assets/akademia/курс-за-бръснарство-крис.webp') !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.55)), url('/assets/akademia/курс-за-бръснар.webp') !important;
     background-position: right 50% bottom 75% !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
@@ -485,7 +476,7 @@ html::-webkit-scrollbar-thumb {
 
 .resizer:after {
   background: #8f1828;
-  content: '\21FF';
+  content: '/21FF';
   font-weight: 900;
   font-size: 17px;
   padding-bottom: 1px;

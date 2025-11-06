@@ -5,7 +5,7 @@ import RiPlayMiniLine from '~icons/ri/play-mini-line';
 import RiPlayReverseMiniLine from '~icons/ri/play-reverse-mini-line';
 import { createEffect, createSignal, JSX, JSXElement, onCleanup, onMount, useContext } from "solid-js";
 import { DotsUnderSlider } from "../../components/BeforeAfterSlider";
-import { ImageWithFrameReview, ImageWithFrameReviewSlider, QuotationReview } from "../(main)/otzivi/+Page";
+import { ImageWithFrameReview, ImageWithFrameReviewSlider, OneImageSlider, QuotationReview } from "../(main)/otzivi/+Page";
 import { ReviewSlider, StarReview } from "../../components/ReviewSlider";
 import MdiCheckboxMarkedOutline from '~icons/mdi/checkbox-marked-outline';
 import MdiProgressClock from '~icons/mdi/progress-clock';
@@ -780,12 +780,12 @@ export default function Page() {
 				</div>
 			)}
 
-			<div style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65) ), url(/assets/akademia/курс-за-бръснар-крис.webp); background-position: center; background-repeat: no-repeat; background-size: cover;" class="h-100vh akademiq-img" role="img" aria-label="курс за бръснар крис">
+			<div style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.55) ), url(/assets/akademia/курс-за-бръснар-mobile.webp); background-position: right 45% bottom 55%; background-repeat: no-repeat; background-size: cover;" class="h-100vh akademiq-img" role="img" aria-label="курс за бръснар крис">
 			</div>
 			<div class="w-full bg-#212528">
 				<div class="max-w-1240px mx-auto">
 					<div class="flex flex-justify-center">
-						<div class="left-0 right-0 px-3 my-0 mx-auto absolute top-62% sm:top-69% md-top-69% lg-top-69% xl-top-74% text-center w-full akademiq-img-overlay" style="-webkit-transform: translateY(-50%);">
+						<div class="left-0 right-0 px-3 my-0 mx-auto absolute top-72% sm:top-72% md:top-72% lg:top-76% xl-top-80% text-center w-full akademiq-img-overlay" style="-webkit-transform: translateY(-50%);">
 							<AnimatedComponent>
 								<div class="uppercase c-paper mb-2 important-font-size-43px important-sm:font-size-65px important-md:font-size-80px important-lg:font-size-100px important-xl:font-size-115px important-line-height-62px important-sm:line-height-85px important-md:line-height-100px important-lg:line-height-120px important-xl:line-height-136px text-center font-600" style="font-family: 'Oswald', sans-serif !important;">Стани бръснар за <span class="whitespace-nowrap">4 седмици</span></div>
 							</AnimatedComponent>
@@ -1023,7 +1023,7 @@ export default function Page() {
 
 			<section class="pb-20" style="background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
 				<section class="max-w-7xl mx-auto px-4">
-					<div class="md:pt-120px flex flex-col md:flex-row items-center gap-15 md:gap-20">
+					<div class="md:pt-120px flex flex-col md:flex-row items-center gap-10 md:gap-20">
 						<div class="w-full md:w-1/2 space-y-4">
 							<AnimatedComponent>
 								<img loading="lazy" class="pb-2 mx-auto md:mx-0 pt-80px md:pt-0 flex flex-justify-center" src="/assets/heading-ic.png" />
@@ -1034,8 +1034,11 @@ export default function Page() {
 						</div>
 
 						<AnimatedComponent class="w-full md:w-1/2 block">
-							<div class="relative">
+							<div class="relative hidden md:block">
 								<img loading="lazy" src="/assets/akademia/за-курс-за-бръснарство.webp" alt="Реални снимки от академията" class="w-full h-auto shadow-xl" style="filter: saturate(130%);" />
+							</div>
+							<div class="relative md:hidden block">
+								<img loading="lazy" src="/assets/akademia/за-курс-за-бръснарство-mobile.webp" alt="Реални снимки от академията" class="w-full h-auto shadow-xl" style="filter: saturate(130%);" />
 							</div>
 							<p class="c-paper mt-0 md:font-size-17px font-size-14px md:leading-7 leading-5">Занятията ще се провеждат The Barber Shop Academy на <span class="c-brand underline whitespace-nowrap"><a class="c-brand hover:c-brand-dark transition-all underline whitespace-nowrap" href="https://maps.app.goo.gl/yZNJRc35cSPyztpaA" target="_blank" rel="noopener"><img class="w-5 h-5 mb--1.5" src="/assets/pin.png" />ул. Алдомировска 77</a></span> (непосредствена близост до метростанция “Константин Величков”)</p>
 						</AnimatedComponent>
@@ -1192,22 +1195,22 @@ export default function Page() {
 						<TestSlider
 							imgs={[
 								{
-									src: "/assets/akademia/след-академия-за-бръснари-1.webp",
+									src: "/assets/akademia/отзив-от-курс-за-бръснарство.webp",
 									alt: "the-barber-shop-detsko-podstrigvane",
-									name: "Марио",
-									reviewtext: "Преминах курса по бръснарство с огромно удоволствие и съм изключително доволен от обучението! Преподавателите бяха професионалисти с богат опит, които обясняваха ясно и търпеливо. Практическата част беше отлично организирана – имах възможност да работя с реални клиенти, което ми даде увереност и усет към занаята. Атмосферата беше приятелска и мотивираща, а групата – сплотена."
+									name: "Димитър Димитров",
+									reviewtext: "Честно казано не очаквах да се науча толкова бързо дори да държа ножицата. Не очаквах да има толкова практика върху реални хора, които реално да оставят доволни. Нямам търпение да започна да работя с клиенти!"
 								},
 								{
-									src: "/assets/akademia/след-бръснарски-курсове-1.webp",
+									src: "/assets/akademia/завършил-barber-academy-със-сертификат-за-бръснарство.webp",
 									alt: "barbershop-mazhko-podstrigvane-otzivi",
-									name: "Благо",
-									reviewtext: "Изключително доволен съм от обучението – практиката беше ключова за мен! Хареса ми подходът на екипа и атмосферата в академията. Научих всичко необходимо, за да стартирам веднага след курса. Препоръчвам с две ръце!"
+									name: "Мартин Серафимов",
+									reviewtext: "Беше ми доста интересно. С голямо желание идвах, слушах те. Надявам се да мога да продължа това, което ни предаде. От първия ден още имаше градация, поне при мен. С практиката и правилните знания могат да се постигнат нещата!"
 								},
 								{
-									src: "/assets/akademia/след-бръснарска-академия.webp",
+									src: "/assets/akademia/завършил-курс-за-бръснар.webp",
 									alt: "barber-shop-otzivi-usluga-podstrigvane",
-									name: "Емо",
-									reviewtext: "Завърших курса преди няколко месеца и още от първата седмица започнах да практикувам. Обучението беше интензивно, но много добре структурирано. Преподавателите са търпеливи и наистина влагат сърце в това, което правят. Благодаря за увереността, която ми дадохте!"
+									name: "Иво Калоянов",
+									reviewtext: "Курсът мина много добре. Много съм доволен! Не очаквах толкова бързо да се науча. Общо взето всичко е 6. Продължаваме нагоре!"
 								},
 							]}
 						/>
@@ -1438,12 +1441,23 @@ export default function Page() {
 
 			<section class="pb-20 px-4 w-full" style="background-color: #222222; background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center center; background-repeat: no-repeat; background-size: cover;">
 				<H2WithImage class="c-paper" title="Всичко, от което ще имате нужда по време на обучението" />
-				<div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 mx-auto max-w-7xl">
-					<AnimatedComponent class="w-full md:ml-15 md:w-1/2">
-						<div>
-							<img loading="lazy" src="/assets/akademia/академия-за-бръснари-софия-с-крис-1.webp" alt="Elegant interior design" class="w-full h-auto shadow-xl" />
-						</div>
-					</AnimatedComponent>
+				<div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-15 mx-auto max-w-7xl">
+					<div class="w-full md:ml-15 md:w-1/2">
+						<OneImageSlider
+							services={[
+								{ title: "academy1" },
+								{ title: "academy2" },
+								{ title: "academy3" },
+								{ title: "academy4" },
+								{ title: "academy5" }
+							]}>
+							<img loading="lazy" src="/assets/akademia/академия-за-бръснари-софия-с-крис-1.webp" alt="Elegant interior design" class="w-full h-auto" />
+							<img loading="lazy" src="/assets/akademia/уроци-по-бръснарство.webp" alt="Elegant interior design" class="w-full h-auto" />
+							<img loading="lazy" src="/assets/akademia/основни-техники-курс-за-бръснари-1.webp" alt="Elegant interior design" class="w-full h-auto" />
+							<img loading="lazy" src="/assets/akademia/интензивно-обучение-за-бръснар-1.webp" alt="Elegant interior design" class="w-full h-auto" />
+							<img loading="lazy" src="/assets/akademia/инструменти-материали-за-курсове-за-мъжко подстригване-1.webp" alt="Elegant interior design" class="w-full h-auto" />
+						</OneImageSlider>
+					</div>
 
 					<div class="w-full md:w-1/2 flex flex-col gap-5">
 						<div>
@@ -1490,7 +1504,7 @@ export default function Page() {
 						<SingleCollapse />
 					</div>
 					<div class="lg:block hidden lg:max-w-40% lg:px-0 md:px-10 px-5 lg:pt-0 md:pt-20 lg:pt-10">
-						<img loading="lazy" class="mx-auto max-w-full" src="/assets/home/бръснари-софия.webp" alt="Бръснари София" />
+						<img loading="lazy" class="mx-auto max-w-full" src="/assets/akademia/често-задавани-въпроси-за-курс-за-бръснарство.webp" alt="Бръснари София" />
 					</div>
 				</div>
 			</section>
