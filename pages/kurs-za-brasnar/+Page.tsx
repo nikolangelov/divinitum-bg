@@ -787,10 +787,12 @@ export default function Page() {
 					<div class="flex flex-justify-center">
 						<div class="left-0 right-0 px-3 my-0 mx-auto absolute top-62% sm:top-69% md-top-69% lg-top-69% xl-top-74% text-center w-full akademiq-img-overlay" style="-webkit-transform: translateY(-50%);">
 							<AnimatedComponent>
-								<h1 class="uppercase c-paper mb-2 important-font-size-43px important-sm:font-size-65px important-md:font-size-80px important-lg:font-size-100px important-xl:font-size-115px important-line-height-62px important-sm:line-height-85px important-md:line-height-100px important-lg:line-height-120px important-xl:line-height-136px">Стани бръснар за 4 седмици</h1>
+								<div class="uppercase c-paper mb-2 important-font-size-43px important-sm:font-size-65px important-md:font-size-80px important-lg:font-size-100px important-xl:font-size-115px important-line-height-62px important-sm:line-height-85px important-md:line-height-100px important-lg:line-height-120px important-xl:line-height-136px text-center font-600" style="font-family: 'Oswald', sans-serif !important;">Стани бръснар за <span class="whitespace-nowrap">4 седмици</span></div>
 							</AnimatedComponent>
-							<AnimatedComponent class="important-delay-300 c-paper text-center mb-0 font-size-4.3 lg-font-size-5 sm-px-0 px-5 leading-6">
-								От курса за бръснар в бръснарницата
+							<AnimatedComponent class="important-delay-300">
+								<h1 class="case-normal c-paper important-tracking-0.04rem important-font-size-17px important-sm:font-size-17px important-md:font-size-19px important-leading-1.8rem important-md:leading-2rem important-my-0 important-font-200" style="font-family: 'SofiaSans', sans-serif !important;">
+									От курса за бръснар в бръснарницата
+								</h1>
 							</AnimatedComponent>
 							<div class="flex flex-justify-center w-full gap-5 lg-gap-15 py-8">
 								<button onClick={openModal} class="cursor-pointer text-center w-42 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
@@ -1123,6 +1125,24 @@ export default function Page() {
 								</AnimatedComponent>
 							</div>
 						</div>
+						<AnimatedComponent class="flex flex-col gap-2 px-5 sm:px-0">
+							<div class="flex flex-col w-full xl:px-50px lg:px-40px sm:px-10 sm:px-10 pb-6 pt-7 md:pb-4 md:pt-6 lg:pb-8 lg:pt-10 mx-auto flex-justify-between flex-items-start b-solid b-2px flex my-8 b-paper bg-#14100c bg-op-60 transition-colors important-transition-duration-300">
+								<div class="flex w-full mx-auto flex-col flex-justify-between flex-items-center">
+									<div class="flex flex-row flex-justify-start items-center">
+										<div class="flex flex-col">
+											<div class="flex items-center">
+												<h3 class="important-my-0 md:px-0 px-0 text-left c-paper important-line-height-7 important-font-size-7 important-md:font-size-9 important-xl:font-size-9 flex sm:flex-row flex-col flex-justify-center flex-items-center uppercase font-500" style="font-family: 'Oswald', sans-serif !important;">
+													Цена на курса: <span class="c-brand ml-2 mt-2 sm:mt-0">2500 лв.</span>
+												</h3>
+											</div>
+										</div>
+									</div>
+									<div class="flex flex-col flex-items-center flex-self-center mt-6 md:mt-8">
+										<button onClick={openModal} class="mr-2 cursor-pointer text-center px-4 lg:px-6 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-5 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
+									</div>
+								</div>
+							</div>
+						</AnimatedComponent>
 					</div>
 				</div>
 			</section>
@@ -1416,11 +1436,6 @@ export default function Page() {
 				</AnimatedComponent>
 			</section>
 
-
-
-
-
-
 			<section class="pb-20 px-4 w-full" style="background-color: #222222; background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center center; background-repeat: no-repeat; background-size: cover;">
 				<H2WithImage class="c-paper" title="Всичко, от което ще имате нужда по време на обучението" />
 				<div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 mx-auto max-w-7xl">
@@ -1446,10 +1461,24 @@ export default function Page() {
 						</div>
 					</div>
 				</div>
-				<p class="c-paper text-center font-500 important-font-size-25px uppercase mt-15" style="font-family: 'Oswald', sans-serif !important;">всичко това за 2500 лв.</p>
-				<div class="flex flex-col flex-items-center flex-self-center mt-6">
-					<button onClick={openModal} class="mr-2 cursor-pointer text-center w-42 lg-w-52 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
-				</div>
+				<AnimatedComponent class="flex flex-col gap-2 md:mt-10">
+					<div class="flex flex-col w-full xl:px-50px lg:px-40px sm:px-10 sm:px-10 pb-6 pt-7 md:pb-4 md:pt-6 lg:pb-8 lg:pt-10 max-w-1200px mx-auto flex-justify-between flex-items-start b-solid b-2px flex my-8 b-paper bg-#14100c bg-op-60 transition-colors important-transition-duration-300">
+						<div class="flex w-full mx-auto flex-col flex-justify-between flex-items-center">
+							<div class="flex flex-row flex-justify-start items-center">
+								<div class="flex flex-col">
+									<div class="flex items-center">
+										<h3 class="important-my-0 md:px-0 px-0 text-left c-paper important-line-height-7 important-font-size-6 important-md:font-size-9 important-xl:font-size-9 flex sm:flex-row flex-col flex-justify-center flex-items-center uppercase font-500" style="font-family: 'Oswald', sans-serif !important;">
+											Получавате всичко това за <span class="c-brand ml-2 mt-2 sm:mt-0">2500 лв.</span>
+										</h3>
+									</div>
+								</div>
+							</div>
+							<div class="flex flex-col flex-items-center flex-self-center mt-6 md:mt-8">
+								<button onClick={openModal} class="mr-2 cursor-pointer text-center px-4 lg:px-6 bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-5 lg-font-size-5 font-500 py-3 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Започнете сега</button>
+							</div>
+						</div>
+					</div>
+				</AnimatedComponent>
 			</section>
 
 			<section class="pb-10">
