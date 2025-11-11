@@ -1,0 +1,32 @@
+<svg id="Layer_1_copy" data-name="Layer 1 copy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 103.15 103.15">
+  <defs>
+    <linearGradient id="linear-gradient" x1="89.64" y1="256.56" x2="40.53" y2="256.8" gradientTransform="matrix(0, 1, 1, 0, -178.04, 13.1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e4a548"/>
+      <stop offset="0.9" stop-color="#e9c941"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="89.7" y1="243.12" x2="67.6" y2="243.23" gradientTransform="matrix(-1, 0, 0, 1, 294.05, -69.2)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="273.59" y1="331.95" x2="224.48" y2="332.19" gradientTransform="matrix(1, 0, 0, -1, -170.96, 356.32)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="273.66" y1="318.51" x2="251.55" y2="318.62" gradientTransform="matrix(0, 1, 1, 0, -76.09, -142.58)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="295" y1="93.99" x2="245.89" y2="94.23" gradientTransform="matrix(0, -1, -1, 0, 118.34, 295.18)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="295.05" y1="80.56" x2="272.95" y2="80.67" gradientTransform="matrix(1, 0, 0, -1, -95.49, 173.57)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-7" x1="117.03" y1="12.59" x2="67.92" y2="12.83" gradientTransform="matrix(-1, 0, 0, 1, 117.09, 65.97)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-8" x1="117.09" y1="-0.84" x2="94.98" y2="-0.73" gradientTransform="matrix(0, -1, -1, 0, 160.64, 252.95)" xlink:href="#linear-gradient"/>
+  </defs>
+  <title>Divinitum logo SQUARE STRAIGHT</title>
+  <g>
+    <polygon points="103 103.15 81 103.12 81.04 76.12 54.04 76.08 54.07 54.08 103.07 54.15 103 103.15" style="fill: url(#linear-gradient)"/>
+    <rect x="204.4" y="162.98" width="22" height="22" transform="translate(-109.27 307.24) rotate(-89.92)" style="fill: url(#linear-gradient-2)"/>
+  </g>
+  <g>
+    <polygon points="103.15 0.15 103.12 22.15 76.12 22.11 76.08 49.11 54.08 49.08 54.15 0.08 103.15 0.15" style="fill: url(#linear-gradient-3)"/>
+    <rect x="231.47" y="109.02" width="22" height="22" transform="translate(-28.28 280.43) rotate(-89.92)" style="fill: url(#linear-gradient-4)"/>
+  </g>
+  <g>
+    <polygon points="0.15 0 22.15 0.03 22.11 27.03 49.11 27.07 49.08 49.08 0.08 49 0.15 0" style="fill: url(#linear-gradient-5)"/>
+    <rect x="177.51" y="81.96" width="22" height="22" transform="translate(-55.1 199.44) rotate(-89.92)" style="fill: url(#linear-gradient-6)"/>
+  </g>
+  <g>
+    <polygon points="0 103 0.03 81 27.03 81.04 27.07 54.04 49.08 54.07 49 103.07 0 103" style="fill: url(#linear-gradient-7)"/>
+    <rect x="150.43" y="135.91" width="22" height="22" transform="translate(-136.09 226.24) rotate(-89.92)" style="fill: url(#linear-gradient-8)"/>
+  </g>
+</svg>

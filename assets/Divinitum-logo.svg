@@ -1,0 +1,35 @@
+<svg id="Layer_1_copy" data-name="Layer 1 copy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1128.73 164.76">
+  <defs>
+    <linearGradient id="linear-gradient" x1="162.89" y1="234.71" x2="113.78" y2="234.95" gradientTransform="matrix(1, 0, 0, -1, -60.39, 286.12)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e4a548"/>
+      <stop offset="0.9" stop-color="#e9c941"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="162.96" y1="221.28" x2="140.85" y2="221.39" gradientTransform="matrix(0, 1, 1, 0, -86.97, -30.67)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="251.75" y1="258.71" x2="202.64" y2="258.95" gradientTransform="matrix(0, -1, -1, 0, 282.85, 279.64)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="251.82" y1="245.26" x2="229.71" y2="245.37" gradientTransform="matrix(1, 0, 0, -1, -160.31, 339.38)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="221.75" y1="115.84" x2="172.64" y2="116.08" gradientTransform="matrix(-1, 0, 0, 1, 222.2, -9.77)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="221.8" y1="102.4" x2="199.69" y2="102.51" gradientTransform="matrix(0, -1, -1, 0, 155.75, 358.73)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-7" x1="138.88" y1="85.85" x2="89.77" y2="86.09" gradientTransform="matrix(0, 1, 1, 0, -7.02, -8.93)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-8" x1="138.94" y1="72.42" x2="116.83" y2="72.53" gradientTransform="matrix(-1, 0, 0, 1, 235.09, 102.68)" xlink:href="#linear-gradient"/>
+  </defs>
+  <title>Divinitum logo black Sanford white without lines</title>
+  <g style="isolation: isolate">
+    <text transform="translate(143.73 130.14) scale(1.01 1)" style="isolation: isolate;font-size: 159.5800018310547px;fill: #fff;font-family: Sanford-Book, Sanford;letter-spacing: 0.05000060511209708em">DIVINITUM</text>
+  </g>
+  <g>
+    <polygon points="103.33 27.31 103.26 49.31 76.26 49.23 76.17 76.22 54.17 76.15 54.33 27.16 103.33 27.31" style="fill: url(#linear-gradient)"/>
+    <rect x="123.36" y="110.23" width="22" height="22" transform="translate(-29.45 199.25) rotate(-89.82)" style="fill: url(#linear-gradient-2)"/>
+  </g>
+  <g>
+    <polygon points="0.33 26.98 22.33 27.05 22.25 54.05 49.24 54.14 49.17 76.14 0.18 75.98 0.33 26.98" style="fill: url(#linear-gradient-3)"/>
+    <rect x="69.45" y="83.06" width="22" height="22" transform="translate(-56.03 118.25) rotate(-89.82)" style="fill: url(#linear-gradient-4)"/>
+  </g>
+  <g>
+    <polygon points="0 129.99 0.07 107.98 27.07 108.07 27.16 81.07 49.16 81.14 49 130.14 0 129.99" style="fill: url(#linear-gradient-5)"/>
+    <rect x="42.29" y="136.98" width="22" height="22" transform="translate(-137.02 144.84) rotate(-89.82)" style="fill: url(#linear-gradient-6)"/>
+  </g>
+  <g>
+    <polygon points="103 130.31 81 130.24 81.08 103.24 54.09 103.15 54.16 81.15 103.15 81.31 103 130.31" style="fill: url(#linear-gradient-7)"/>
+    <rect x="96.2" y="164.15" width="22" height="22" transform="translate(-110.45 225.83) rotate(-89.82)" style="fill: url(#linear-gradient-8)"/>
+  </g>
+</svg>

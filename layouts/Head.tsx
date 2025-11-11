@@ -1,5 +1,5 @@
 // Default <head> (can be overridden by pages)
-import logoUrl from "../assets/TBS_logo_GA.jpeg";
+import logoUrl from "../assets/home2/Divinitum-logo-SQUARE-STRAIGHT.svg";
 
 export default function Head() {
   return (

@@ -1,607 +1,848 @@
 import "solid-slider/slider.css";
-import { ReviewSlider, StarReview } from '../../../components/ReviewSlider';
-import { VideoPlayer } from '../../../components/VideoPlayer';
-import { GallerySlider } from '../../../components/GallerySlider';
-import { BeforeAfterSlider, BeforeAfterSliderContainer } from '../../../components/BeforeAfterSlider';
+import { BasicReview, ImageReview, ImagewTextReview, SliderOfOne } from '../../../components/ReviewSlider';
+import { PuzzleButton, PuzzleButton2 } from "../../../components/PuzzleButton";
+import { Collapse } from "../../../components/FAQ";
 import { AnimatedComponent } from '../../../components/AnimateOnView';
-import { AnimatedComponentSlide } from '../../../components/AnimateOnViewSlide';
-import { H2WithImage } from '../../../components/H2WithImage';
-import MdiBank from '~icons/mdi/bank';
-import MdiPhoneClassic from '~icons/mdi/phone-classic';
-import RiTimerFill from '~icons/ri/timer-fill';
-import { ServiceContaner } from '../../../components/ServiceContainer';
-import { Head } from 'vike-solid/Head';
-import { createEffect } from "solid-js";
+import { RevealWords } from "../../../components/RevealAnimate";
+import { ImageReveal } from "../../../components/ImageRevealAnimate";
+import { ScrollColorText } from "../../../components/ScrollWhiteAnimate";
+import IconoirNumber1SquareSolid from '~icons/iconoir/number-1-square-solid';
+import IconoirNumber2SquareSolid from '~icons/iconoir/number-2-square-solid';
+import IconoirNumber3SquareSolid from '~icons/iconoir/number-3-square-solid';
+import IconoirNumber4SquareSolid from '~icons/iconoir/number-4-square-solid';
+import IconoirNumber5SquareSolid from '~icons/iconoir/number-5-square-solid';
+import { HeroGif } from "../../../components/HeroGif";
+import { createEffect, createSignal } from "solid-js";
+import MdiCloseThick from '~icons/mdi/close-thick';
 
-const JSONLDScript = () => {
-	createEffect(() => {
-		const script = document.createElement("script");
-		script.type = "application/ld+json";
-		script.text = JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": "LocalBusiness",
-			"@id": "https://thebarbershop.bg#localBusiness",
-			"name": "The Barber Shop Sofia",
-			"image": "https://thebarbershop.bg/assets/za-nas/the-barber-shop-sofia-2_result_result.webp",
-			"url": "https://thebarbershop.bg",
-			"telephone": "+359 88 282 0331",
-			"address": {
-				"@type": "PostalAddress",
-				"streetAddress": "ж.к. Изток, ул. Николай Хайтов 2",
-				"addressLocality": "София",
-				"postalCode": "1113",
-				"addressCountry": "BG"
-			},
-			"openingHoursSpecification": {
-				"@type": "OpeningHoursSpecification",
-				"dayOfWeek": [
-					"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-				],
-				"opens": "10:00",
-				"closes": "20:00"
-			},
-			"sameAs": [
-				"https://www.facebook.com/TheBarberShopSofia/?locale=en_GB",
-				"https://www.youtube.com/@TheBarberShop-c7o",
-				"https://www.instagram.com/the.barber.shop.sofia/"
-			],
-			"aggregateRating": {
-				"@type": "AggregateRating",
-				"ratingValue": "4.8",
-				"bestRating": "5",
-				"worstRating": "1",
-				"ratingCount": "610"
-			},
-			"priceRange": "лв.",
-			"areaServed": {
-				"@type": "Place",
-				"name": "София"
-			},
-			"description": "The Barber Shop Sofia е нещо повече от просто бръснарница. Това е Вашето спокойно място, където можете да се откъснете за малко от ежедневието. Да спрете и да си поемете въздух, докато някой се погрижи за отличния Ви външен вид.",
-			"inLanguage": "bg",
-			"review": [
-				{
-					"@type": "Review",
-					"author": {
-						"@type": "Person",
-						"name": "Pavel Petrov"
-					},
-					"datePublished": "2025-05-27",
-					"reviewBody": "Мноооого добро постригване и супер готин персонал!",
-					"reviewRating": {
-						"@type": "Rating",
-						"ratingValue": "5",
-						"bestRating": "5"
-					},
-					"inLanguage": "bg"
-				},
-				{
-					"@type": "Review",
-					"author": {
-						"@type": "Person",
-						"name": "Teodor Stoilov"
-					},
-					"datePublished": "2025-05-27",
-					"reviewBody": "Супер отношение и майсторство от Благо. Силно препоръчвам!",
-					"reviewRating": {
-						"@type": "Rating",
-						"ratingValue": "5",
-						"bestRating": "5"
-					},
-					"inLanguage": "bg"
-				},
-				{
-					"@type": "Review",
-					"author": {
-						"@type": "Person",
-						"name": "Georgi Pleshkov"
-					},
-					"datePublished": "2024-10-27",
-					"reviewBody": "За първи път посещавам The Barber Shop. Крис ме изслуша и след това подстрига с изключително внимание към детайла и моите предпочитания. Атмосферата е много приятна, а за резултатите можете да прецените сами.\n\nС ръка на сърцето мога да кажа, че това е най-добрата бръснарница в София от тези, които съм посетил.",
-					"reviewRating": {
-						"@type": "Rating",
-						"ratingValue": "5",
-						"bestRating": "5"
-					},
-					"inLanguage": "bg"
-				},
-				{
-					"@type": "Review",
-					"author": {
-						"@type": "Person",
-						"name": "Atanas Todorov"
-					},
-					"datePublished": "2025-02-27",
-					"reviewBody": "Страхотен и приветлив салон.\nПълен с професионалисти!\nВинаги си тръгвам доволен и определено препоръчвам Крис!",
-					"reviewRating": {
-						"@type": "Rating",
-						"ratingValue": "5",
-						"bestRating": "5"
-					},
-					"inLanguage": "bg"
-				}
-			]
+function Form() {
+	const [name, setName] = createSignal('');
+	const [phone, setPhone] = createSignal('');
+	const [email, setEmail] = createSignal('');
+	const [websiteLink, setWebsiteLink] = createSignal('');
+	const [text, setText] = createSignal('');
+	const [isSubmitted, setIsSubmitted] = createSignal(false);
+	const [isModalOpen, setIsModalOpen] = createSignal(false);
+	const [isUploading, setIsUploading] = createSignal(false);
+	const [progress, setProgress] = createSignal(0);
+	const [errorMessage, setErrorMessage] = createSignal('');
+
+	const resetForm = () => {
+		setName('');
+		setPhone('');
+		setEmail('');
+		setWebsiteLink('');
+		setText('');
+	};
+
+	async function sendEmail(e: Event) {
+		e.preventDefault();
+		setIsUploading(true);
+		setProgress(0);
+
+		const formData = new FormData();
+		formData.append('name', name());
+		formData.append('phone', phone());
+		formData.append('senderEmail', email());
+		formData.append('websiteLink', websiteLink());
+		formData.append('text', text());
+
+		try {
+			const response = await fetch('/api/send-email', {
+				method: 'POST',
+				body: formData,
+			});
+
+			if (response.ok) {
+				setIsSubmitted(true);
+				setIsModalOpen(true);
+				resetForm();
+			} else {
+				const errorText = await response.text();
+				setErrorMessage(`Failed to send the email. Please try again later. Error details: ${errorText}`);
+			}
+		} catch (error) {
+			console.error('Error:', error);
+			setErrorMessage('An error occurred while sending the email.');
+		} finally {
+			setIsUploading(false);
+			resetForm();
 		}
-		);
-		document.head.appendChild(script);
+	}
+
+	const closeModal = () => {
+		setIsModalOpen(false);
+		setIsSubmitted(false);
+		setErrorMessage('');
+		resetForm();
+	};
+
+	createEffect(() => {
+		if (isModalOpen()) {
+		}
 	});
 
-	return null; // This component doesn't need to render anything visible
-};
-
-export default function Page() {
 	return (
 		<>
-			<Head><meta name="google-site-verification" content="hYXSLNVoAgD8gglbKZvTZycfmFhcTTRZ8CKPADFbRP0" /></Head>
+			{!isSubmitted() && !isModalOpen() && (
+				<div class="bg-white px-8 py-14 border border-black shadow-md">
+					<h2 class="important-text-7 font-bold mb-8 text-black text-center">СВЪРЖЕТЕ СЕ С НАС</h2>
+					<form class="flex flex-col space-y-7 lg:max-w-1200px lg:mx-auto" onSubmit={sendEmail} method="post" enctype="multipart/form-data">
 
-			<JSONLDScript />
-
-			<div style="background-position: center top; background-repeat: no-repeat; background-size: cover; height: auto;"><div style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.55) ), url(/assets/za-nas/the-barber-shop-sofia-2_result_result.webp); background-position: right 55% bottom 100%; background-repeat: no-repeat; background-size: cover;" class="h-105vh home-img" role="img" aria-label="бръснарски салон софия център"></div></div>
-
-			<div class="w-full bg-#212528">
-				<div class="max-w-1240px mx-auto">
-					<div class="flex flex-justify-center">
-						<div class="left-0 right-0 px-3 my-0 mx-auto absolute top-30% lg-top-68% text-center w-full" style="-webkit-transform: translateY(-50%);">
-							<AnimatedComponent>
-								<h1 class="uppercase c-paper mb-6 md:px-0 px-5">The Barber Shop Sofia</h1>
-							</AnimatedComponent>
-							<AnimatedComponent class="important-delay-300 c-paper text-center mb-0 font-size-4.3 lg-font-size-5 sm-px-0 px-12 leading-6">Само за мъже.<br></br>За добре прекарано време или за добре загубено време.</AnimatedComponent>
+						<div>
+							<label class="text-14px font-700 text-black">ВАШИТЕ ИМЕНА</label>
+							<input
+								type="text"
+								value={name()}
+								onInput={(e) => setName(e.currentTarget.value)}
+								required
+								class="w-full b-solid b-1px b-black p-1.5 text-sm mt-2"
+							/>
 						</div>
 
-						<AnimatedComponent class="important-delay-600 float-left md:pr-5px relative text-center lg--top-170px -top-315px w-100% max-w-1240px md:border-2 md:border-solid md:border-[rgba(255,255,255,0.5)]">
-							<div class="md:w-33.333% md:float-left px-2 md:px-0">
-								<div class="float-left w-full py-0px md:py-25px">
-									<div class="block md:hidden mx-auto h-1px w-full bg-gray-200 my-10px op-30%"></div>
-									<div class="flex flex-col flex-justify-center flex-items-center gap-2">
-										<MdiBank class="font-size-5.2 c-brand" />
-										<div class="relative min-h-1px px-8px lg-px-15px c-paper flex text-center flex-justify-center tracking-1.3px font-size-5 lg-font-size-5.2" style="font-family: 'Oswald', sans-serif !important;">
-											София, ул. "Николай Хайтов" 2
-										</div>
-									</div>
-								</div>
-							</div>
+						<div>
+							<label class="text-14px font-700 text-black">ТЕЛЕФОН</label>
+							<input
+								type="tel"
+								value={phone()}
+								onInput={(e) => setPhone(e.currentTarget.value)}
+								required
+								class="w-full b-solid b-1px b-black p-1.5 text-sm mt-2"
+							/>
+						</div>
 
-							<div class="md:w-33.333% md:float-left px-2 md:px-0">
-								<div class="float-left w-full py-0px md:py-25px md:border-[rgba(255,255,255,0.5)] md:border-r-2 md:border-r-[rgba(255,255,255,0.5)] md:border-r-solid md:border-l-solid">
-									<div class="block md:hidden mx-auto h-1px w-full bg-gray-200 my-10px op-30%"></div>
-									<div class="flex flex-col flex-justify-center flex-items-center gap-2">
-										<RiTimerFill class="font-size-5.7 c-brand" />
-										<div class="relative min-h-1px px-8px lg-px-15px c-paper flex text-center flex-justify-center tracking-1.3px font-size-5 lg-font-size-5.2" style="font-family: 'Oswald', sans-serif !important;">
-											Понеделник - Неделя: 10:00 - 20:00
-										</div>
-									</div>
-								</div>
-							</div>
+						<div>
+							<label class="text-14px font-700 text-black">ИМЕЙЛ АДРЕС</label>
+							<input
+								type="email"
+								value={email()}
+								onInput={(e) => setEmail(e.currentTarget.value)}
+								required
+								class="w-full b-solid b-1px b-black p-1.5 text-sm mt-2"
+							/>
+						</div>
 
-							<div class="md:w-33.333% md:float-left px-2 md:px-0">
-								<div class="float-left w-full py-0px md:py-25px">
-									<div class="block md:hidden mx-auto h-1px w-full bg-gray-200 my-10px op-30%"></div>
-									<div class="flex flex-col flex-justify-center flex-items-center gap-2">
-										<MdiPhoneClassic class="font-size-5.7 c-brand" />
-										<div class="relative min-h-1px px-8px lg-px-15px c-paper text-center flex flex-row flex-justify-center font-size-4.3 lg-font-size-4.8" style="font-family: 'Oswald', sans-serif !important;">
-											<div class="c-paper text-center flex flex-justify-center tracking-1.3px font-size-5 lg-font-size-5" style="font-family: 'Oswald', sans-serif !important;">
-												Телефон:&nbsp;
-											</div>
-											<div class="c-paper text-center flex flex-justify-center font-size-4.8 lg-font-size-5.2" style="font-family: 'Oswald', sans-serif !important;">
-												+359 882 820 331
-											</div>
-										</div>
-									</div>
-									<div class="block md:hidden mx-auto h-1px w-full bg-gray-200 my-15px op-30%"></div>
-								</div>
+						<div>
+							<label class="text-14px font-700 text-black">ЛИНК КЪМ САЙТ/СТРАНИЦА НА БИЗНЕСА ВИ</label>
+							<input
+								type="text"
+								value={websiteLink()}
+								onInput={(e) => setWebsiteLink(e.currentTarget.value)}
+								class="w-full b-solid b-1px b-black p-1.5 text-sm mt-2"
+							/>
+						</div>
+
+						<div>
+							<label class="text-14px font-700 text-black">ЗАПИТВАНЕ</label>
+							<textarea
+								value={text()}
+								onChange={(e) => setText(e.target.value)}
+								rows="4"
+								class="w-full b-solid b-1px b-black p-1.5 text-sm mt-2 resize-none"
+							></textarea>
+						</div>
+
+						<button
+							type="submit"
+							class="cursor-pointer bg-brand-second hover:bg-brand-second-hover b-none text-black text-3.8 tracking-0.5px font-bold py-3 px-5 max-w-full mx-auto transition-colors"
+						>
+							ИЗПРАТЕТЕ
+						</button>
+					</form>
+				</div>
+			)}
+
+			{isUploading() && (
+				<div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+					<div class="bg-black py-10 px-6 shadow-lg max-w-full w-96">
+						<h3 class="text-lg font-semibold mb-3">Изпращане...</h3>
+						<div class="w-full bg-gray-200 h-4 overflow-hidden relative">
+							<div
+								class="h-full relative"
+								style={{
+									background: 'linear-gradient(to right, #aeeb56, #87bd40ff)',
+								}}
+							>
+								<div
+									class="progress-bar-contacts-form-span"
+								/>
 							</div>
-						</AnimatedComponent>
+						</div>
 					</div>
 				</div>
-			</div>
+			)}
 
-			<div class="pb-10 lg--mt-30 -mt-80" style="background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
+			{isModalOpen() && (
+				<div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-5 px-5">
+					<div class="bg-black p-8 shadow-lg max-w-md w-full">
+						<h2 class="important-text-5.5 font-bold mb-4 mt-1">Успешно изпращане!</h2>
+						<p class="mb-5 pr-2">Съобщението е изпратено успешно! Ще се свържем с Вас възможно най-скоро.</p>
+						<button
+							onClick={closeModal}
+							class="bg-brand text-white tracking-0.8px px-5 py-3 b-none hover:bg-brand-second-action-hover transition-colors">
+							Затвори
+						</button>
+					</div>
+				</div>
+			)}
 
-				<div class="lg-mt-0 lg-px-30 pb-10 max-w-1600px mx-auto flex lg-flex-row flex-col lg-gap-20">
-					<div class="lg-w-50% px-5">
-						<AnimatedComponent>
-							<img class="pb-2 pt-80px md:pt-120px flex flex-justify-center" src="/assets/heading-ic.png" />
-							<h2 class="c-paper text-left mb-7 pl-0 important-mt-0">Бръснарница от класа</h2>
-						</AnimatedComponent>
-						<AnimatedComponent>
-							<div class="flex flex-col gap-5">
-								<div class="c-paper">
-									<span class="c-brand font-900" style="font-family: 'Roboto'">The Barber Shop Sofia</span> е нещо повече от просто бръснарница. Това е Вашето спокойно място, където можете да се откъснете за малко от ежедневието. Да спрете и да си поемете въздух, докато някой се погрижи за отличния Ви външен вид.
-								</div>
-								<div class="c-paper">
-									Ние сме пионери в американския стил бръснарство в България – при нас ще усетите точно тази комбинация от професионализъм, приятелско отношение и уютна атмосфера. Влизате, сядате и без много обяснения знаете, че ще излезете с перфектна визия.
-								</div>
+			{errorMessage() && (
+				<div class="fixed inset-0 flex items-center justify-center bg-paper-inv bg-opacity-50 z-5 px-5">
+					<div class="bg-black px-8 pb-10 pt-7 shadow-lg max-w-lg w-full relative">
+						<div
+							onClick={closeModal}
+							class="cursor-pointer b-none c-brand hover-c-brand-action transition-colors absolute top-4 right-4">
+							<MdiCloseThick class="w-8 font-size-5" />
+						</div>
+						<h3 class="font-semibold important-mb-6 text-left">Oops...</h3>
+						<div>Изглежда, че нашата контактна форма не работи правилно.</div>
+						<div>Моля, свържете се с нас чрез Viber.</div>
+						<div class="mt-7"><a class="c-paper text-white px-5 py-3 b-none bg-brand hover:bg-brand-hover transition-colors" href="viber://chat?number=%2B359879494220" target="_blank" rel="noopener">Към чат</a></div>
+					</div>
+				</div>
+			)}
+		</>);
+}
+
+function SlidingLogoCarousel(props: { class: string; }) {
+	let containerRef: HTMLDivElement | undefined;
+	let trackRef: HTMLDivElement | undefined;
+
+	const logos = [
+		{
+			src: "https://mlrlmmdl0xru.i.optimole.com/cb:o_7N.287/w:300/h:84/q:mauto/ig:avif/https://renli.bg/wp-content/uploads/2023/04/FullLogo_Transparent_NoBuffer-1.png",
+			height: "h-9 md:h-15"
+		},
+		{
+			src: "https://software-supreme.com/wp-content/uploads/2021/05/172537177894088853.png",
+			height: "h-9 md:h-15"
+		},
+		{
+			src: "https://finecarpetcleaning.co.uk/assets/FCC_2024_png.png",
+			height: "h-14 md:h-20"
+		},
+		{
+			src: "https://dermagold.bg/wp-content/uploads/2023/12/717ab5dce593b8204989ab597017d14b-300x300.webp",
+			height: "h-24 md:h-36"
+		},
+		{
+			src: "https://cherrycarpetcleaning.co.uk/wp-content/uploads/2018/06/cherrycarpetcleaning-logo.png",
+			height: "h-14 md:h-25"
+		},
+		{
+			src: "https://thebarbershop.bg/assets/the-barber-shop-logo1000-x-400-px.webp",
+			height: "h-12 md:h-20"
+		},
+		{
+			src: "https://numberonecarpetcleaning.co.uk/wp-content/uploads/2018/06/NOCC-LOGO-TITLE-BLUE.png",
+			height: "h-12 md:h-18"
+		},
+		{
+			src: "https://sense-center.bg/assets/sense_logo_heart_text.webp",
+			height: "h-12 md:h-18"
+		}
+	];
+
+	return (
+		<section class={props.class}>
+			<div
+				ref={el => (containerRef = el)}
+				class="w-full relative"
+				style={{ filter: 'saturate(100%)' }}
+			>
+				<div class="flex items-center overflow-hidden">
+					<div
+						ref={el => (trackRef = el)}
+						class="flex items-center gap-8 md:gap-12"
+						style={{
+							"animation": `slide 50s linear infinite`,
+							"width": 'fit-content'
+						}}
+					>
+						{logos.map((logo, index) => (
+							<div class="flex-shrink-0 px-4">
+								<img
+									class={`w-auto ${logo.height} object-contain grayscale hover:grayscale-0 transition-all duration-200`}
+									src={logo.src}
+									alt={`Partner logo ${index + 1}`}
+									loading="lazy"
+								/>
 							</div>
-						</AnimatedComponent>
-					</div>
-
-					<div class="lg-w-50% pr-5 pl-5 lg-pl-0">
-						<AnimatedComponent>
-							<img class="pb-2 pt-80px md:pt-120px flex flex-justify-center" src="/assets/heading-ic.png" />
-							<h2 class="c-paper text-left mb-7 pl-0 important-mt-0">Стил и комфорт в едно</h2>
-						</AnimatedComponent>
-						<AnimatedComponent>
-							<ul class="c-paper ml--5 mt-0">
-								<li>Безплатно паркиране</li>
-								<li>Топло посрещане с безплатно питие</li>
-								<li>Приятна и уютна атмосфера</li>
-								<li>Усещане за принадлежност към мъжка общност</li>
-								<li>Съчетание на традиционни техники с модерни подходи</li>
-							</ul>
-						</AnimatedComponent>
+						))}
+						{logos.map((logo, index) => (
+							<div class="flex-shrink-0 px-4">
+								<img
+									class={`w-auto ${logo.height} object-contain grayscale hover:grayscale-0 transition-all duration-200`}
+									src={logo.src}
+									alt={`Partner logo ${index + 1} duplicate`}
+									loading="lazy"
+								/>
+							</div>
+						))}
 					</div>
 				</div>
-			</div>
 
-			<div class="pb-20 px-4 w-full">
-				<AnimatedComponentSlide>
-					<H2WithImage title="Нашите услуги" />
-				</AnimatedComponentSlide>
-				<div class="flex flex-wrap flex-justify-center lg-gap-15 gap-15">
-
-					<ServiceContaner
-						img="/assets/home/stylish-buzz-cuts.webp"
-						alt="stylish buzz cuts"
-						title="Мъжко подстригване"
-						href="/uslugi/mazhko-podstrigvane"
-					/>
-					<ServiceContaner
-						img="/assets/home/оформяне-на-брада.webp"
-						alt="оформяне на брада"
-						title="Оформяне на брада"
-						href="/uslugi/oformiane-na-brada"
-					/>
-					<ServiceContaner
-						img="/assets/home/buzz-cut-and-beard.webp"
-						alt="buzz cut and beard"
-						title="Подстригване и оформяне на брада"
-						href="/uslugi/mazhko-podstrigvane-i-oformiane-na-brada"
-					/>
-					<ServiceContaner
-						img="/assets/home/мокро-бръснене.webp"
-						alt="мокро бръснене"
-						title="Класическо мокро бръснене"
-						href="/uslugi/klasichesko-mokro-brasnene"
-					/>
-					<ServiceContaner
-						img="/assets/home/барбър-шоп-тониране-на-сиви-коси.webp"
-						alt="тониране на сиви коси"
-						title="Тониране на сиви коси"
-						href="/uslugi/klasichesko-mokro-brasnene"
-					/>
-					<ServiceContaner
-						img="/assets/home/бръснене-на-глава-с-бръснач-в-бръснарница.webp"
-						alt="бръснене на глава с бръснач"
-						title="Бръснене на глава с бръснач"
-						href="/uslugi/brasnene-na-glava-s-brasnach"
-					/>
-					<ServiceContaner
-						img="/assets/home/детско-подстригване.webp"
-						alt="детско подстригване"
-						title="Детско подстригване"
-						href="/uslugi/detsko-podstrigvane-momche"
-					/>
-					<ServiceContaner
-						img="/assets/home/подстригване-на-баща-и-син.webp"
-						alt="подстригване на баща и син"
-						title="Подстригване на баща и син"
-						href="/uslugi/podstrigvane-na-bashta-i-sin"
-					/>
+				<div class="flex items-center overflow-hidden">
+					<div
+						ref={el => (trackRef = el)}
+						class="flex items-center gap-8 md:gap-12"
+						style={{
+							"animation": `slide 50s linear infinite reverse`,
+							"width": 'fit-content'
+						}}
+					>
+						{logos.map((logo, index) => (
+							<div class="flex-shrink-0 px-4">
+								<img
+									class={`w-auto ${logo.height} object-contain grayscale hover:grayscale-0 transition-all duration-200`}
+									src={logo.src}
+									alt={`Partner logo ${index + 1}`}
+									loading="lazy"
+								/>
+							</div>
+						))}
+						{logos.map((logo, index) => (
+							<div class="flex-shrink-0 px-4">
+								<img
+									class={`w-auto ${logo.height} object-contain grayscale hover:grayscale-0 transition-all duration-200`}
+									src={logo.src}
+									alt={`Partner logo ${index + 1} duplicate`}
+									loading="lazy"
+								/>
+							</div>
+						))}
+					</div>
 				</div>
-			</div>
 
-			<div style="background-image: url(/assets/thebarbershop-dark-bg.webp); background-position: center; background-repeat: no-repeat; background-size: cover;">
-				<div class="pb-20">
-					<AnimatedComponent>
-						<H2WithImage class="c-paper" title="Стилът на The Barber Shop" />
-					</AnimatedComponent>
-					<AnimatedComponent>
-						<VideoPlayer src='/assets/Barbershop-video-home.mp4' />
-					</AnimatedComponent>
-				</div>
+				<div class="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-black to-transparent pointer-events-none z-10"></div>
+				<div class="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-black to-transparent pointer-events-none z-10"></div>
 			</div>
+			<style>{`
+			@keyframes slide {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(-50%);
+			}
+			}
+		`}</style>
+		</section>
+	);
+}
 
-			<section class="pb-20">
-				<AnimatedComponent>
-					<H2WithImage title="Как го правим" />
-				</AnimatedComponent>
-				<GallerySlider imgs={[
-					{ src: "/assets/home/барбер-шоп-софия.webp", alt: "професионално мъжко подстригване в бръснарница в барбер шоп в София" },
-					{ src: "/assets/home/barber-shops-sofia.webp", alt: "професионално измиване на глава в barber shops Sofia" },
-					{ src: "/assets/home/подстригване-мъжко.webp", alt: "Подстригване мъжко" },
-					{ src: "/assets/home/buzz-cut.webp", alt: "buzz cut" },
-					{ src: "/assets/home/бръснарница-софия.webp", alt: "професионално мъжко подстригване в бръснарница в София" },
-					{ src: "/assets/home/барбер-шоп.webp", alt: "оформяне на брада в барбер шоп" },
-					{ src: "/assets/home/бръснарница-студентски-град.webp", alt: "професионално мъжко подстригване в бръснарница в студентски-град" },
-					{ src: "/assets/home/бръснарница.webp", alt: "мъжко подстригване в бръснарница" },
-					{ src: "/assets/home/барбершоп.webp", alt: "снимка от барбершоп процеса на работа" },
-					{ src: "/assets/home/барбершоп-софия-1.webp", alt: "гореща кърпа в барбершоп в София" },
-					{ src: "/assets/home/бръснарници-в-софия.webp", alt: "измиване на глава в бръснарница в София" },
-					{ src: "/assets/home/мъжко-подстригване.webp", alt: "мъжко подстригване" },
-					{ src: "/assets/home/мъжко-подстригване-софия.webp", alt: "мъжко подстригване София" },
-					{ src: "/assets/home/мъжко-подстригване-софия-център.webp", alt: "мъжко подстригване в София център" },
-					{ src: "/assets/home/мъжко-подстригване-студентски-град.webp", alt: "мъжко подстригване студентски град" },
-					{ src: "/assets/home/подстригване-с-машинка-мъжко.webp", alt: "подстригване с машинка мъжко" },
-				]}
+function SingleCollapse() {
+	return (
+		<>
+			<div class="flex flex-col gap-4 pb-2 mx-auto lg:max-w-900px xl:max-w-1100px">
+				<Collapse img="/assets/home2/divinitum-icon-1.webp" title="Изработка на уебсайт" desc="" >
+					<div class="important-font-size-16px">
+						Извършваме цялостна изработка на уебсайтове – от планирането и дизайна до програмирането и финалната реализация. Работим с платформи, които позволяват пълна персонализация според нуждите на вашия бизнес. Предлагаме и фокусирани лендинг страници, които представят вашия бизнес по най-добрия начин. Ако вече имате сайт, можем да направим пълен редизайн, който ще му вдъхне нов живот и ще подобри потребителското изживяване.
+					</div>
+				</Collapse>
+
+				<Collapse img="/assets/home2/divinitum-icon-2.webp" title="Създаване и обработка на съдържание" desc="" >
+					<div class="important-font-size-16px">
+						Създаваме съдържание, което комуникира ясно и убедително посланието с Вашата аудитория. Пишем текстове за уебсайтове, блог статии, продуктови описания и др маркетингови материали. Изготвяме и визуално съдържание като графики, постове и видеа, които подпомагат посланието Ви. Също така ако имате съществуващо съдържание, можем да го преработим и оптимизираме, за да постига по-добри резултати.
+					</div>
+				</Collapse>
+
+				<Collapse img="/assets/home2/divinitum-icon-3.webp" title="SEO оптимизация" desc="" >
+					<div class="important-font-size-16px">
+						Оптимизираме уебсайтове така, че Google да ги обича, а клиентите да ги намират лесно. Анализираме ключови думи, подобряваме структурата, скоростта и съдържанието, за да изведем Вашият сайт на по-високи позиции. Целта ни е проста. Искаме да постигнем повече видимост, повече трафик и повече реални клиенти.
+					</div>
+				</Collapse>
+
+				<Collapse img="/assets/home2/divinitum-icon-4.webp" title="CRO оптимизация" desc="" >
+					<div class="important-font-size-16px">
+						Анализираме поведението на потребителите на Вашия сайт и идентифицираме къде губите потенциални клиенти. Оптимизираме всеки елемент – заглавия, бутони, контактни форми и навигация, за да увеличим процента на конверсия. Провеждаме A/B тестове, изследваме данните и внедряваме промени, които превръщат посетителите във клиенти. Ако имате трафик, но не виждате продажби, ние ще открием защо и ще го коригираме.
+					</div>
+				</Collapse>
+
+				<Collapse img="/assets/home2/divinitum-icon-1.webp" title="Управление на профили в социалните мрежи" desc="" >
+					<div class="important-font-size-16px">
+						Поемаме цялостното управление на Вашите профили в социалните мрежи. Това включва планиране на съдържание, график за публикуване, комуникация с аудиторията, анализ на резултатите и др. Създаваме постове, които ангажират, изграждат общност и засилват Вашия бранд. Работим с най-популярните платформи, като адаптираме стратегията според спецификата на всяка.
+					</div>
+				</Collapse>
+
+				<Collapse img="/assets/home2/divinitum-icon-2.webp" title="Рекламни кампании в социалните мрежи" desc="" >
+					<div class="important-font-size-16px">
+						Създаваме и управляваме рекламни кампании в социалните мрежи, които достигат до точната аудитория и генерират реални резултати. Създаваме послания, които привличат вниманието и продават. Ако сте провеждали кампании с разочароващи резултати, ние ще анализираме проблема, ще оптимизираме стратегията така че да работи по-ефективно.
+					</div>
+				</Collapse>
+
+				<Collapse img="/assets/home2/divinitum-icon-3.webp" title="Реклами в GOOGLE" desc="" >
+					<div class="important-font-size-16px">
+						Изграждаме печеливши рекламни кампании в Google, които привличат качествени клиенти и увеличават продажбите. Работим с внимателно подбрани ключови думи, ясни послания и постоянна оптимизация, за да осигурим максимална възвръщаемост на Вашата инвестиция и измерими резултати, които носят реална полза на бизнеса Ви.
+					</div>
+				</Collapse>
+
+				<Collapse img="/assets/home2/divinitum-icon-5.webp" title="Имейл маркетинг" desc="" >
+					<div class="important-font-size-16px">
+						Изграждаме и управляваме имейл кампании, които поддържат връзка с Вашата аудитория и стимулират продажбите. Създаваме персонализирани имейли, насочени към таргет аудиторията, според конкретните цели на Вашата кампания. Създаваме база от абонати, която да превърнем в постоянен източник на приходи чрез редовна и ангажираща комуникация.
+					</div>
+				</Collapse>
+			</div>
+		</>
+	);
+}
+
+export default function Page() {
+
+	return (
+		<>
+			<div class="relative w-full">
+				<HeroGif
+					gifPreview="/assets/home2/1-Hero-Section2.mp4"
+					gifPreviewMobile="/assets/home2/1_Hero_Section.mp4"
 				/>
 
-				<div class="lg-mt-0 lg-px-30 xl-px-58 py-15 lg-py-25 max-w-1600px mx-auto flex lg-flex-row flex-col gap-8 lg-gap-20">
-					<AnimatedComponentSlide class="px-5">
-						<div class="flex flex-col gap-5">
-							<div>
-								В The Barber Shop ще получите повече от просто подстригване или оформяне на брада – ще се насладите на автентично мъжко изживяване. В бръснарницата Ви очаква уютна и приятелска атмосфера, която ще Ви накара да забравите напрежението и стреса.
-							</div>
-							<div>
-								В нашия барбър шоп ще получите персонално отношение и грижа, за да опознаем Вашия индивидуален стил и заедно да създадем визия, която Ви кара да изглеждате и да се чувствате като най-добрата версия на себе си. Защото всеки уважаващ себе си мъж знае, че добрият външен вид изготвен в барбър шоп подчертава увереността и оставя трайно впечатление.
-							</div>
-						</div>
-					</AnimatedComponentSlide>
-				</div>
+				<div class="w-full bg-#000000">
+					<div class="max-w-1240px mx-auto">
+						<div class="flex flex-justify-center">
+							<div class="flex flex-col justify-center items-center left-0 right-0 px-3 my-0 mx-auto absolute top-50% lg-top-53% text-center w-full mt-25 lg:mt-10" style="-webkit-transform: translateY(-50%);">
 
-				<BeforeAfterSlider
-					services={[
-						{ title: "Мъжко подстригване" },
-						{ title: "Бръснене на глава с бръснач" },
-						{ title: "Мъжко подстригване" },
-						{ title: "Бръснене на глава с бръснач" },
-						{ title: "Мъжко подстригване" },
-						{ title: "Бръснене на глава с бръснач" },
-						{ title: "Мъжко подстригване" },
-						{ title: "Бръснене на глава с бръснач" },
-					]}>
-					<BeforeAfterSliderContainer
-						altBefore="преди снимка на men's haircut and beard"
-						altAfter="след снимка на men's haircut and beard"
-						before="/assets/otzivi/men_s-haircut-and-beard-before.webp"
-						after="/assets/otzivi/men_s-haircut-and-beard-after.webp"
-					/>
-					<BeforeAfterSliderContainer
-						altBefore="преди снимка на подстригване и оформяне на брада"
-						altAfter="след снимка на подстригване и оформяне на брада"
-						before="/assets/otzivi/мъжко-подстригване-и-оформяне-на-брада-преди.webp"
-						after="/assets/otzivi/мъжко-подстригване-и-оформяне-на-брада-след.webp"
-					/>
-					<BeforeAfterSliderContainer
-						altBefore="преди снимка на мокро бръснене"
-						altAfter="след снимка на мокро бръснене"
-						before="/assets/otzivi/мокро-бръснене-преди.webp"
-						after="/assets/otzivi/мокро-бръснене-след.webp"
-					/>
-					<BeforeAfterSliderContainer
-						altBefore="преди снимка на мъжко подстригване софия"
-						altAfter="след снимка на мъжко подстригване софия"
-						before="/assets/otzivi/мъжко-подстригване-софия-преди.webp"
-						after="/assets/otzivi/мъжко-подстригване-софия-след.webp"
-					/>
-					<BeforeAfterSliderContainer
-						altBefore="преди снимка на детско подстригване момче"
-						altAfter="след снимка на детско подстригване момче"
-						before="/assets/otzivi/детско-подстригване-момче-преди (1).webp"
-						after="/assets/otzivi/детско-подстригване-момче-след (1).webp"
-					/>
-					<BeforeAfterSliderContainer
-						altBefore="преди снимка на детско подстригване"
-						altAfter="след снимка на детско подстригване"
-						before="/assets/otzivi/детско-подстригване-преди.webp"
-						after="/assets/otzivi/детско-подстригване-след.webp"
-					/>
-					<BeforeAfterSliderContainer
-						altBefore="преди снимка на мъжко подстригване"
-						altAfter="след снимка на мъжко подстригване"
-						before="/assets/otzivi/мъжко-подстригване-преди.webp"
-						after="/assets/otzivi/мъжко-подстригване-след.webp"
-					/>
-					<BeforeAfterSliderContainer
-						altBefore="преди снимка на buzz cut styles"
-						altAfter="след снимка на buzz cut styles"
-						before="/assets/otzivi/buzz-cut-and-beard-before.webp"
-						after="/assets/otzivi/buzz-cut-and-beard-after.webp"
-					/>
-				</BeforeAfterSlider>
-			</section>
+								<RevealWords
+									as="h1"
+									class="mx--15px c-paper mb-2.5 md:mb-7 md:px-10 xl:px-55"
+								>
+									ДИГИТАЛЕН МАРКЕТИНГ, КОЙТО ЗАЩИТАВА ВАШИЯ ИНТЕРЕС
+								</RevealWords>
 
-			<section style="background-color: #222222; background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8) ), url(/assets/brown-background-image.webp); background-position: center center; background-repeat: no-repeat; background-size: cover;">
-				<div class="flex flex-col pb-20">
-					<div class="flex flex-col flex-items-center">
-						<AnimatedComponent>
-							<H2WithImage class="c-paper" title="Какво казват нашите клиенти за нас" />
-						</AnimatedComponent>
-					</div>
-					<div>
-						<AnimatedComponent>
-							<ReviewSlider
-								reviews={[
-									{ name: "Iliyan Asenov" },
-									{ name: "Georgi Pleshkov" },
-									{ name: "Ivaylo Hristov (Ivo)" },
-									{ name: "Asen Markov" },
-									{ name: "Dimitar Stoyanov" },
-									{ name: "Borislav Bankov" },
-									{ name: "Hristo Velev" },
-									{ name: "Asen Georgiev" },
-									{ name: "Nikola Despotoski" },
-									{ name: "Martin Dimitrov" },
-								]}>
-								<StarReview
-									src="/assets/GoogleLogoPNGImage.png"
-									reviewText="Страхотна бръснарница. След няколко погрешни опита намерих точното място. Вниманието към клиента е на високо ниво. От вратата те посрещат с нещо за пиене кафе, вода, безалкохолно или Bullet бърбън. Вайба е чудесен, музиката не е прекалено силна или натрапваща. Всичко е уникално. Отидохме с няколко момчета и всички останахме очаровани. Крис беше нашия бръснар и силно го препоръчвам в момента и на други приятели."
-									name="Iliyan Asenov"
-									date="Януари 2024"
-									stars={5}
-									hrefGoogleReview="https://maps.app.goo.gl/sye2Me5vsxUajS8a6"
-								/>
-								<StarReview
-									src="/assets/GoogleLogoPNGImage.png"
-									reviewText={
-										<>
-											За първи път посещавам The Barber Shop. Крис ме изслуша и след това подстрига с изключително внимание към детайла и моите предпочитания. Атмосферата е много приятна, а за резултатите можете да прецените сами.<br />
-											С ръка на сърцето мога да кажа, че това е най-добрата бръснарница в София от тези, които съм посетил.
-										</>
-									}
-									name="Georgi Pleshkov"
-									date="Октомври 2024"
-									stars={5}
-									hrefGoogleReview="https://maps.app.goo.gl/pgSmLpppJkuxo1SH6"
-								/>
-								<StarReview
-									src="/assets/GoogleLogoPNGImage.png"
-									reviewText="Много съм доволен. Луксозен салон. Общителни и приятни млади хора работят там. И правят отлични прически. Аз съм много доволен."
-									name="Ivaylo Hristov (Ivo)"
-									date="Септември 2019"
-									stars={5}
-									hrefGoogleReview="https://maps.app.goo.gl/JzPSXpCBG1jX8LiV8"
-								/>
-								<StarReview
-									src="/assets/GoogleLogoPNGImage.png"
-									reviewText="Перфектното място за мъжки отдих. Посрещнаха ме с вежливо обслужване и приятелска атмосфера. Работата им е на много високо ниво с внимание към детайла. Преопоръчвам!"
-									name="Asen Markov"
-									date="Март 2024"
-									stars={5}
-									hrefGoogleReview="https://maps.app.goo.gl/R7ZJQMcubmDh82W8A"
-								/>
-								<StarReview
-									src="/assets/GoogleLogoPNGImage.png"
-									reviewText="Чудесна обстановка. Млади момчета със завидни умения. Горещо препоръчвам !"
-									name="Dimitar Stoyanov"
-									date="Ноември 2021"
-									stars={5}
-									hrefGoogleReview="https://maps.app.goo.gl/5NwhV395TLrdHThT6"
-								/>
-								<StarReview
-									src="/assets/GoogleLogoPNGImage.png"
-									reviewText="Перфектната бръснарница! Много високо ниво на обслужване в мега приятна атмосфера."
-									name="Borislav Bankov"
-									date="Март 2024"
-									stars={5}
-									hrefGoogleReview="https://maps.app.goo.gl/tCXYMiVnq4HbstkLA"
-								/>
-								<StarReview
-									src="/assets/GoogleLogoPNGImage.png"
-									reviewText="The guys are pros! Good music, good atmosphere and offer a free drink. They also have free parking but is limited to number of spaces, so better call them in advance if you are planning to visit with a car."
-									name="Hristo Velev"
-									date="Март 2024"
-									stars={5}
-									hrefGoogleReview="https://maps.app.goo.gl/hTviWSgBNaeRdZ7u5"
-								/>
-								<StarReview
-									src="/assets/GoogleLogoPNGImage.png"
-									reviewText="Absolutely fantastic service. I have long, thick hair but that didn’t stop the barber. Couldn’t recommend The Barber Shop more!"
-									name="Asen Georgiev"
-									date="Март 2024"
-									stars={5}
-									hrefGoogleReview="https://maps.app.goo.gl/3RGkmd9NLraJbQRcA"
-								/>
-								<StarReview
-									src="/assets/GoogleLogoPNGImage.png"
-									reviewText="Really detailed and organized crew. Booked appointment thru maps and they responded swiftly. Upon arrival I was offeres whiskey, beer amd other beverages, unfortunately I refused alchol because I was driving. I totally recommend this barber shop."
-									name="Nikola Despotoski"
-									date="Януари 2021"
-									stars={5}
-									hrefGoogleReview="https://maps.app.goo.gl/M3mBfJMQEj3whcG37"
-								/>
-								<StarReview
-									src="/assets/GoogleLogoPNGImage.png"
-									reviewText={
-										<>
-											Easy to reserve via their website and platform.<br />
-											The most precise and highest caliber of professional service there is in Sofia!<br />
-											Consistent quality and attention to every detail along with customer-oriented tailored services and experience!<br />
-											Highly recommended!<br />
-											Keep up the awesome work, team!
-										</>
-									}
-									name="Martin Dimitrov"
-									date="Април 2024"
-									stars={5}
-									hrefGoogleReview="https://maps.app.goo.gl/RTMRbg9PKtp9Ldvt7"
-								/>
-							</ReviewSlider>
-						</AnimatedComponent>
-					</div>
-					<AnimatedComponent>
-						<div class="flex flex-col flex-items-center">
-							<a href="https://www.google.com/maps/place/The+Barber+Shop+Sofia/@42.6709892,23.3495634,17z/data=!4m14!1m5!8m4!1e1!2s116520566335663544524!3m1!1e1!3m7!1s0x40aa85cc743ddfd7:0xfdafbdb8cd44f23!8m2!3d42.6709899!4d23.3521502!9m1!1b1!16s%2Fg%2F11g9n1jlq8?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDQyMi4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="bg-brand-compliment c-paper b-solid b-2px b-brand-compliment uppercase font-size-4 font-500 px-7 py-2 hover-c-paper-inv transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Вижте повече</a>
-						</div>
-					</AnimatedComponent>
-				</div>
-			</section>
-
-			<section>
-				<div class="lg-mx-30 mx-auto">
-					<div class="flex md-flex flex-col flex-justify-center max-w-1440px lg-px-0 mx-auto lg:pb-10">
-						<AnimatedComponent>
-							<H2WithImage title="Предимствата на бръснарница The Barber Shop Sofia" />
-						</AnimatedComponent>
-						<div class="px-5 lg-px-0 flex lg-flex-row flex-col lg-gap-10">
-							<div class="lg-w-33.33% flex flex-col">
-								<AnimatedComponent>
-									<h3 class="text-left mt-0 c-paper-inv op-70%">Опит, на който можете да разчитате</h3>
-									<div class="pb-10">Зад всяка супер визия в <span class="font-600 c-brand-compliment">The Barber Shop Sofia</span> стои <span class="font-600">екип от изключителни професионалисти.</span> Всеки един от нашите топ бръснари в София е преминал задълбочен курс по бръснарство в The Barber Shop Academy. По време на интензивното обучение усвояват както <span class="font-600">класически бръснарски техники,</span> така и <span class="font-600">най-новите тенденции в подстригването.</span> След многократни упражнения и наблюдение от преподавателя най-добрите бръснари биват поканени да работят при нас.</div>
+								<AnimatedComponent class="important-delay-300 c-paper text-center mb-10 font-size-16px xl:font-size-6 important-tracking-1.2px px-15 sm:px-0 mt-2 md:mt-0 md:px-12">
+									Ние сме дигиталният партньор, който играе от Вашия отбор.
 								</AnimatedComponent>
-							</div>
-							<div class="lg-w-33.33% flex flex-col">
-								<AnimatedComponent>
-									<h3 class="text-left mt-6 lg-mt-0 c-paper-inv op-70%">Всеки детайл има значение</h3>
-									<div class="pb-10">Качеството е основен приоритет в работата на нашата <span class="font-600 c-brand-compliment">бръснарница.</span> За целта използваме професионални бръснарски инструменти от световно утвърдени марки като <span class="font-600">Wahl, Andis, BabylissPRO, Mühle и Thiers Issard.</span> Всяка ножица и машинка е подбрана, заради нейната прецизна работа и удобство при различни техники на подстригване и бръснене. Благодарение на това можем да постигнем <span class="font-600">отличен краен резултат,</span> независимо от предпочитания стил.</div>
-								</AnimatedComponent>
-							</div>
-							<div class="lg-w-33.33% flex flex-col">
-								<AnimatedComponent>
-									<h3 class="text-left mt-6 lg-mt-0 c-paper-inv op-70%">Първокласна грижа</h3>
-									<div class="pb-10">В <span class="font-600 c-brand-compliment">The Barber Shop Sofia</span> използваме професионални продукти за мъжка грижа от марки като <span class="font-600">Depot, American Crew и Lavish.</span> Асортиментът обхваща нуждите на различни типове кожа и коса и включва шампоани, балсами и стилизиращи продукти. В бръснарницата разполагаме с всичко необходимо за оформяне на желаната визия, както при работа с професионалист, така и за грижа у дома. Всеки продукт е специално подбран, за да осигури подходяща поддръжка за различните стилове и дължини на косата.</div>
+
+								<AnimatedComponent class="important-delay-700 mt-30 float-left md:pr-5px relative text-center max-w-1240px">
+									<div class="flex md:flex-row flex-col justify-center items-center gap-3">
+										<PuzzleButton
+											href="#contact-form"
+											text="Свържете се с нас"
+										/>
+										<PuzzleButton2
+											href="#about-us"
+											text="Повече за нас"
+										/>
+									</div>
 								</AnimatedComponent>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="pb-20">
-					<GallerySlider imgs={[
-						{ src: "/assets/home/инструменти-за-buzz-cut-hairstyles.webp", alt: "инструменти за buzz cut hairstyles" },
-						{ src: "/assets/home/инструменти-за-бръснарница-софия.webp", alt: "мъжко подстригване в София център" },
-						{ src: "/assets/home/професионална-козметика-от-barber-shops-sofia.webp", alt: "професионална козметика от barber shops Sofia" },
-						{ src: "/assets/home/инструменти-за-barber-barber-shop-sofia.webp", alt: "инструменти за barber barber shop Sofia" },
-						{ src: "/assets/home/инструменти-за-buzz-cut.webp", alt: "инструменти за buzz cut" },
-						{ src: "/assets/home/козметиката-в-бръснарница-софия.webp", alt: "Kозметиката в бръснарница София" },
-						{ src: "/assets/home/инструменти-за-buzz-cut-fade.webp", alt: "инструменти за buzz cut fade" },
-						{ src: "/assets/home/козметиката-на-barber-shops-sofia.webp", alt: "козметиката на barber shops Sofia" },
-					]}
-					/>
+			</div>
+
+			<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between pt-60 md:pt-50">
+				<div class="mx-30px lg:mx-20 pr-5">
+					<ScrollColorText class="w-full lg:max-w-1200px">
+						<h2 class="important-mb-6">КАКВО МОЖЕМ ДА <span class="c-brand-compl">НАПРАВИМ ЗА ВАС</span></h2>
+
+						<p>Вашият бизнес заслужава да бъде видян и да расте. Ние сме тук, за да помогнем на бизнеси като Вашия да се откроят в дигиталния свят, като вдъхнем живот на Вашия бранд с цялостни дигитални решения. При работата с нас, Вие печелите партньор, който работи за Вашия успех: ние поемаме грижата за цялостната Ви дигитална стратегия. Комбинираме креативност, модерни технологии и стратегическо мислене, прилагайки иновативни решения за максимална ефективност, за да постигнете повече — с по-малко усилия.</p>
+					</ScrollColorText>
 				</div>
-			</section>
 
-			{/* <div class="lg-px-30 pt-10 pb-20 px-4 w-full flex flex-col flex-justify-center">
-				<AnimatedComponentSlide>
-					<h2 class="important-mb-0">Нашият магазин</h2>
-					<img class="mx-auto pt-2 pb-15 flex flex-justify-center" src="/assets/heading-ic.png" />
-				</AnimatedComponentSlide>
+				<div class="relative mt-20 overflow-hidden">
+					{/* <div class="hidden lg:block">
+						<ImageReveal img="/assets/home2/divinitum-2.webp" />
+					</div> */}
 
-				<AnimatedComponent>
-					<OurShop>
-						<ElementInOurShop
-							img="/assets/home/козметиката-в-бръснарница-софия.webp"
-							alt="Kозметиката в бръснарница София"
-							href="/"
-							title="Козметика"
-						/>
-						<ElementInOurShop
-							img="/assets/home/козметиката-на-barber-shops-sofia.webp"
-							alt="козметиката на barber shops Sofia"
-							href="/"
-							title="Козметика"
-						/>
-						<ElementInOurShop
-							img="/assets/home/професионална-козметика-от-barber-shops-sofia.webp"
-							alt="професионална козметика от barber shops Sofia"
-							href="/"
-							title="Козметика"
-						/>
-					</OurShop>
+					<img
+						src="/assets/home2/divinitum-2.webp"
+						alt=""
+						class="w-full block"
+					/>
+
+					<div
+						class="absolute top-0 left-0 w-full h-[15vh] 
+						bg-gradient-to-b from-black via-black/30 to-transparent
+						pointer-events-none"
+					></div>
+
+					<div
+						class="absolute bottom-0 left-0 w-full h-[15vh] 
+						bg-gradient-to-t from-black via-black/50 to-transparent
+						pointer-events-none"
+					></div>
+				</div>
+			</div>
+
+			<section class="pt-233px pb-144px">
+				{/* <RevealWords
+					as="h2"
+					class="mx-10px"
+				>
+					<h2>Оставете дигиталния маркетинг на нас, <span class="c-brand-compl">а вие се фокусирайте върху бизнеса си</span></h2>
+				</RevealWords> */}
+
+				<h2>
+					ОСТАВЕТЕ СЛОЖНОТО НА НАС И ГЛЕДАЙТЕ <span class="c-brand-compl">КАК БИЗНЕСЪТ ВИ РАСТЕ.</span>
+				</h2>
+
+				<AnimatedComponent class="">
+					<img loading="lazy" class="w-120% md:w-105% mx--10 lg:mx--13 xl:mt--3" src="/assets/home/glass-image.webp" />
 				</AnimatedComponent>
+				<AnimatedComponent class="flex flex-col mr-0 sm:mt--15 md:mt--15 lg:mt--15 xl:mt--35 lg:ml-10 mx-10px max-w-800px text-glass-squares">
+					<p>Фокусирайте се върху управлението на бизнеса си, а ние ще се погрижим за растежа му онлайн. Взимаме предвид всеки детайл, за да построим стабилни осниови на Вашето онлайн присъствие и да го превърнем в генератор на реални приходи.</p>
+				</AnimatedComponent>
+			</section>
 
-				<AnimatedComponentSlide class="mx-auto pt-15">
-					<a href="/" class="bg-brand c-paper-inv b-solid b-2px b-brand uppercase font-size-4 font-500 px-7 py-2 hover-c-paper transition-colors" style="font-family: 'Oswald', sans-serif !important; letter-spacing: 1px;">Към магазин</a>
-				</AnimatedComponentSlide>
-			</div> */}
+			<section class="mx-40px lg:mx-20 lg:mt-60">
+				<h3 class="c-brand-second">стратегически фокус:</h3>
+				<AnimatedComponent>
+					<div class="lg:my-15 xl:px-30 pb-10 max-w-1400px mx-auto flex lg-flex-row flex-col gap-6 lg:gap-20 justify-between items-center">
+						<div class="lg-w-50% flex-self-start">
+							<div class="flex flex-col justify-center items-start gap-5 c-paper">
+								<div class="flex justify-center items-start lg:items-center gap-10px c-paper">
+									<img src="/assets/home2/Divinitum-logo-SQUARE-STRAIGHT.svg" class="w-6.5 mt-2 lg:m-0 mx-auto" /><div class="c-paper ml-3 uppercase font-size-17px leading-7 font-600">усилия в правилната посока</div><br></br>
+								</div>
+								<div class="flex items-start lg:items-center gap-10px c-paper">
+									<img src="/assets/home2/Divinitum-logo-SQUARE-STRAIGHT.svg" class="w-6.5 mt-2 lg:m-0 mx-auto" /><div class="c-paper ml-3 uppercase font-size-17px leading-7 font-600">утвърждаване на силно онлайн присъствие</div><br></br>
+								</div>
+							</div>
+						</div>
+
+						<div class="lg-w-50% lg-pl-0 flex-self-start">
+							<div class="flex flex-col justify-center items-start gap-5 c-paper">
+								<div class="flex items-start lg:items-center gap-10px c-paper">
+									<img src="/assets/home2/Divinitum-logo-SQUARE-STRAIGHT.svg" class="w-6.5 mt-2 lg:m-0 mx-auto" /><div class="c-paper ml-3 uppercase font-size-17px leading-7 font-600">привличане на точните клиенти</div><br></br>
+								</div>
+								<div class="flex items-start lg:items-center gap-10px c-paper">
+									<img src="/assets/home2/Divinitum-logo-SQUARE-STRAIGHT.svg" class="w-6.5 mt-2 lg:m-0 mx-auto" /><div class="c-paper ml-3 uppercase font-size-17px leading-7 font-600">генериране на повече продажби</div><br></br>
+								</div>
+							</div>
+						</div>
+					</div>
+					<PuzzleButton2
+						href="#about-us"
+						text="Повече за нас"
+					/>
+				</AnimatedComponent>
+			</section>
+
+			<section class="mt-70 mx-40px lg:mx-20 mb-6">
+				<h2 class="mb-20px lg:mb-20 c-brand-compl">Дигитални услуги</h2>
+			</section>
+
+			<SingleCollapse />
+
+			<section class="md:px-30 mx-30px mt-70 md:pb-10 pr-5">
+				<h2>Обратна връзка <span class="c-brand-compl">от нашите клиенти</span></h2>
+				<div class="lg:mt-10">
+					<div class="">
+						<AnimatedComponent>
+							<SliderOfOne reviews={[
+								{ name: "1" },
+								{ name: "2" },
+								{ name: "3" },
+							]}>
+								<BasicReview
+									reviewText={<>
+										Благодарение на тях сайтът ни излезе напред в търсачките и клиентите започнаха да ни търсят много повече - работата се увеличи с около 20-30%. Вече не работим само във Варна, а получаваме поръчки от цяла България.
+									</>}
+									name="Диян Данаилов"
+									job={<>
+										собственик на “Ренли”<br />
+										Фирма, специализирана в почистването на заведения във Варна
+									</>}
+								/>
+								<BasicReview
+									reviewText={<>
+										Преди да започнем работа заедно, бях работил с други компании, но без реални резултати. Често оставах с усещането, че просто ми взимат парите, тук за първи път усетихме реално отношение и фокус върху резултатите.
+									</>}
+									name="Явор Горолов"
+									job={<>
+										собственик на Fine Carpet Cleaning<br />
+										По­чис­тва­ща фир­ма за килими в Лондон
+									</>}
+								/>
+								<BasicReview
+									reviewText={<>
+										Още от самото начало, когато започнахме работа имаше положителен прогрес, а реалните резултати дойдоха след няколко месеца. Като пример мога да дам, че в гугъл сме на първо място по всички ключови думи, имайки предвид голямата конкуренция. 
+									</>}
+									name="Кристиан Митов"
+									job={<>
+										собственик на The Barber Shop<br />
+										Премиум бръснарница в София
+									</>}
+								/>
+							</SliderOfOne>
+						</AnimatedComponent>
+					</div>
+				</div>
+			</section>
+
+			<SlidingLogoCarousel class="mt-20 md:mt-0 md:mt-60 md:px-30 xl:px-25 md:ml-5 mx-5 overflow-hidden" />
+
+			<section class="px-4 mx-auto mt-24 md:mt-70">
+				<div class="[background-color:#000000] mx-[-21px]">
+					<div
+						class="rotate-0 block md:hidden
+							mb-20
+							relative 
+							h-[50vh] 
+							bg-[url(/assets/home2/divinitum-3.webp)] 
+							bg-[position:right_55%_bottom_0%] lg:bg-[position:right_55%_bottom_60%]
+							bg-no-repeat 
+							bg-cover 
+							"
+						role="img"
+						aria-label=""
+					></div>
+					<div
+						class="rotate-0 md:block hidden
+							mb-20
+							relative 
+							h-[100vh] 
+							bg-[url(/assets/home2/divinitum-3.webp)] 
+							bg-[position:right_5%_bottom_100%]
+							bg-no-repeat 
+							bg-cover 
+							[mask-image:linear-gradient(to_bottom,_rgba(0,0,0,1)_60%,_rgba(0,0,0,0.7)_75%,_rgba(0,0,0,0.4)_85%,_rgba(0,0,0,0)_100%)] 
+							[-webkit-mask-image:linear-gradient(to_bottom,_rgba(0,0,0,1)_60%,_rgba(0,0,0,0.7)_75%,_rgba(0,0,0,0)_85%,_rgba(0,0,0,0)_100%)] 
+							"
+						role="img"
+						aria-label=""
+					></div>
+				</div>
+
+				<ScrollColorText class="mt-8 lg:mt--40 lg:mx-20">
+					<h2 class="text-2xl important-lg:text-11 md:text-3xl font-bold uppercase">
+						Създаваме среда, в която бизнесите могат:
+					</h2>
+					<div class="mt-4 lg:mt-12 space-y-6">
+						<div>
+							<h3 class="text-lg important-lg:text-7 font-semibold text-brand-second uppercase">Лесно да управляват маркетинга си</h3>
+							<p>като им предоставяме отлично управление на рекламите</p>
+						</div>
+						<div>
+							<h3 class="text-lg important-lg:text-7 font-semibold text-brand-second uppercase">Да растат устойчиво</h3>
+							<p>чрез постоянен поток от нови клиенти и измерими резултати всеки месец</p>
+						</div>
+						<div>
+							<h3 class="text-lg important-lg:text-7 font-semibold text-brand-second uppercase">Да печелят повече</h3>
+							<p>благодарение на изпитани системи, които превръщат инвестицията в реални приходи</p>
+						</div>
+						<div>
+							<h3 class="text-lg important-lg:text-7 font-semibold text-brand-second uppercase important-mt-40px important-mb-10px important-leading-8 important-lg:leading-9">“Нашата цел е да помогнем на вашия бизнес да остави траен отпечатък в днешния дигитален свят.”</h3>
+							<div class="flex flex-row justify-start items-center">
+								<p class="italic">CEO of</p> 
+								<img src="/assets/Divinitum-logo.svg" class="max-w-140px ml-3" />
+							</div>
+						</div>
+					</div>
+				</ScrollColorText>
+			</section>
+
+			<div id="about-us"></div>
+
+			<section class="mx-30px lg:mx-20 mt-70">
+				<div>
+					<h2>Какво стои зад</h2>
+					<img src="/assets/Divinitum-logo.svg" class="max-w-250px lg:max-w-350px mx-0 mt-2" />
+				</div>
+				<h3 class="pt-18 important-mb-0 important-lg:mb-8 important-font-size-34px important-lg:font-size-44px important-leading-9">Нашата <span class="c-brand-compl">мисия</span></h3>
+				<p class="mt-3 important-font-size-20px important-leading-7 max-w-1200px">
+					Да освободим бизнес собствениците от хаоса на дигиталния маркетинг и да им дадем яснота, контрол и резултати. Да бъдем Вашият доверен партньор по пътя към онлайн успеха.
+				</p>
+			</section>
+
+			<section class="mt-20 lg:mt-60 mx-30px lg:mx-20">
+				<AnimatedComponent>
+					<h3 class="pt-18 important-mb--5 lg:important-mb-0 important-font-size-34px important-lg:font-size-44px important-leading-9">Нашите <span class="c-brand-compl">ценности</span></h3>
+					<SliderOfOne
+						reviews={[
+							{ name: "1" },
+							{ name: "2" },
+							{ name: "3" },
+						]}>
+						<ImagewTextReview
+							reviewTitle="Без губене на време"
+							reviewText={<>
+								Честността е в основата на всичко, което правим. Ако установим, че не можем да ви бъдем полезни – ще ви го кажем открито още в началото.
+							</>}
+							video="/assets/home2/2.1.-Без-Губене-На-Време.mp4"
+						/>
+						<ImagewTextReview
+							reviewTitle="Реалистични очаквания"
+							reviewText={<>
+								Изграждането на дигитално присъствие изисква време, тестове и ресурси.<br />
+								Няма универсална формула — нужно е подходящо позициониране и стратегия, която работи за Вашия бизнес.
+							</>}
+							video="/assets/home2/2.2-Реалистични-Очаквания.mp4"
+						/>
+						<ImagewTextReview
+							reviewTitle="Без фалшиви обещания"
+							reviewText={<>
+								Никога няма да Ви гарантираме резултати, които не можем да контролираме.<br />
+								Обещаваме работа, анализ и подобрения, които стъпка по стъпка водят до реални бизнес резултати.
+							</>}
+							video="/assets/home2/2.3.-Без-Фалшиви-Обещания.mp4"
+						/>
+					</SliderOfOne>
+				</AnimatedComponent>
+			</section>
+
+			<section class="mt-70 lg:mt-60 mx-30px lg:mx-20">
+				<AnimatedComponent>
+					<h3 class="pt-18 important-mb--5 lg:important-mb-0 important-font-size-34px important-lg:font-size-44px important-leading-9">Как <span class="c-brand-compl">работим</span></h3>
+					<SliderOfOne
+						reviews={[
+							{ name: "1" },
+							{ name: "2" },
+							{ name: "3" },
+							{ name: "4" },
+							{ name: "5" },
+						]}>
+						<ImagewTextReview
+							reviewTitle={<>
+								<div class="flex gap-3 items-center">
+									<div class="flex items-center">
+										<IconoirNumber1SquareSolid class="c-yellow w-8 h-8" />
+									</div>
+									<div class="font-size-20px font-600">ОРГАНИЗИРАМЕ СРЕЩА</div>
+								</div>
+							</>}
+							reviewText={<>
+								Организираме среща, на която да се запознаем и да обсъдим Вашите цели, предизвикателства и очаквания. Действа като отправна точка, възможност да се опознаем и да дефинираме как можем да Ви бъдем най-полезни.
+							</>}
+							video="/assets/home2/3.1.-Организираме-Среща.mp4"
+							class2="important-pb-5 pt-7"
+						/>
+						<ImagewTextReview
+							reviewTitle={<>
+								<div class="flex gap-3 items-center">
+									<div class="flex items-center">
+										<IconoirNumber2SquareSolid class="c-yellow w-8 h-8" />
+									</div>
+									<div class="font-size-20px font-600">Запознаваме се с вашият бизнес</div>
+								</div>
+							</>}
+							reviewText={<>
+								Провеждаме детайлен анализ на Вашия бизнес. Целта ни е да разберем какво Ви движи, какво Ви спира и къде искате да стигнете. Така всяка следваща стъпка от процеса е индивидуално съобразена с Вашите бизнес цели.
+							</>}
+							video="/assets/home2/3.2.-Запознаваме-Се-С-Вашия-Бизнес.mp4"
+							class2="important-pb-5 pt-7"
+						/>
+						<ImagewTextReview
+							reviewTitle={<>
+								<div class="flex gap-3 items-center">
+									<div class="flex items-center">
+										<IconoirNumber3SquareSolid class="c-yellow w-8 h-8" />
+									</div>
+									<div class="font-size-20px font-600">Изграждаме цялостна стратегия, която да работи за вас</div>
+								</div>
+							</>}
+							reviewText={<>
+								Не използваме „копи-пейст“ решения.<br />
+								Създаваме дигитална стратегия, която подхожда на Вашия бизнес модел, пазар и клиент. Тя е ясна, изпълнима и насочена към постигане на реални резултати.
+							</>}
+							video="/assets/home2/3.3.-Изграждаме-Цялостна-Стратегия.mp4"
+							class2="important-pb-5 pt-7"
+						/>
+						<ImagewTextReview
+							reviewTitle={<>
+								<div class="flex gap-3 items-center">
+									<div class="flex items-center">
+										<IconoirNumber4SquareSolid class="c-yellow w-8 h-8" />
+									</div>
+									<div class="font-size-20px font-600">Ние действаме. Вие следите напредъка</div>
+								</div>
+							</>}
+							reviewText={<>
+								Поемаме изпълнението на проекта. Анализираме и при нужда оптимизираме и доразвиваме.<br />
+								Всичко се случва прозрачно: знаете какво правим, защо го правим и какви резултати целим.
+							</>}
+							video="/assets/home2/3.4.-Ние-Действаме-Вие-Следите-Напредъка.mp4"
+							class2="important-pb-5 pt-7"
+						/>
+						<ImagewTextReview
+							reviewTitle={<>
+								<div class="flex gap-3 items-center">
+									<div class="flex items-center">
+										<IconoirNumber5SquareSolid class="c-yellow w-8 h-8" />
+									</div>
+									<div class="font-size-20px font-600">растем заедно</div>
+								</div>
+							</>}
+							reviewText={<>
+								Когато вие печелите, ние също. Нашата цел не е еднократен успех, а дългосрочен растеж. Да превърнем Вашия маркетинг в система, която работи, докато Вие мислите за следващата стъпка.
+							</>}
+							video="/assets/home2/3.5.-Растем-Заедно.mp4"
+							class2="important-pb-5 pt-7"
+						/>
+					</SliderOfOne>
+				</AnimatedComponent>
+			</section>
+
+			<section class="mt-70 lg:mt-60 mx-30px lg:mx-20">
+				<AnimatedComponent>
+					<h3 class="important-font-size-34px important-lg:font-size-44px lg:mb-20 important-leading-9">Case <span class="c-brand-compl">Study</span></h3>
+					<ImageReview
+						reviewText={<>
+							Около два месеца след началото на рекламите с Дивинитум, <span class="c-brand-second">запитванията се увеличиха с около 35%.</span>.
+						</>}
+						img="/assets/home2/3ca49d0a0f7dbf37a4708cc50dc794e6a3839b76.jpg"
+						name={<>
+							Явор Горолов<br />
+							<span class="c-gray-400">собственик на Fine Carpet Cleaning<br />
+								По­чис­тва­ща фир­ма за килими в Лондон</span>
+						</>}
+						case="Клиентът имаше предизвикателство – недостатъчно запитвания от онлайн каналите. След анализ на бизнеса и аудиторията създадохме таргетирани Google кампании с оптимизирани обяви. Само за два месеца запитванията се увеличиха с 35%. Паралелно оптимизирахме ключови страници на сайта, които се класираха органично на първа страница в Google. Така съвместната ни работа постигна двоен ефект – повече запитвания и трайна онлайн видимост."
+					/>
+				</AnimatedComponent>
+			</section>
+
+			<section class="mt-40 mb-30">
+				<div class="[background-color:#000000] mx-[-21px]">
+					<div
+						class="rotate-0 block md:hidden
+							mb-20
+							relative 
+							h-[40vh] 
+							bg-[url(/assets/home2/3.-Имаме-опита-инструментите.webp)] 
+							bg-[position:right_55%_bottom_0%] lg:bg-[position:right_55%_bottom_60%]
+							bg-no-repeat 
+							bg-cover
+							hue-rotate-[-10deg]
+							[mask-image:linear-gradient(to_bottom,_rgba(0,0,0,1)_60%,_rgba(0,0,0,0.7)_75%,_rgba(0,0,0,0.4)_85%,_rgba(0,0,0,0)_100%)] 
+							[-webkit-mask-image:linear-gradient(to_bottom,_rgba(0,0,0,1)_60%,_rgba(0,0,0,0.7)_75%,_rgba(0,0,0,0)_85%,_rgba(0,0,0,0)_100%)] 
+							"
+						role="img"
+						aria-label=""
+					></div>
+					<div
+						class="rotate-0 md:block hidden
+							mb-20
+							relative 
+							h-[80vh] 
+							bg-[url(/assets/home2/3.-Имаме-опита-инструментите.webp)] 
+							bg-[position:right_5%_bottom_90%]
+							bg-no-repeat 
+							bg-cover 
+							hue-rotate-[-10deg]
+							[mask-image:linear-gradient(to_bottom,_rgba(0,0,0,1)_60%,_rgba(0,0,0,0.7)_75%,_rgba(0,0,0,0.4)_85%,_rgba(0,0,0,0)_100%)] 
+							[-webkit-mask-image:linear-gradient(to_bottom,_rgba(0,0,0,1)_60%,_rgba(0,0,0,0.7)_75%,_rgba(0,0,0,0)_85%,_rgba(0,0,0,0)_100%)] 
+							"
+						role="img"
+						aria-label=""
+					></div>
+				</div>
+
+				<div class="important-pl-10px">
+					<ScrollColorText>
+						<h2 class="mt--30 lg:mt--60 lg:mr-100 case-normal important-font-size-36px important-leading-12 important-lg:pl-10 relative z-2 uppercase">Време е и Вашият бизнес <span class="c-brand-second">да започне да расте!</span></h2>
+					</ScrollColorText>
+					<div class="mt-10">
+						<PuzzleButton
+							href="#contact-form"
+							text="Свържете се с нас"
+						/>
+					</div>
+				</div>
+			</section>
+
+			<div class="bg-paper" id="contact-form">
+				<Form />
+			</div>
 		</>
 	);
 }

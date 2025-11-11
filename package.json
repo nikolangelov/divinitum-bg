@@ -5,13 +5,14 @@
     "dev": "vite dev",
     "copyfiles": "copyfiles -u 1 \"assets/**/*.{html,css,scss,ttf,woff,woff2,webp,eot,svg,jpg,png,js,mp4}\" dist/client/assets",
     "build": "vite build && npm run copyfiles",
-    "deploy": "cp -r -v ./dist/client/* /home/thebarbershop/htdocs/thebarbershop.bg",
+    "deploy": "cp -r -v ./dist/client/* /home/divinitum/htdocs/divinitum.bg",
     "preview": "vite preview",
     "test": "tsc --noEmit",
     "start-mailer": "node mail-sender/index.cjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@iconify-json/iconoir": "^1.2.10",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/ri": "^1.2.5",
     "@solid-primitives/storage": "^3.8.0",
@@ -26,6 +27,7 @@
     "dotenv": "^16.4.7",
     "escape-html": "^1.0.3",
     "express": "^4.21.2",
+    "gsap": "^3.13.0",
     "js-cookie": "^3.0.5",
     "lodash": "^4.17.21",
     "multer": "^1.4.5-lts.1",

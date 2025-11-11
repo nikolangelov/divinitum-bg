@@ -18,26 +18,26 @@ app.use(bodyParser.json());
 const upload = multer({ dest: "./upload" });
 
 const transporter = nodemailer.createTransport({
-    host: "mail.thebarbershop.bg",
+    host: "mail.divinitum.bg",
     port: 465,
     secure: true,
     auth: {
-        user: "test@thebarbershop.bg",
-        pass: "is7wqFlkhWGrfcFzx6dQ",
+        user: "office@divinitum.bg",
+        pass: `GzK"UdP4.3fcD+!W`,
     },
     logger: true,
     debug: true,
 });
 
 app.post('/api/send-email', (req, res) => {
-    const { senderEmail, text, phone, name, surname } = req.body;
+    const { senderEmail, text, phone, name, websiteLink } = req.body;
 
     const emailContent = `
-        Ново съобщение от контактната форма в сайта.
-        ИМЕЙЛ: ${senderEmail}
-        ИМЕ: ${name}
-        ФАМИЛИЯ: ${surname}
-        ТЕЛЕФОН: ${phone}
+        Ново съобщение от контактната форма в сайта.<br>
+        ИМЕ: ${name}<br>
+        ТЕЛЕФОН: ${phone}<br>
+        ИМЕЙЛ: ${senderEmail}<br>
+        ЛИНК КЪМ САЙТ: ${websiteLink}<br>
         СЪОБЩЕНИЕ: ${text}
     `;
 
@@ -47,9 +47,9 @@ app.post('/api/send-email', (req, res) => {
     console.log(emailContent)
 
     const mailOptions = {
-        from: '"The Barbershop" <officethebarbershop@gmail.com>',
+        from: '"DIVINITUM" <office@divinitum.bg>',
         replyTo: senderEmail,
-        to: 'officethebarbershop@gmail.com',
+        to: 'office@divinitum.bg',
         subject: 'Ново съобщение от контактната форма на сайта',
         text: emailContent,
     };
@@ -64,7 +64,7 @@ app.post('/api/send-email', (req, res) => {
     });
 });
 
-const port = 3046;
+const port = 3048;
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });

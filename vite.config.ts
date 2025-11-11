@@ -19,20 +19,14 @@ export default defineConfig({
 			theme:
 			{
 				colors: {
-					brand: "#eba65b",
-					"brand-dark": "#bf7e36",
-					"brand-compliment": "#8f1828",
-					"brand-title-light-bg": "#4f4234",
-					"brand-action": "#edb339",
-					"brand-action-hover": "#ebbc59",
-					"brand-second-action": "#228057",
-					"brand-second-action-hover": "#01874c",
-					"paper-link": "#56B665",
-					"paper-link-hover": "#268c5f",
+					brand: "#322380",
+					"brand-hover": "#3c2a9c",
+					"brand-compl": "#e8c841",
+					"brand-second": "#aeeb56",
+					"brand-second-hover": "#9ddc48",
+					"brand-third": "#6fecf0",
 
-					"brand-light": "#007faf",
-					"brand-inv": "#eee",
-					"paper": "#fdfdfd",
+					"paper": "#fcfcfc",
 					"paper-inv": "#07111c",
 					"paper-border": "#e7e7e7",
 				},
