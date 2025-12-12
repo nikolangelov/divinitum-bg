@@ -81,7 +81,7 @@ export function ImageReview(props: { name: string | JSXElement; reviewText: stri
                 <div class="flex flex-row flex-justify-center flex-items-start gap-3">
                     <div class="flex flex-justify-center flex-items-center relative">
                         <img
-                            class="w-170px sm:w-220px md:w-400px h-auto mx-auto"
+                            class="w-170px sm:w-220px md:w-300px h-auto mx-auto"
                             style="filter: saturate(130%);"
                             src={props.img}
                             alt="profile"
@@ -91,7 +91,7 @@ export function ImageReview(props: { name: string | JSXElement; reviewText: stri
 
                     <p class="c-paper leading-4 md:leading-6 font-[] mb-0 mt-0 font-size-12px md:font-size-18px">{props.name}</p>
                 </div>
-                <div class="w-full flex justify-center items-center ml-10 md:ml-40 mt--20 lg:mt--50">
+                <div class="w-full flex justify-center items-center ml-7 md:ml-40 mt--20 lg:mt--40">
                     <div class="max-w-400px lg:max-w-600px c-paper py-7 tracking--0.2 font-size-6 md:font-size-13 line-height-7 md:line-height-12">"{props.reviewText}"</div>
                 </div>
                 <div class="pt-5 max-w-500px lg:max-w-600px c-gray-200 font-size-20px leading-7">

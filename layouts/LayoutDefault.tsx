@@ -35,7 +35,7 @@ function Footer() {
   return (
     <div class="mt--2 py-20 w-full z-35 bg-black bottom-0 transition-all duration-300 ease-in-out">
       <div class="flex flex-col justify-center items-center h-full">
-        <img src="/assets/Divinitum-logo.svg" class="w-70 lg:w-80" />
+        <img src="/assets/Divinitum-logo-black-Sanford-white-without-lines.png" class="w-70 lg:w-80" />
 
         <div class="flex flex-col justify-center items-center gap-4">
           <div class="mt-10 relative flex justify-center items-center gap-2">
@@ -151,7 +151,7 @@ onMount(() => {
       <div class="block relative mx-auto md:mt-2">
         <img
           ref={(el) => (logoRef = el)}
-          src="/assets/Divinitum-logo.svg"
+          src="/assets/Divinitum-logo-black-Sanford-white-without-lines.png"
           class="w-45 lg:w-50 animate-initial"
           alt="Divinitum"
         />
@@ -175,7 +175,7 @@ export function Topbar(props: { children: JSX.Element }) {
 function BackToTopButton(props: { onClick: JSX.EventHandlerUnion<HTMLButtonElement, MouseEvent> | undefined; children: number | boolean | Node | JSX.ArrayElement | (string & {}) | null | undefined; }) {
   return (
     <button
-      class="flex items-center justify-between cursor-pointer b-solid b-2px c-brand hover-c-brand-orange b-brand hover-b-brand-orange bg-transparent md-w-12 md-h-12 w-10 h-10 b-rd-50% transition-colors"
+      class="flex items-center justify-between cursor-pointer b-solid b-2px c-brand-second hover-c-brand-compl b-brand-second hover-b-brand-compl bg-transparent md-w-10 md-h-10 w-10 h-10 transition-colors"
       onClick={props.onClick}
     >
       {props.children}

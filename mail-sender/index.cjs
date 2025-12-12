@@ -23,13 +23,13 @@ const transporter = nodemailer.createTransport({
     secure: true,
     auth: {
         user: "office@divinitum.bg",
-        pass: `GzK"UdP4.3fcD+!W`,
+        pass: 'GzK"UdP4.3fcD+!W',
     },
     logger: true,
     debug: true,
 });
 
-app.post('/api/send-email', (req, res) => {
+app.post('/api/send-email', upload.none(), (req, res) => {
     const { senderEmail, text, phone, name, websiteLink } = req.body;
 
     const emailContent = `
