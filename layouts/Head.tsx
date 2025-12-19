@@ -5,6 +5,7 @@ export default function Head() {
   return (
     <>
       <link rel="icon" href={logoUrl} />
+      <meta name="google-site-verification" content="eGTg97BYZRP--qeuZ1n41Aqg41aw9fK1FZ5aff3YYvE" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <script>{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
